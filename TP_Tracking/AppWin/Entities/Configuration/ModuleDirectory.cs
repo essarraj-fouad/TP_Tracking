@@ -6,11 +6,18 @@ using System.Threading.Tasks;
 
 namespace TP_Tracking.Entities
 {
-    public class Repertories : RepertoriesConfiguration
+    public class ModuleDirectory : RepertoriesConfiguration
     {
+        /// <summary>
+        /// Trainne 
+        /// </summary>
+        public Trainee Trainee { set; get; }
+        /// <summary>
+        /// List of Error
+        /// </summary>
         public List<ErrorMessage> ListErrorMessage { set; get; }
        
-        public Repertories():base()
+        public ModuleDirectory():base()
         {
             ListErrorMessage = new List<ErrorMessage>();
         }

@@ -15,7 +15,7 @@ namespace TP_Tracking.Presentation.UI
     public partial class RepertoriesControl : UserControl
     {
         public event EventHandler ErrorMessage;
-        public List<Repertory> ListRepertory { set; get; }
+        public List<FileData> ListRepertory { set; get; }
 
         public RepertoriesControl()
         {
@@ -32,7 +32,7 @@ namespace TP_Tracking.Presentation.UI
             this.RefreshRepertories();
         }
 
-        public void RefreshRepertories(List<Repertory> ListRepertory)
+        public void RefreshRepertories(List<FileData> ListRepertory)
         {
             this.ListRepertory = ListRepertory;
             this.RefreshRepertories();

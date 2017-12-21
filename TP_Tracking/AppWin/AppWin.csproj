@@ -47,14 +47,11 @@
   <ItemGroup>
     <Compile Include="BLL\ConfigurationBLO.cs" />
     <Compile Include="BLL\RepertoriesBLO.cs" />
-    <Compile Include="Entities\Configuration\Repertories.cs" />
+    <Compile Include="Entities\Configuration\ModuleDirectory.cs" />
     <Compile Include="Entities\ErrorMessage.cs" />
     <Compile Include="Entities\RepertoriesConfiguration.cs" />
     <Compile Include="Entities\TraineeInformations\Group.cs" />
-    <Compile Include="Entities\Configuration\Task.cs" />
-    <Compile Include="Entities\Configuration\TD.cs" />
-    <Compile Include="Entities\Configuration\TP.cs" />
-    <Compile Include="Entities\Configuration\Repertory.cs" />
+    <Compile Include="Entities\Configuration\FileData.cs" />
     <Compile Include="Entities\TraineeInformations\Trainee.cs" />
     <Compile Include="Enumerations\Repertories.cs" />
     <Compile Include="Enumerations\Task.cs" />

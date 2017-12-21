@@ -14,7 +14,7 @@ namespace TP_Tracking.Presentation
 {
     public partial class AppForm : Form
     {
-        Repertories repertories;
+        ModuleDirectory repertories;
         public AppForm()
         {
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace TP_Tracking.Presentation
 
         private void AppForm_Load(object sender, EventArgs e)
         {
-            Repertories repertories = RepertoriesBLO.LoadRepertoies();
+            ModuleDirectory repertories = RepertoriesBLO.LoadRepertoies();
             this.repertoriesRoot.RefreshRepertories(repertories.ListRepertory);
             this.repertoriesTD.RefreshRepertories(repertories.ListTD);
             this.repertoriesTP.RefreshRepertories(repertories.ListTP);

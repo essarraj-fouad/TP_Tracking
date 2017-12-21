@@ -8,16 +8,16 @@ namespace TP_Tracking.Entities
 {
     public class RepertoriesConfiguration 
     {
-        public List<Repertory> ListRepertory { set; get; }
-        public List<Repertory> ListTP { set; get; }
-        public List<Repertory> ListTD { set; get; }
+        public List<FileData> ListRepertory { set; get; }
+        public List<FileData> ListTP { set; get; }
+        public List<FileData> ListTD { set; get; }
 
 
          public RepertoriesConfiguration()
         {
-            ListRepertory = new List<Repertory>();
-            ListTP = new List<Repertory>();
-            ListTD = new List<Repertory>();
+            ListRepertory = new List<FileData>();
+            ListTP = new List<FileData>();
+            ListTD = new List<FileData>();
         }
     }
 }

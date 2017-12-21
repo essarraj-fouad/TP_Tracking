@@ -14,33 +14,24 @@ namespace TP_Tracking.BLL
         /// Load Repertories and Validate
         /// </summary>
         /// <returns></returns>
-        public static Repertories LoadRepertoies()
+        public static ModuleDirectory LoadRepertoies()
         {
             
-            Repertories repertories = new Repertories();
+            ModuleDirectory repertories = new ModuleDirectory();
 
             // Load Root Repertories
             string[] files = Directory.GetFileSystemEntries(".");
             foreach (var item in files)
             {
                 FileInfo fileInfo = new FileInfo(item);
-                repertories.ListRepertory.Add(new Repertory() { FileInfo = fileInfo });
+                repertories.ListRepertory.Add(new FileData() { FileInfo = fileInfo });
             }
 
             // Load TD
-            LoadTD();
+            LoadRepertoryByName(repertories.ListTD, "TD", repertories.AddErrorMessage);
 
             // Load TP
-            Repertory RepertoryTP = repertories.ListRepertory.Where(r => r.Name.ToUpper().Contains("TP")).FirstOrDefault();
-            if (RepertoryTD == null)
-            {
-                string msg = string.Format("Le répertoir TP n'existe pas");
-                repertories.AddErrorMessage(new ErrorMessage(msg));
-            }
-            else
-            {
-
-            }
+            LoadRepertoryByName(repertories.ListTD, "TP", repertories.AddErrorMessage);
 
             // Load Cours 
 
@@ -51,9 +42,9 @@ namespace TP_Tracking.BLL
             return repertories;
         }
 
-        private static void LoadRepertoryByName(List<Repertory> ListRepertory,string NameOfRepertory,Action<string> AddErrorMessage)
+        private static void LoadRepertoryByName(List<FileData> ListRepertory,string NameOfRepertory,Action<ErrorMessage> AddErrorMessage)
         {
-            Repertory CheckedRepertory = ListRepertory.Where(r => r.Name.ToUpper().Contains(NameOfRepertory)).FirstOrDefault();
+            FileData CheckedRepertory = ListRepertory.Where(r => r.Name.ToUpper().Contains(NameOfRepertory)).FirstOrDefault();
             if (CheckedRepertory == null)
             {
                 string msg = string.Format("Le répertoir TD n'existe pas");
@@ -61,17 +52,17 @@ namespace TP_Tracking.BLL
             }
             else
             {
-                string[] directoryTD = Directory.GetFileSystemEntries(RepertoryTD.FileInfo.FullName);
+                string[] directoryTD = Directory.GetFileSystemEntries(CheckedRepertory.FileInfo.FullName);
                 foreach (var item in directoryTD)
                 {
                     FileInfo fileInfo = new FileInfo(item);
-                    repertories.ListTD.Add(new Repertory() { FileInfo = fileInfo });
+                    ListRepertory.Add(new FileData() { FileInfo = fileInfo });
                 }
 
             }
         }
 
-        private static void Validation(Repertories repertories)
+        private static void Validation(ModuleDirectory repertories)
         {
             RepertoriesConfiguration Configuration = ConfigurationBLO.LoadConfiguration();
 

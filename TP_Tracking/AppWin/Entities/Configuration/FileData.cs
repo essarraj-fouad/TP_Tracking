@@ -8,13 +8,13 @@ using TP_Tracking.Enumerations;
 
 namespace TP_Tracking.Entities
 {
-    public class Repertory
+    public class FileData
     {
-        public Repertory()
+        public FileData()
         {
             this.Validation = ValisationStat.Neutral;
         }
-
+        public List<FileData> RepertoryChilds { set; get; }
         private FileInfo fileInfo;
         public FileInfo FileInfo
         {

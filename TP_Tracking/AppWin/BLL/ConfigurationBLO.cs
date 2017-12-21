@@ -15,12 +15,12 @@ namespace TP_Tracking.BLL
         /// </summary>
         public static RepertoriesConfiguration LoadConfiguration()
         {
-            RepertoriesConfiguration configuration = new Entities.Repertories();
+            RepertoriesConfiguration configuration = new Entities.ModuleDirectory();
 
             // Load List of requied repetories
-            configuration.ListRepertory.Add(new Repertory() { Name = "TD" });
-            configuration.ListRepertory.Add(new Repertory() { Name = "TP" });
-            configuration.ListRepertory.Add(new Repertory() { Name = "Cours" });
+            configuration.ListRepertory.Add(new FileData() { Name = "TD" });
+            configuration.ListRepertory.Add(new FileData() { Name = "TP" });
+            configuration.ListRepertory.Add(new FileData() { Name = "Cours" });
 
             // Load List of TD
 
