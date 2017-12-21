@@ -49,6 +49,7 @@
     <Compile Include="BLL\RepertoriesBLO.cs" />
     <Compile Include="Entities\Configuration\Repertories.cs" />
     <Compile Include="Entities\ErrorMessage.cs" />
+    <Compile Include="Entities\RepertoriesConfiguration.cs" />
     <Compile Include="Entities\TraineeInformations\Group.cs" />
     <Compile Include="Entities\Configuration\Task.cs" />
     <Compile Include="Entities\Configuration\TD.cs" />

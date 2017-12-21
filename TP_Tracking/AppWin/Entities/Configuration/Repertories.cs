@@ -6,18 +6,22 @@ using System.Threading.Tasks;
 
 namespace TP_Tracking.Entities
 {
-    public class Repertories
+    public class Repertories : RepertoriesConfiguration
     {
         public List<ErrorMessage> ListErrorMessage { set; get; }
-        public List<Repertory> ListRepertory { set; get; }
-        public List<TP> ListTP { set; get; }
-        public List<TD> ListTD { set; get; }
-        public Repertories()
+       
+        public Repertories():base()
         {
-            ListRepertory = new List<Repertory>();
             ListErrorMessage = new List<ErrorMessage>();
-            ListTP = new List<TP>();
-            ListTD = new List<TD>();
+        }
+
+        /// <summary>
+        /// Add Error Message 
+        /// </summary>
+        /// <param name="errorMessage"></param>
+        public  void AddErrorMessage(ErrorMessage errorMessage)
+        {
+            ListErrorMessage.Add(errorMessage);
         }
     }
 }

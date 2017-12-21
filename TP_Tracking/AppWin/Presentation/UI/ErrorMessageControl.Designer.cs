@@ -36,10 +36,13 @@
             this.listBoxErrorMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBoxErrorMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxErrorMessage.ForeColor = System.Drawing.Color.Maroon;
             this.listBoxErrorMessage.FormattingEnabled = true;
+            this.listBoxErrorMessage.ItemHeight = 20;
             this.listBoxErrorMessage.Location = new System.Drawing.Point(3, 3);
             this.listBoxErrorMessage.Name = "listBoxErrorMessage";
-            this.listBoxErrorMessage.Size = new System.Drawing.Size(271, 186);
+            this.listBoxErrorMessage.Size = new System.Drawing.Size(271, 184);
             this.listBoxErrorMessage.TabIndex = 0;
             // 
             // ErrorMessageControl

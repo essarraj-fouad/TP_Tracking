@@ -8,6 +8,17 @@ namespace TP_Tracking.Entities
 {
     public class ErrorMessage
     {
-        string Message { set; get; }
+
+        public string Message { set; get; }
+        public ErrorMessage(string msg)
+        {
+            this.Message = msg;
+        }
+
+       
+        public override string ToString()
+        {
+            return this.Message;
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace TP_Tracking.Presentation.UI
     public partial class RepertoriesControl : UserControl
     {
         public event EventHandler ErrorMessage;
-        public Repertories repertories { set; get; }
+        public List<Repertory> ListRepertory { set; get; }
 
         public RepertoriesControl()
         {
@@ -31,11 +31,17 @@ namespace TP_Tracking.Presentation.UI
             treeView1.Nodes.Clear();
             this.RefreshRepertories();
         }
+
+        public void RefreshRepertories(List<Repertory> ListRepertory)
+        {
+            this.ListRepertory = ListRepertory;
+            this.RefreshRepertories();
+        }
         public void RefreshRepertories()
         {
-            if(repertories != null)
+            if(ListRepertory != null)
             {
-                foreach (var item in repertories.ListRepertory)
+                foreach (var item in ListRepertory)
                 {
                     TreeNode treeNode = new TreeNode();
                     treeNode.Text = item.FileInfo.Name;

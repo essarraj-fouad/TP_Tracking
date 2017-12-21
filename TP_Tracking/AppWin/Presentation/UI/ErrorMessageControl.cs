@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TP_Tracking.Entities;
 
 namespace TP_Tracking.Presentation.UI
 {
@@ -17,6 +18,12 @@ namespace TP_Tracking.Presentation.UI
         {
             InitializeComponent();
         }
-        
+
+
+        public void ShowMessages(List<ErrorMessage> listErrorMessage)
+        {
+            this.listBoxErrorMessage.Items.Clear();
+            this.listBoxErrorMessage.DataSource = listErrorMessage;
+        }
     }
 }

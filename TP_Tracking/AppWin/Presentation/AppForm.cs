@@ -23,8 +23,11 @@ namespace TP_Tracking.Presentation
         private void AppForm_Load(object sender, EventArgs e)
         {
             Repertories repertories = RepertoriesBLO.LoadRepertoies();
-            this.repertoriesControl1.repertories = repertories;
-            this.repertoriesControl1.Refresh();
+            this.repertoriesRoot.RefreshRepertories(repertories.ListRepertory);
+            this.repertoriesTD.RefreshRepertories(repertories.ListTD);
+            this.repertoriesTP.RefreshRepertories(repertories.ListTP);
+
+            this.errorMessageControl.ShowMessages(repertories.ListErrorMessage);
 
            
         }

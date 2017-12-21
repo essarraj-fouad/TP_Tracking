@@ -12,13 +12,31 @@ namespace TP_Tracking.Entities
     {
         public Repertory()
         {
-            this.Validation = ValisationStat.Neutral ;
+            this.Validation = ValisationStat.Neutral;
         }
-        public FileInfo FileInfo { set; get; }
-        public string Name { set; get; }
+
+        private FileInfo fileInfo;
+        public FileInfo FileInfo
+        {
+            set
+            {
+                this.fileInfo = value;
+                this.Name = fileInfo.Name;
+            }
+            get
+            {
+
+                return this.fileInfo;
+            }
+        }
+        public string Name
+        {
+            set;
+            get;
+        }
 
         public ValisationStat Validation { set; get; }
         public string ValidationErrorMessage { set; get; }
-        
+
     }
 }

@@ -13,9 +13,9 @@ namespace TP_Tracking.BLL
         /// <summary>
         /// Load Configuration : 
         /// </summary>
-        public static Repertories LoadConfiguration()
+        public static RepertoriesConfiguration LoadConfiguration()
         {
-            Entities.Repertories configuration = new Entities.Repertories();
+            RepertoriesConfiguration configuration = new Entities.Repertories();
 
             // Load List of requied repetories
             configuration.ListRepertory.Add(new Repertory() { Name = "TD" });
