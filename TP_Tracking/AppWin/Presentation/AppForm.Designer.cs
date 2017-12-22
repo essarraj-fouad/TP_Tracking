@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBoxRepertories = new System.Windows.Forms.GroupBox();
+            this.repertoriesRoot = new TP_Tracking.Presentation.UI.RepertoriesControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.errorMessageControl = new TP_Tracking.Presentation.UI.ErrorMessageControl();
-            this.repertoriesRoot = new TP_Tracking.Presentation.UI.RepertoriesControl();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.repertoriesTD = new TP_Tracking.Presentation.UI.RepertoriesControl();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.repertoriesTP = new TP_Tracking.Presentation.UI.RepertoriesControl();
-            this.repertoriesTD = new TP_Tracking.Presentation.UI.RepertoriesControl();
+            this.bt_refresh = new System.Windows.Forms.Button();
             this.groupBoxRepertories.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -51,6 +52,15 @@
             this.groupBoxRepertories.TabIndex = 1;
             this.groupBoxRepertories.TabStop = false;
             this.groupBoxRepertories.Text = "Organisations des répertoires";
+            // 
+            // repertoriesRoot
+            // 
+            this.repertoriesRoot.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.repertoriesRoot.ListDirectory = null;
+            this.repertoriesRoot.Location = new System.Drawing.Point(3, 16);
+            this.repertoriesRoot.Name = "repertoriesRoot";
+            this.repertoriesRoot.Size = new System.Drawing.Size(348, 238);
+            this.repertoriesRoot.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -70,15 +80,6 @@
             this.errorMessageControl.Size = new System.Drawing.Size(351, 153);
             this.errorMessageControl.TabIndex = 0;
             // 
-            // repertoriesRoot
-            // 
-            this.repertoriesRoot.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.repertoriesRoot.Location = new System.Drawing.Point(3, 16);
-            this.repertoriesRoot.Name = "repertoriesRoot";
-            this.repertoriesRoot.ListRepertory = null;
-            this.repertoriesRoot.Size = new System.Drawing.Size(348, 238);
-            this.repertoriesRoot.TabIndex = 0;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.repertoriesTD);
@@ -88,6 +89,15 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "TD";
+            // 
+            // repertoriesTD
+            // 
+            this.repertoriesTD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.repertoriesTD.ListDirectory = null;
+            this.repertoriesTD.Location = new System.Drawing.Point(3, 16);
+            this.repertoriesTD.Name = "repertoriesTD";
+            this.repertoriesTD.Size = new System.Drawing.Size(309, 413);
+            this.repertoriesTD.TabIndex = 0;
             // 
             // groupBox3
             // 
@@ -102,26 +112,28 @@
             // repertoriesTP
             // 
             this.repertoriesTP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.repertoriesTP.ListDirectory = null;
             this.repertoriesTP.Location = new System.Drawing.Point(3, 16);
             this.repertoriesTP.Name = "repertoriesTP";
-            this.repertoriesTP.ListRepertory = null;
             this.repertoriesTP.Size = new System.Drawing.Size(343, 413);
             this.repertoriesTP.TabIndex = 0;
             // 
-            // repertoriesTD
+            // bt_refresh
             // 
-            this.repertoriesTD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.repertoriesTD.Location = new System.Drawing.Point(3, 16);
-            this.repertoriesTD.Name = "repertoriesTD";
-            this.repertoriesTD.ListRepertory = null;
-            this.repertoriesTD.Size = new System.Drawing.Size(309, 413);
-            this.repertoriesTD.TabIndex = 0;
+            this.bt_refresh.Location = new System.Drawing.Point(1051, 12);
+            this.bt_refresh.Name = "bt_refresh";
+            this.bt_refresh.Size = new System.Drawing.Size(75, 23);
+            this.bt_refresh.TabIndex = 5;
+            this.bt_refresh.Text = "Actualiser";
+            this.bt_refresh.UseVisualStyleBackColor = true;
+            this.bt_refresh.Click += new System.EventHandler(this.bt_refresh_Click);
             // 
             // AppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1057, 459);
+            this.ClientSize = new System.Drawing.Size(1169, 459);
+            this.Controls.Add(this.bt_refresh);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -146,5 +158,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private UI.RepertoriesControl repertoriesTD;
         private UI.RepertoriesControl repertoriesTP;
+        private System.Windows.Forms.Button bt_refresh;
     }
 }

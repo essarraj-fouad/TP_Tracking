@@ -1,16 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TP_Tracking>
-  <TP>
-    <TP code="TP1" name="Bonjour C#" description="Application Bonjour C#" />
-    <TP code="TP2" name="Boucle" description="Application Bonjour C#" />
-    <TP code="TP3" name="Condition" description="Application Bonjour C#" />
-    <TP code="TP4" name="Craation des Classes" description="Application Bonjour C#" />
-  </TP>
-  <TD>
-    <TD code="TD-1-EF" name="Bonjour C#" description="Application Bonjour C#" />
-    <TD code="TD-2-EF" name="Boucle" description="Application Bonjour C#" />
-    <TD code="TD-3-EF" name="Condition" description="Application Bonjour C#" />
-    <TD code="TD-4-EF" name="Craation des Classes" description="Application Bonjour C#" />
-  </TD>
-  <Cours></Cours>
-</TP_Tracking>
+<ModuleDirectory>
+  <FileData>
+    <TravauxPratique>
+      <TP code="TP1" name="Bonjour C#" description="Application Bonjour C#" />
+      <TP code="TP2" name="Boucle" description="Application Bonjour C#" />
+      <TP code="TP3" name="Condition" description="Application Bonjour C#" />
+      <TP code="TP4" name="Craation des Classes" description="Application Bonjour C#" />
+    </TravauxPratique>
+    <TravauxDirige>
+      <TD code="TD-1-EF" name="Bonjour C#" description="Application Bonjour C#" />
+      <TD code="TD-2-EF" name="Boucle" description="Application Bonjour C#" />
+      <TD code="TD-3-EF" name="Condition" description="Application Bonjour C#" />
+      <TD code="TD-4-EF" name="Craation des Classes" description="Application Bonjour C#" />
+    </TravauxDirige>
+    <Cours></Cours>
+  </FileData>
+</ModuleDirectory>

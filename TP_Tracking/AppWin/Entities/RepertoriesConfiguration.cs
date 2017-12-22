@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 
 namespace TP_Tracking.Entities
 {
-    public class RepertoriesConfiguration 
+    public class DataFilesConfiguration 
     {
-        public List<FileData> ListRepertory { set; get; }
-        public List<FileData> ListTP { set; get; }
-        public List<FileData> ListTD { set; get; }
+        public List<string> ListRootDirectory { set; get; }
+        public List<string> ListTP { set; get; }
+        public List<string> ListTD { set; get; }
+        public List<string> ListCours { set; get; }
 
-
-         public RepertoriesConfiguration()
+        public DataFilesConfiguration()
         {
-            ListRepertory = new List<FileData>();
-            ListTP = new List<FileData>();
-            ListTD = new List<FileData>();
+            ListRootDirectory = new List<string>();
+            ListTP = new List<string>();
+            ListTD = new List<string>();
+            ListCours = new List<string>();
         }
     }
 }

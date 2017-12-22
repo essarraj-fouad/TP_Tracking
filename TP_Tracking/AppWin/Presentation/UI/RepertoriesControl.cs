@@ -14,8 +14,7 @@ namespace TP_Tracking.Presentation.UI
 {
     public partial class RepertoriesControl : UserControl
     {
-        public event EventHandler ErrorMessage;
-        public List<FileData> ListRepertory { set; get; }
+        public List<FileData> ListDirectory { set; get; }
 
         public RepertoriesControl()
         {
@@ -26,22 +25,19 @@ namespace TP_Tracking.Presentation.UI
         {
         }
 
-        private void btRefresh_Click(object sender, EventArgs e)
-        {
-            treeView1.Nodes.Clear();
-            this.RefreshRepertories();
-        }
+        
 
-        public void RefreshRepertories(List<FileData> ListRepertory)
+        public void RefreshRepertories(FileData fileData)
         {
-            this.ListRepertory = ListRepertory;
+            this.ListDirectory = fileData.ChildsFils;
             this.RefreshRepertories();
         }
         public void RefreshRepertories()
         {
-            if(ListRepertory != null)
+            if(ListDirectory != null)
             {
-                foreach (var item in ListRepertory)
+                treeView1.Nodes.Clear();
+                foreach (var item in ListDirectory)
                 {
                     TreeNode treeNode = new TreeNode();
                     treeNode.Text = item.FileInfo.Name;

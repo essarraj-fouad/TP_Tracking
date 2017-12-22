@@ -22,6 +22,7 @@ namespace TP_Tracking.Presentation.UI
 
         public void ShowMessages(List<ErrorMessage> listErrorMessage)
         {
+            this.listBoxErrorMessage.DataSource = null;
             this.listBoxErrorMessage.Items.Clear();
             this.listBoxErrorMessage.DataSource = listErrorMessage;
         }

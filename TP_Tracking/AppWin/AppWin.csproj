@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\ConfigurationBLO.cs" />
-    <Compile Include="BLL\RepertoriesBLO.cs" />
+    <Compile Include="BLL\ModuleDirectoryBLO.cs" />
     <Compile Include="Entities\Configuration\ModuleDirectory.cs" />
     <Compile Include="Entities\ErrorMessage.cs" />
     <Compile Include="Entities\RepertoriesConfiguration.cs" />
@@ -94,6 +94,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="BLL\EntitiesBLO.cd" />
+    <None Include="Entities\Entities.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

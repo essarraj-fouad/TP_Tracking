@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TP_Tracking.Entities.FileData">
+    <Position X="0.5" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAACAAQAQAAAAAAAAAAEAAAABAAAA=</HashCode>
+      <FileName>Entities\Configuration\FileData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TP_Tracking.Entities.ModuleDirectory">
+    <Position X="3.5" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAIAgAAAAAAQAAAgEAAAAAAQAAAA=</HashCode>
+      <FileName>Entities\Configuration\ModuleDirectory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Trainee" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TP_Tracking.Entities.Group">
+    <Position X="8" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\TraineeInformations\Group.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TP_Tracking.Entities.Trainee">
+    <Position X="6.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Entities\TraineeInformations\Trainee.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Group" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TP_Tracking.Entities.ErrorMessage">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Entities\ErrorMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TP_Tracking.Entities.DataFilesConfiguration">
+    <Position X="2.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAIAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\RepertoriesConfiguration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

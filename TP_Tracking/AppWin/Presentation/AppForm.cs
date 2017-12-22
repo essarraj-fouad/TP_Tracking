@@ -14,7 +14,7 @@ namespace TP_Tracking.Presentation
 {
     public partial class AppForm : Form
     {
-        ModuleDirectory repertories;
+        ModuleDirectory moduleDirectory;
         public AppForm()
         {
             InitializeComponent();
@@ -22,14 +22,16 @@ namespace TP_Tracking.Presentation
 
         private void AppForm_Load(object sender, EventArgs e)
         {
-            ModuleDirectory repertories = RepertoriesBLO.LoadRepertoies();
-            this.repertoriesRoot.RefreshRepertories(repertories.ListRepertory);
-            this.repertoriesTD.RefreshRepertories(repertories.ListTD);
-            this.repertoriesTP.RefreshRepertories(repertories.ListTP);
+            this.bt_refresh_Click(null, null);
+        }
 
-            this.errorMessageControl.ShowMessages(repertories.ListErrorMessage);
-
-           
+        private void bt_refresh_Click(object sender, EventArgs e)
+        {
+            moduleDirectory = ModuleDirectoryBLO.LoadAndValidateFils();
+            this.repertoriesRoot.RefreshRepertories(moduleDirectory.RootDirectoty);
+            this.repertoriesTD.RefreshRepertories(moduleDirectory.TD);
+            this.repertoriesTP.RefreshRepertories(moduleDirectory.TP);
+            this.errorMessageControl.ShowMessages(moduleDirectory.ListErrorMessage);
         }
     }
 }

@@ -6,8 +6,26 @@ using System.Threading.Tasks;
 
 namespace TP_Tracking.Entities
 {
-    public class ModuleDirectory : RepertoriesConfiguration
+    public class ModuleDirectory
     {
+
+        public FileData RootDirectoty { set; get; }
+        public FileData TP { set; get; }
+        public FileData TD { set; get; }
+        public FileData Cours { set; get; }
+
+
+        public ModuleDirectory()
+        {
+            
+           
+            RootDirectoty = new FileData();
+            TP = new FileData();
+            TD = new FileData();
+            Cours = new FileData();
+            ListErrorMessage = new List<ErrorMessage>();
+        }
+
         /// <summary>
         /// Trainne 
         /// </summary>
@@ -16,12 +34,7 @@ namespace TP_Tracking.Entities
         /// List of Error
         /// </summary>
         public List<ErrorMessage> ListErrorMessage { set; get; }
-       
-        public ModuleDirectory():base()
-        {
-            ListErrorMessage = new List<ErrorMessage>();
-        }
-
+ 
         /// <summary>
         /// Add Error Message 
         /// </summary>

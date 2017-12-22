@@ -10,17 +10,24 @@ namespace TP_Tracking.Entities
 {
     public class FileData
     {
-        public FileData()
-        {
+        public FileData(){
             this.Validation = ValisationStat.Neutral;
+            this.ChildsFils = new List<FileData>();
         }
-        public List<FileData> RepertoryChilds { set; get; }
+        public FileData(FileData Parent)
+        {
+            this.Parent = Parent;
+            this.Validation = ValisationStat.Neutral;
+            this.ChildsFils = new List<FileData>();
+            
+        }
         private FileInfo fileInfo;
         public FileInfo FileInfo
         {
             set
             {
                 this.fileInfo = value;
+                if(this.fileInfo != null)
                 this.Name = fileInfo.Name;
             }
             get
@@ -34,9 +41,11 @@ namespace TP_Tracking.Entities
             set;
             get;
         }
-
         public ValisationStat Validation { set; get; }
-        public string ValidationErrorMessage { set; get; }
+        public FileData Parent { set; get; }
+        public List<FileData> ChildsFils { set; get; }
+       
+       
 
     }
 }
