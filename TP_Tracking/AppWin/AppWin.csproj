@@ -46,13 +46,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\ConfigurationBLO.cs" />
+    <Compile Include="BLL\Exceptions\ConfigurationFileNotExistException.cs" />
+    <Compile Include="BLL\LoadModuleDirectory.cs" />
     <Compile Include="BLL\ModuleDirectoryBLO.cs" />
+    <Compile Include="BLL\SaveModuleDirectory.cs" />
+    <Compile Include="BLL\Exceptions\USBDeviceNotExistException.cs" />
+    <Compile Include="BLL\USBDevice.cs" />
+    <Compile Include="BLL\ValidateModuleDirectory.cs" />
     <Compile Include="Entities\Configuration\ModuleDirectory.cs" />
     <Compile Include="Entities\ErrorMessage.cs" />
-    <Compile Include="Entities\RepertoriesConfiguration.cs" />
+    <Compile Include="Entities\DataFilesConfiguration.cs" />
     <Compile Include="Entities\TraineeInformations\Group.cs" />
     <Compile Include="Entities\Configuration\FileData.cs" />
     <Compile Include="Entities\TraineeInformations\Trainee.cs" />
+    <Compile Include="Entities\TrakingState.cs" />
     <Compile Include="Enumerations\Repertories.cs" />
     <Compile Include="Enumerations\Task.cs" />
     <Compile Include="Presentation\AppForm.cs">
@@ -60,6 +67,12 @@
     </Compile>
     <Compile Include="Presentation\AppForm.Designer.cs">
       <DependentUpon>AppForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\UI\ConfigurationFileDeviceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\UI\ConfigurationFileDeviceControl.Designer.cs">
+      <DependentUpon>ConfigurationFileDeviceControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\UI\ErrorMessageControl.cs">
       <SubType>UserControl</SubType>
@@ -77,6 +90,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentation\AppForm.resx">
       <DependentUpon>AppForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\UI\ConfigurationFileDeviceControl.resx">
+      <DependentUpon>ConfigurationFileDeviceControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\UI\ErrorMessageControl.resx">
       <DependentUpon>ErrorMessageControl.cs</DependentUpon>
@@ -114,6 +130,8 @@
     <Content Include="DAL\FilesConfiguation.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\root-directory.png" />
+    <None Include="Resources\usb.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

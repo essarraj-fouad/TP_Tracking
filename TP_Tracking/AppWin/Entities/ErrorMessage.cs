@@ -10,6 +10,11 @@ namespace TP_Tracking.Entities
     {
 
         public string Message { set; get; }
+
+        public ErrorMessage()
+        {
+  
+        }
         public ErrorMessage(string msg)
         {
             this.Message = msg;

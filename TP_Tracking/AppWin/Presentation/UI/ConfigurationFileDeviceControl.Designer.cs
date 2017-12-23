@@ -1,6 +1,6 @@
 ﻿namespace TP_Tracking.Presentation.UI
 {
-    partial class ErrorMessageControl
+    partial class ConfigurationFileDeviceControl
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -28,33 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBoxErrorMessage = new System.Windows.Forms.ListBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // listBoxErrorMessage
+            // pictureBox1
             // 
-            this.listBoxErrorMessage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBoxErrorMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBoxErrorMessage.ForeColor = System.Drawing.Color.Maroon;
-            this.listBoxErrorMessage.ItemHeight = 20;
-            this.listBoxErrorMessage.Location = new System.Drawing.Point(0, 0);
-            this.listBoxErrorMessage.Name = "listBoxErrorMessage";
-            this.listBoxErrorMessage.Size = new System.Drawing.Size(253, 258);
-            this.listBoxErrorMessage.TabIndex = 0;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::TP_Tracking.Properties.Resources.root_directory;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(136, 129);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // ErrorMessageControl
+            // ConfigurationFileDeviceControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.listBoxErrorMessage);
-            this.Name = "ErrorMessageControl";
-            this.Size = new System.Drawing.Size(253, 258);
+            this.Controls.Add(this.pictureBox1);
+            this.Name = "ConfigurationFileDeviceControl";
+            this.Size = new System.Drawing.Size(136, 129);
+            this.Load += new System.EventHandler(this.ConfigurationFileDeviceControl_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBoxErrorMessage;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

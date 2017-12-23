@@ -14,7 +14,8 @@ namespace TP_Tracking.Presentation.UI
 {
     public partial class RepertoriesControl : UserControl
     {
-        public List<FileData> ListDirectory { set; get; }
+        
+        public FileData ParentFileData { set; get; }
 
         public RepertoriesControl()
         {
@@ -27,25 +28,35 @@ namespace TP_Tracking.Presentation.UI
 
         
 
-        public void RefreshRepertories(FileData fileData)
+        public void RefreshRepertories(FileData ParentFileData)
         {
-            this.ListDirectory = fileData.ChildsFils;
+            this.ParentFileData = ParentFileData;
             this.RefreshRepertories();
         }
         public void RefreshRepertories()
         {
-            if(ListDirectory != null)
+            if(this.ParentFileData != null)
             {
                 treeView1.Nodes.Clear();
-                foreach (var item in ListDirectory)
+                foreach (var dataFile in this.ParentFileData.ChildsFils)
                 {
                     TreeNode treeNode = new TreeNode();
-                    treeNode.Text = item.FileInfo.Name;
-                    if (item.Validation == Enumerations.ValisationStat.NotValid)
+                    treeNode.Text = dataFile.FileInfo.Name;
+                    if (dataFile.Validation == Enumerations.ValisationStat.NotValid)
+                    {
                         treeNode.BackColor = Color.Red;
+                        string messageToolTip = string.Join("\n", 
+                            dataFile
+                            .ListErrorMessage
+                            .Select(d => d.Message)
+                            .ToList<string>());
+                        treeNode.ToolTipText = messageToolTip;
+                    }
+                      
                     treeView1.Nodes.Add(treeNode);
 
                 }
+                this.errorMessageControl1.ShowMessages(this.ParentFileData.ListErrorMessage);
             }
           
 

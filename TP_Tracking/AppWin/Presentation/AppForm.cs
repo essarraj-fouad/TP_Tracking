@@ -27,11 +27,25 @@ namespace TP_Tracking.Presentation
 
         private void bt_refresh_Click(object sender, EventArgs e)
         {
-            moduleDirectory = ModuleDirectoryBLO.LoadAndValidateFils();
-            this.repertoriesRoot.RefreshRepertories(moduleDirectory.RootDirectoty);
-            this.repertoriesTD.RefreshRepertories(moduleDirectory.TD);
-            this.repertoriesTP.RefreshRepertories(moduleDirectory.TP);
-            this.errorMessageControl.ShowMessages(moduleDirectory.ListErrorMessage);
+            try
+            {
+                moduleDirectory = ModuleDirectoryBLO.Load_Validate_SaveTraineeState();
+                this.repertoriesRoot.RefreshRepertories(moduleDirectory.RootDirectoty);
+                this.repertoriesTD.RefreshRepertories(moduleDirectory.TD);
+                this.repertoriesTP.RefreshRepertories(moduleDirectory.TP);
+                this.configurationFileDeviceControl1.RefreshControl();
+            }
+            catch (ConfigurationFileNotExistException ex)
+            {
+
+                MessageBox.Show("Le fichier de configuration n'existe pas");
+            }
+
+        }
+
+        private void bt_save_repport_Click(object sender, EventArgs e)
+        {
+            ModuleDirectoryBLO.SaveModuleDirectoryStat();
         }
     }
 }

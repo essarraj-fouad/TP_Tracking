@@ -25,6 +25,7 @@ namespace TP_Tracking.Presentation.UI
             this.listBoxErrorMessage.DataSource = null;
             this.listBoxErrorMessage.Items.Clear();
             this.listBoxErrorMessage.DataSource = listErrorMessage;
+            this.listBoxErrorMessage.ClearSelected();
         }
     }
 }
