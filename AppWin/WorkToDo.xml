@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkToDoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ListRootDirectory>
+    <WorkToDo>
+      <Id>1</Id>
+      <Ordre>0</Ordre>
+      <DateCreation>2017-12-23T20:25:41.2323495+01:00</DateCreation>
+      <DateModification>2017-12-23T20:25:41.2323495+01:00</DateModification>
+      <Title>TP</Title>
+    </WorkToDo>
+    <WorkToDo>
+      <Id>2</Id>
+      <Ordre>0</Ordre>
+      <DateCreation>2017-12-23T20:25:41.2323495+01:00</DateCreation>
+      <DateModification>2017-12-23T20:25:41.2323495+01:00</DateModification>
+      <Title>TD</Title>
+    </WorkToDo>
+    <WorkToDo>
+      <Id>3</Id>
+      <Ordre>0</Ordre>
+      <DateCreation>2017-12-23T20:25:41.2323495+01:00</DateCreation>
+      <DateModification>2017-12-23T20:25:41.2323495+01:00</DateModification>
+      <Title>Cours</Title>
+    </WorkToDo>
+    <WorkToDo>
+      <Id>4</Id>
+      <Ordre>0</Ordre>
+      <DateCreation>2017-12-23T20:25:41.2323495+01:00</DateCreation>
+      <DateModification>2017-12-23T20:25:41.2323495+01:00</DateModification>
+      <Title>MiniProjet</Title>
+    </WorkToDo>
+    <WorkToDo>
+      <Id>4</Id>
+      <Ordre>0</Ordre>
+      <DateCreation>2017-12-23T20:25:41.2323495+01:00</DateCreation>
+      <DateModification>2017-12-23T20:25:41.2323495+01:00</DateModification>
+      <Title>Recherches</Title>
+    </WorkToDo>
+  </ListRootDirectory>
+  <ListTP>
+    <WorkToDo>
+      <Id>0</Id>
+      <Ordre>0</Ordre>
+      <DateCreation>2017-12-23T20:25:41.2323495+01:00</DateCreation>
+      <DateModification>2017-12-23T20:25:41.2323495+01:00</DateModification>
+      <Title>TP1 - Gestion des stagiaires</Title>
+    </WorkToDo>
+    <WorkToDo>
+      <Id>0</Id>
+      <Ordre>0</Ordre>
+      <DateCreation>2017-12-23T20:25:41.2323495+01:00</DateCreation>
+      <DateModification>2017-12-23T20:25:41.2323495+01:00</DateModification>
+      <Title>TP 2 - Gestion des stagiaires et groupes</Title>
+    </WorkToDo>
+    <WorkToDo>
+      <Id>0</Id>
+      <Ordre>0</Ordre>
+      <DateCreation>2017-12-23T20:25:41.2323495+01:00</DateCreation>
+      <DateModification>2017-12-23T20:25:41.2323495+01:00</DateModification>
+      <Title>TP 3 - Création d’un user contrôle</Title>
+    </WorkToDo>
+    <WorkToDo>
+      <Id>0</Id>
+      <Ordre>0</Ordre>
+      <DateCreation>2017-12-23T20:25:41.2323495+01:00</DateCreation>
+      <DateModification>2017-12-23T20:25:41.2323495+01:00</DateModification>
+      <Title>TP 4 - Intégration d'accès aux données</Title>
+    </WorkToDo>
+    <WorkToDo>
+      <Id>0</Id>
+      <Ordre>0</Ordre>
+      <DateCreation>2017-12-23T20:25:41.2323495+01:00</DateCreation>
+      <DateModification>2017-12-23T20:25:41.2323495+01:00</DateModification>
+      <Title>TP 5 - Mini-Projet</Title>
+    </WorkToDo>
+    <WorkToDo>
+      <Id>0</Id>
+      <Ordre>0</Ordre>
+      <DateCreation>2017-12-23T20:25:41.2323495+01:00</DateCreation>
+      <DateModification>2017-12-23T20:25:41.2323495+01:00</DateModification>
+      <Title>TP 6 : CC1, Relation « Père-fils »</Title>
+    </WorkToDo>
+    <WorkToDo>
+      <Id>0</Id>
+      <Ordre>0</Ordre>
+      <DateCreation>2017-12-23T20:25:41.2323495+01:00</DateCreation>
+      <DateModification>2017-12-23T20:25:41.2323495+01:00</DateModification>
+      <Title>TP7 - CC1, Relation « Père-Père »</Title>
+    </WorkToDo>
+    <WorkToDo>
+      <Id>0</Id>
+      <Ordre>0</Ordre>
+      <DateCreation>2017-12-23T20:25:41.2323495+01:00</DateCreation>
+      <DateModification>2017-12-23T20:25:41.2323495+01:00</DateModification>
+      <Title>TP : Transaction</Title>
+    </WorkToDo>
+    <WorkToDo>
+      <Id>0</Id>
+      <Ordre>0</Ordre>
+      <DateCreation>2017-12-23T20:25:41.2323495+01:00</DateCreation>
+      <DateModification>2017-12-23T20:25:41.2323495+01:00</DateModification>
+      <Title>TP 11 : « ListeBox » au lieu d’un DataGrid</Title>
+    </WorkToDo>
+    <WorkToDo>
+      <Id>0</Id>
+      <Ordre>0</Ordre>
+      <DateCreation>2017-12-23T20:25:41.2323495+01:00</DateCreation>
+      <DateModification>2017-12-23T20:25:41.2323495+01:00</DateModification>
+      <Title>TP 12 : Contrôle continue 2</Title>
+    </WorkToDo>
+    <WorkToDo>
+      <Id>0</Id>
+      <Ordre>0</Ordre>
+      <DateCreation>2017-12-23T20:25:41.2323495+01:00</DateCreation>
+      <DateModification>2017-12-23T20:25:41.2323495+01:00</DateModification>
+      <Title>TP 13 : Préparation à l’examen de fin de formation</Title>
+    </WorkToDo>
+  </ListTP>
+  <ListTD>
+    <WorkToDo>
+      <Id>0</Id>
+      <Ordre>0</Ordre>
+      <DateCreation>2017-12-23T20:25:41.2323495+01:00</DateCreation>
+      <DateModification>2017-12-23T20:25:41.2323495+01:00</DateModification>
+      <Title>TD1</Title>
+    </WorkToDo>
+  </ListTD>
+  <ListCours>
+    <WorkToDo>
+      <Id>0</Id>
+      <Ordre>0</Ordre>
+      <DateCreation>2017-12-23T20:25:41.2323495+01:00</DateCreation>
+      <DateModification>2017-12-23T20:25:41.2323495+01:00</DateModification>
+      <Title>Cours_V2</Title>
+    </WorkToDo>
+  </ListCours>
+</WorkToDoConfiguration>
