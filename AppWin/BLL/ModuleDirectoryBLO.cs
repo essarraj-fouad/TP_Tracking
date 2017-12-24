@@ -12,20 +12,20 @@ namespace TP_Tracking.BLL
 {
     public class ModuleDirectoryBLO
     {
-        private ModuleDirectoryDAO moduleDirectoryDAO;
-        private ValidateModuleDirectoryBLO validateModuleDirectoryBLO;
+        private TraineeDirectoryDAO traineeDirectoryDAO;
+        private ValidateTraineeDirectoryBLO validateTraineeDirectoryDAO;
 
-        public ModuleDirectory ModuleDirectory {
+        public TraineeDirectory TraineeDirectory {
             get
             {
-                return moduleDirectoryDAO.ModuleDirectory;
+                return traineeDirectoryDAO.ModuleDirectory;
             }
         }
 
         public ModuleDirectoryBLO()
         {
-            moduleDirectoryDAO = new ModuleDirectoryDAO();
-            validateModuleDirectoryBLO = new ValidateModuleDirectoryBLO(moduleDirectoryDAO.ModuleDirectory);
+            traineeDirectoryDAO = new TraineeDirectoryDAO();
+            validateTraineeDirectoryDAO = new ValidateTraineeDirectoryBLO(traineeDirectoryDAO.ModuleDirectory);
             this.Validate();
         }
 
@@ -35,19 +35,19 @@ namespace TP_Tracking.BLL
         /// <returns></returns>
         public void Validate()
         {
-            validateModuleDirectoryBLO.Validation();
+            validateTraineeDirectoryDAO.Validation();
         }
         /// <summary>
         /// Save Job State
         /// </summary>
         public void SaveState()
         {
-            moduleDirectoryDAO.SaveModuleDirectoryStat();
+            traineeDirectoryDAO.SaveModuleDirectoryStat();
         }
 
         public static void CreateConfigurationFileExample()
         {
-             ValidateModuleDirectoryBLO.CreateConfigurationFileExample();
+            ValidateTraineeDirectoryBLO.CreateConfigurationFileExample();
         }
     }
 }

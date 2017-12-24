@@ -10,10 +10,10 @@ namespace TP_Tracking.BLL
 {
     public class UserBLO
     {
-        private FormerDAO formerDAO;
+        private UserDAO userDAO;
         public UserBLO()
         {
-            this.formerDAO = new FormerDAO();
+            this.userDAO = new UserDAO();
         }
         /// <summary>
         /// Get the UserCagrory that use the application
@@ -21,10 +21,24 @@ namespace TP_Tracking.BLL
         /// <returns></returns>
         public UserCategory GetUserCagegory()
         {
-            if (this.formerDAO.isFormerDeviceExist())
+            if (this.userDAO.isFormerDeviceExist())
                 return UserCategory.Former;
             else
                 return UserCategory.Trainee;
+        }
+
+        /// <summary>
+        /// get XmlDataBase directory that contain the XML DataBase
+        /// </summary>
+        /// <returns></returns>
+        public string getUserXmlDataBaseDirecrory()
+        {
+            string path = "";
+            if (this.userDAO.isFormerDeviceExist())
+                path = this.userDAO.GetFormerDeviceInfo().Name + "/";
+            else
+                path = "./";
+            return path;
         }
     }
 }

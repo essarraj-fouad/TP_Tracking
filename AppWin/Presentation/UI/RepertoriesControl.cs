@@ -15,7 +15,7 @@ namespace TP_Tracking.Presentation.UI
     public partial class RepertoriesControl : UserControl
     {
         
-        public FileData ParentFileData { set; get; }
+        public WorkToDoFileData ParentFileData { set; get; }
 
         public RepertoriesControl()
         {
@@ -28,7 +28,7 @@ namespace TP_Tracking.Presentation.UI
 
         
 
-        public void RefreshRepertories(FileData ParentFileData)
+        public void RefreshRepertories(WorkToDoFileData ParentFileData)
         {
             this.ParentFileData = ParentFileData;
             this.RefreshRepertories();
@@ -44,7 +44,7 @@ namespace TP_Tracking.Presentation.UI
             if(this.ParentFileData != null)
             {
                 treeView1.Nodes.Clear();
-                foreach (var dataFile in this.ParentFileData.ChildsFils)
+                foreach (var dataFile in this.ParentFileData.ChildsWorkToDoFileData)
                 {
                     TreeNode treeNode = new TreeNode();
                     treeNode.Text = dataFile.FileInfo.Name;

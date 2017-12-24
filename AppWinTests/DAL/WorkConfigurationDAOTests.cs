@@ -18,7 +18,7 @@ namespace TP_Tracking.DAL.Tests
             string messageException = "";
             try
             {
-                WorkConfigurationDAO workConfigurationDAO = new WorkConfigurationDAO();
+                WorkToDoXMLDataBase workConfigurationDAO = new WorkToDoXMLDataBase();
                 Assert.Fail(string.Format("Exception {0} not thrown", typeof(ConfigurationFileNotExistException)));
             }
             catch (Exception ex)
@@ -33,10 +33,10 @@ namespace TP_Tracking.DAL.Tests
         public void LoadConfigurationTest()
         {
             // Create configuration file 
-            WorkConfigurationDAO.CreateConfigurationFileExample();
-            WorkConfigurationDAO workConfigurationDAO = new WorkConfigurationDAO();
+            WorkToDoXMLDataBase.CreateConfigurationFileExample();
+            WorkToDoXMLDataBase workConfigurationDAO = new WorkToDoXMLDataBase();
             Assert.IsNotNull(workConfigurationDAO.getWorkToDoConfiguration());
-            WorkConfigurationDAO.DeleteConfigurationFileExample();
+            WorkToDoXMLDataBase.DeleteConfigurationFileExample();
         }
 
        

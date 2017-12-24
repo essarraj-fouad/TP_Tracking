@@ -10,5 +10,6 @@ namespace TP_Tracking.Entities
     public class WorkCategory : BaseEntity
     {
         public string Name { set; get; }
+        public string Description { set; get; }
     }
 }

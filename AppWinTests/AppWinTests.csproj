@@ -51,12 +51,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="BLL\ModuleDirectoryBLOTests.cs" />
-    <Compile Include="DAL\ConfigurationFileNotExistException.cs" />
-    <Compile Include="DAL\FormerDAOTests.cs" />
-    <Compile Include="DAL\ModuleDirectoryDAOTests.cs" />
-    <Compile Include="DAL\USBDeviceNotExistException.cs" />
-    <Compile Include="DAL\WorkConfigurationDAOTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestTraking_Test.cs" />
   </ItemGroup>

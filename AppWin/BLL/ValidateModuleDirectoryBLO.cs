@@ -8,67 +8,72 @@ using TP_Tracking.Entities;
 
 namespace TP_Tracking.BLL
 {
-    public class ValidateModuleDirectoryBLO
+    /// <summary>
+    /// Validate Trainee directory with WorkToDo configuration
+    /// </summary>
+    public class ValidateTraineeDirectoryBLO
     {
-        WorkConfigurationDAO workConfigurationDAO;
-        ModuleDirectory moduleDirectory;
+        WorkToDoDAO workToDoDAO;
+        TraineeDirectory moduleDirectory;
 
-        public ValidateModuleDirectoryBLO(ModuleDirectory moduleDirectory)
+        public ValidateTraineeDirectoryBLO(TraineeDirectory traineeDirectory)
         {
-            this.moduleDirectory = moduleDirectory;
-            this.workConfigurationDAO = new WorkConfigurationDAO();
+            this.moduleDirectory = traineeDirectory;
+            this.workToDoDAO = new WorkToDoDAO(new UserBLO().getUserXmlDataBaseDirecrory());
         }
         /// <summary>
-        /// Validation moduleDirectory
+        /// Validation trainee directory
         /// </summary>
-        /// <param name="moduleDirectory"></param>
         public void Validation()
         {
-            // Check root Directory
-            CheckFileMustExist(moduleDirectory.RootDirectoty, workConfigurationDAO.getWorkToDoConfiguration().ListRootDirectory);
-            CheckFileMustNotExist(moduleDirectory.RootDirectoty, workConfigurationDAO.getWorkToDoConfiguration().ListRootDirectory);
 
-            // Check TD 
-            CheckFileMustExist(moduleDirectory.TD, workConfigurationDAO.getWorkToDoConfiguration().ListTD);
-            CheckFileMustNotExist(moduleDirectory.TD, workConfigurationDAO.getWorkToDoConfiguration().ListTD);
+            WorkToDoXMLDataBaseObject WorkToDoData = workToDoDAO.getData();
 
+            // The work to do for the root directory have the workCategory with reference == "root"
+            var rootDirectoryWorkToDo = WorkToDoData.WorksToDo
+                .Where(w => w.WorkCategory?.Reference == "root")
+                .OrderBy(w => w.Ordre).ToList<WorkToDo>();
 
-            // Check TP
-            CheckFileMustExist(moduleDirectory.TP, workConfigurationDAO.getWorkToDoConfiguration().ListTP);
-            CheckFileMustNotExist(moduleDirectory.TP, workConfigurationDAO.getWorkToDoConfiguration().ListTP);
+            CheckFileMustExist(moduleDirectory, rootDirectoryWorkToDo);
+            CheckFileMustNotExist(moduleDirectory, rootDirectoryWorkToDo);
 
+            foreach (var WorkToDoFileData in moduleDirectory.ChildsWorkToDoFileData)
+            {
+                var CategoryItemWorksTodo = WorkToDoData.WorksToDo
+               .Where(w => w.WorkCategory?.Reference == WorkToDoFileData.Reference)
+               .OrderBy(w => w.Ordre).ToList<WorkToDo>();
 
-            // check Cours
-            CheckFileMustExist(moduleDirectory.Cours, workConfigurationDAO.getWorkToDoConfiguration().ListCours);
-            CheckFileMustNotExist(moduleDirectory.Cours, workConfigurationDAO.getWorkToDoConfiguration().ListCours);
+                CheckFileMustExist(WorkToDoFileData, CategoryItemWorksTodo);
+                CheckFileMustNotExist(WorkToDoFileData, CategoryItemWorksTodo);
+            }
 
         }
 
         public static void CreateConfigurationFileExample()
         {
-            WorkConfigurationDAO.CreateConfigurationFileExample();
+            WorkToDoDAO.CreateConfigurationFileExample();
             
         }
 
-        private void CheckFileMustExist(FileData ParentFileData, List<WorkToDo> ListChildName)
+        private void CheckFileMustExist(WorkToDoFileData ParentFileData, List<WorkToDo> WorksTodo)
         {
-            foreach (var configurationFileName in ListChildName)
+            foreach (var workToDo in WorksTodo)
             {
-                FileData chilFile = ParentFileData.ChildsFils
-              .Where(tdChildFile => tdChildFile.Name.ToUpper()
-              .Contains(configurationFileName.Title.ToUpper()))
+                WorkToDoFileData chilFile = ParentFileData.ChildsWorkToDoFileData
+              .Where(tdChildFile => tdChildFile.FileName.ToUpper()
+              .Contains(workToDo.Title.ToUpper()))
               .FirstOrDefault();
                 if (chilFile == null)
                 {
-                    string msg = string.Format("Le répertoir {0} n'existe pas", configurationFileName);
+                    string msg = string.Format("Le répertoir {0} n'existe pas", workToDo);
                     ValidateErrorMessage errorMessage = new ValidateErrorMessage(msg);
                     ParentFileData.AddErrorMessage(errorMessage);
                 }
             }
         }
-        private void CheckFileMustNotExist(FileData ParentFileData, List<WorkToDo> ListChildName)
+        private void CheckFileMustNotExist(WorkToDoFileData ParentFileData, List<WorkToDo> ListChildName)
         {
-            foreach (var chilFile in ParentFileData.ChildsFils)
+            foreach (var chilFile in ParentFileData.ChildsWorkToDoFileData)
             {
                 if (ListChildName
                     .Where(configFileName => configFileName.Title.ToUpper() == chilFile.FileInfo.Name.ToUpper())
@@ -76,7 +81,7 @@ namespace TP_Tracking.BLL
                     chilFile.Validation = Enumerations.ValisationStat.Valid;
                 else
                 {
-                    string msg = string.Format("Le nom du répertoir {0} n'est pas valide", chilFile.Name);
+                    string msg = string.Format("Le nom du répertoir {0} n'est pas valide", chilFile.FileName);
                     ValidateErrorMessage errorMessage = new ValidateErrorMessage(msg);
 
                     chilFile.Validation = Enumerations.ValisationStat.NotValid;

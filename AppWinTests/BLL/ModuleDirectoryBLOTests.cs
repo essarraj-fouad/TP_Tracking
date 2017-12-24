@@ -19,13 +19,13 @@ namespace TP_Tracking.BLL.Tests
         public void InitializeModuleDirectoryForTest()
         {
             TestTraking_Test.CreateModuleDirectory();
-            WorkConfigurationDAO.CreateConfigurationFileExample();
+            WorkToDoXMLDataBase.CreateConfigurationFileExample();
         }
         [TestCleanup]
         public void CleanModuleDirectoryForTest()
         {
             TestTraking_Test.CreateModuleDirectory();
-            WorkConfigurationDAO.DeleteConfigurationFileExample();
+            WorkToDoXMLDataBase.DeleteConfigurationFileExample();
         }
 
         [TestMethod()]

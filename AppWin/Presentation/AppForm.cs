@@ -11,6 +11,7 @@ using TP_Tracking.BLL;
 using TP_Tracking.DAL;
 using TP_Tracking.Entities;
 using TP_Tracking.Exceptions;
+using TP_Tracking.Presentation.UI;
 
 namespace TP_Tracking.Presentation
 {
@@ -32,9 +33,25 @@ namespace TP_Tracking.Presentation
             try
             {
                 moduleDirectoryBLO = new ModuleDirectoryBLO();
-                this.repertoriesRoot.RefreshRepertories(moduleDirectoryBLO.ModuleDirectory.RootDirectoty);
-                this.repertoriesTD.RefreshRepertories(moduleDirectoryBLO.ModuleDirectory.TD);
-                this.repertoriesTP.RefreshRepertories(moduleDirectoryBLO.ModuleDirectory.TP);
+                this.repertoriesRoot.RefreshRepertories(moduleDirectoryBLO.TraineeDirectory);
+
+                foreach (var item in moduleDirectoryBLO.TraineeDirectory.ChildsWorkToDoFileData)
+                {
+                    // Create Tab if not exit
+                    if (!tabControl1.TabPages.ContainsKey(item.Reference))
+                    {
+                        RepertoriesControl repertoriesControl = new RepertoriesControl();
+                        repertoriesControl.Dock = DockStyle.Fill;
+                        repertoriesControl.RefreshRepertories(item);
+
+                        TabPage tabPage = new TabPage();
+                        tabPage.Name = item.Reference;
+                        tabControl1.TabPages.Add(tabPage);
+                    }
+                }
+                 
+                //this.repertoriesTD.RefreshRepertories(moduleDirectoryBLO.ModuleDirectory.TD);
+                //this.repertoriesTP.RefreshRepertories(moduleDirectoryBLO.ModuleDirectory.TP);
                 this.configurationFileDeviceControl1.RefreshControl();
             }
             catch (ConfigurationFileNotExistException ex)

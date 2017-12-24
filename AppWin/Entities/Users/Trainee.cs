@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TP_Tracking.Entities
 {
-    public class Trainee : Person
+    public class Trainee : User
     {
         public Group Group { set; get; }
     }

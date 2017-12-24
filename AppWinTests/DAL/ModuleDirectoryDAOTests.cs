@@ -29,14 +29,14 @@ namespace TP_Tracking.DAL.Tests
         [TestMethod()]
         public void ModuleDirectoryDAOTest()
         {
-            ModuleDirectoryDAO moduleDirectoryDAO = new ModuleDirectoryDAO();
+            TraineeDirectoryDAO moduleDirectoryDAO = new TraineeDirectoryDAO();
             Assert.AreEqual(moduleDirectoryDAO.ModuleDirectory.TP.ChildsFils.Count , 1);
         }
 
         [TestMethod()]
         public void LoadTest()
         {
-            ModuleDirectoryDAO moduleDirectoryDAO = new ModuleDirectoryDAO();
+            TraineeDirectoryDAO moduleDirectoryDAO = new TraineeDirectoryDAO();
             moduleDirectoryDAO.Load();
             Assert.AreEqual(moduleDirectoryDAO.ModuleDirectory.TP.ChildsFils.Count, 1);
         }
@@ -47,7 +47,7 @@ namespace TP_Tracking.DAL.Tests
             string messageException = "";
             try
             {
-                ModuleDirectoryDAO moduleDirectoryDAO = new ModuleDirectoryDAO();
+                TraineeDirectoryDAO moduleDirectoryDAO = new TraineeDirectoryDAO();
                 moduleDirectoryDAO.SaveModuleDirectoryStat();
             }
             catch (Exception ex)
