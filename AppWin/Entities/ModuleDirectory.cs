@@ -11,7 +11,7 @@ namespace TP_Tracking.Entities
     /// </summary>
     public class ModuleDirectory
     {
-        public Trainee Trainee { set; get; }
+        
         public FileData RootDirectoty { set; get; }
         public FileData TP { set; get; }
         public FileData TD { set; get; }
