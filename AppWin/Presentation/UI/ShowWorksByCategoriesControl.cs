@@ -31,9 +31,9 @@ namespace TP_Tracking.Presentation.UI
             }
 
             // Create TabPage for each valide Child TraineeDirectory
-            foreach (WorkToDoFileData workToDoFileData in
+            foreach (Work workToDoFileData in
                 traineeDirectory
-                .ChildsWorkToDoFileData
+                .WorksChilds
                 .Where(w => w.Validation == Enumerations.ValisationStat.Valid))
             {
                 // Create Tab if not exit

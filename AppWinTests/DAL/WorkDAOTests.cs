@@ -8,11 +8,12 @@ using System.Threading.Tasks;
 using System.IO;
 using TP_Tracking.Entities;
 using AppWinTests;
+using TP_Tracking.Exceptions;
 
 namespace TP_Tracking.DAL.Tests
 {
     [TestClass()]
-    public class ModuleDirectoryDAOTests
+    public class WorkDAOTests
     {
         [TestInitialize]
         public void InitializeModuleDirectoryForTest()
@@ -29,33 +30,27 @@ namespace TP_Tracking.DAL.Tests
         [TestMethod()]
         public void ModuleDirectoryDAOTest()
         {
-            TraineeDirectoryDAO moduleDirectoryDAO = new TraineeDirectoryDAO();
-            Assert.AreEqual(moduleDirectoryDAO.ModuleDirectory.TP.ChildsFils.Count , 1);
+            WorkDAO workDAO = new WorkDAO();
+            Assert.AreEqual(workDAO.TraineeDirectory.WorksChilds.Count ,2);
         }
 
         [TestMethod()]
         public void LoadTest()
         {
-            TraineeDirectoryDAO moduleDirectoryDAO = new TraineeDirectoryDAO();
-            moduleDirectoryDAO.Load();
-            Assert.AreEqual(moduleDirectoryDAO.ModuleDirectory.TP.ChildsFils.Count, 1);
+            WorkDAO workDAO = new WorkDAO();
+            workDAO.Load();
+            Assert.AreEqual(workDAO.TraineeDirectory.WorksChilds.Count, 2);
         }
 
         [TestMethod()]
         public void SaveModuleDirectoryStatTest()
         {
-            string messageException = "";
-            try
-            {
-                TraineeDirectoryDAO moduleDirectoryDAO = new TraineeDirectoryDAO();
+           
+            
+                WorkDAO moduleDirectoryDAO = new WorkDAO();
                 moduleDirectoryDAO.SaveModuleDirectoryStat();
-            }
-            catch (Exception ex)
-            {
-
-                messageException = ex.Message;
-            }
-            Assert.IsTrue(messageException.Contains(nameof(USBDeviceNotExistException)));
+            
+            
            
         }
     }

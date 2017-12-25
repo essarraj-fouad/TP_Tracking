@@ -8,6 +8,20 @@ namespace TP_Tracking.Entities
 {
     public class Trainee : User
     {
+        private string name;
+
+        public Trainee() { }
+        public Trainee(string TraineeDirctoryName)
+        {
+            string[] names = TraineeDirctoryName.Split(' ');
+            if (names.Count() > 0)
+                this.FirstName = names[0];
+            if (names.Count() > 1)
+                this.LastName = names[1];
+            if (names.Count() == 0)
+                this.FirstName = TraineeDirctoryName;
+        }
+
         public Group Group { set; get; }
     }
 }

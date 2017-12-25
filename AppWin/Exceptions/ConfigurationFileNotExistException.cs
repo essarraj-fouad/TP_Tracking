@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace TP_Tracking.Exceptions
 {
     [Serializable]
-    internal class ConfigurationFileNotExistException : Exception
+    public class ConfigurationFileNotExistException : Exception
     {
         public ConfigurationFileNotExistException()
         {

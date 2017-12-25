@@ -17,7 +17,7 @@ namespace TP_Tracking.Presentation
 {
     public partial class AppForm : Form
     {
-        ModuleDirectoryBLO moduleDirectoryBLO;
+        WorkBLO moduleDirectoryBLO;
         public AppForm()
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace TP_Tracking.Presentation
         {
             try
             {
-                moduleDirectoryBLO = new ModuleDirectoryBLO();
+                moduleDirectoryBLO = new WorkBLO();
                 this.showWorksByCategoriesControl1.RefreshShow(moduleDirectoryBLO.TraineeDirectory);
                 this.configurationFileDeviceControl1.RefreshControl();
             }
@@ -42,7 +42,7 @@ namespace TP_Tracking.Presentation
                 DialogResult dialogResult = MessageBox.Show("Voullez-vous créer un fichier exemple", "", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    ModuleDirectoryBLO.CreateConfigurationFileExample();
+                    WorkBLO.CreateConfigurationFileExample();
                 }
                 this.bt_refresh_Click(null, null);
             }

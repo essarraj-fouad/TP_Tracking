@@ -10,12 +10,12 @@ using TP_Tracking.Exceptions;
 
 namespace TP_Tracking.DAL
 {
-    public class TraineeDirectoryDAO
+    public class WorkDAO
     {
         // Data
         private static TraineeDirectory traineeDirectory = null;
 
-        public TraineeDirectory ModuleDirectory
+        public TraineeDirectory TraineeDirectory
         {
             get
             {
@@ -23,45 +23,43 @@ namespace TP_Tracking.DAL
             }
         }
 
-        public TraineeDirectoryDAO()
+        public WorkDAO()
         {
             traineeDirectory = new TraineeDirectory();
             Load();
         }
 
         /// <summary>
-        /// Load Wrok to do dataFile
+        /// Load Trainee Wrok  
         /// </summary>
         public void Load()
         {
             // Create traineeDirectory Instance
             traineeDirectory = new TraineeDirectory();
 
-            // trainee Directory File Info
+            // trainee Directory
             traineeDirectory.FileInfo = new FileInfo(".");
+            traineeDirectory.Trainee = new Trainee(traineeDirectory.FileInfo.FullName.Split('\\').Last());
 
-            // Load Childs Directories
+            // Load   root work Directories
             string[] Files = Directory.GetDirectories(".");
             foreach (var file in Files)
             {
                 FileInfo fileInfo = new FileInfo(file);
+                Work rootWork = new Work(fileInfo);
+                traineeDirectory.WorksChilds.Add(rootWork);
 
-                WorkToDoFileData FirstChild = new WorkToDoFileData(fileInfo);
-              
-
-                traineeDirectory.ChildsWorkToDoFileData.Add(FirstChild);
-
-                LoadChildDataFile(FirstChild);
+                LoadChildDataFile(rootWork);
             }
         }
 
-        private void LoadChildDataFile(WorkToDoFileData fileData)
+        private void LoadChildDataFile(Work fileData)
         {
             string[] ChildsFiles = Directory.GetFileSystemEntries(fileData.FileInfo.FullName);
             foreach (var childFile in ChildsFiles)
             {
                 FileInfo fileInfo = new FileInfo(childFile);
-                fileData.ChildsWorkToDoFileData.Add(new WorkToDoFileData(fileInfo));
+                fileData.WorksChilds.Add(new Work(fileInfo));
             }
         }
 
@@ -72,17 +70,21 @@ namespace TP_Tracking.DAL
             if (new UserDAO().GetFormerDeviceInfo() != null)
             {
 
-                path = new UserDAO().GetFormerDeviceInfo().RootDirectory.FullName + "SuiviTP_Madani_Ali.xml";
+                path = new UserDAO().GetFormerDeviceInfo().RootDirectory.FullName +  this.StateXmlFileName() + ".xml";
 
             }
             else
             {
-                path = "SuiviTP_Madani_Ali.xml";
+                path = this.StateXmlFileName() + ".xml";
             }
             TextWriter TextWriter = new StreamWriter(path);
             xmlSerializer.Serialize(TextWriter, traineeDirectory);
             TextWriter.Close();
         }
 
+        private string StateXmlFileName()
+        {
+            return this.TraineeDirectory.Trainee.FirstName + "_" + this.TraineeDirectory.Trainee.LastName;
+        }
     }
 }

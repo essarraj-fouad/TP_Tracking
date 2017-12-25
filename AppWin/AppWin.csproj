@@ -57,13 +57,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\ModuleDirectoryBLO.cs" />
+    <Compile Include="BLL\WorkBLO.cs" />
     <Compile Include="BLL\UserBLO.cs" />
-    <Compile Include="BLL\ValidateModuleDirectoryBLO.cs" />
+    <Compile Include="BLL\Validate.WorkBLO.cs" />
+    <Compile Include="BLL\WorkCategoryBLO.cs" />
     <Compile Include="BLL\WorkToDoBLO.cs" />
     <Compile Include="DAL\UserDAO.cs" />
     <Compile Include="DAL\TraineeDAO.cs" />
-    <Compile Include="DAL\TraineeDirectoryDAO.cs" />
+    <Compile Include="DAL\WorkDAO.cs" />
     <Compile Include="DAL\WorkToDoDAO.cs" />
     <Compile Include="Entities\Users\Former.cs" />
     <Compile Include="Entities\Users\Person.cs" />
@@ -122,9 +123,9 @@
     <Compile Include="Presentation\UI\Trainees\TraineeUpdate.Designer.cs">
       <DependentUpon>TraineeUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="XMLDataBase\WorkToDoXMLDataBaseObject.cs" />
+    <Compile Include="XMLDataBase\WorksToDoData.cs" />
     <Compile Include="Entities\Users\Group.cs" />
-    <Compile Include="Entities\WorkToDoFileData.cs" />
+    <Compile Include="Entities\Work.cs" />
     <Compile Include="Entities\Users\Trainee.cs" />
     <Compile Include="Enumerations\UserCategory.cs" />
     <Compile Include="Enumerations\Repertories.cs" />

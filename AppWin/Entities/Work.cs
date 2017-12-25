@@ -10,15 +10,15 @@ using TP_Tracking.Enumerations;
 
 namespace TP_Tracking.Entities
 {
-    public class WorkToDoFileData : BaseEntity
+    public class Work : BaseEntity
     {
         public WorkToDo WorkToDo { set; get; }
 
         public string FileName { set; get; }
 
-        public WorkToDoFileData Parent { set; get; }
+        public Work Parent { set; get; }
 
-        public List<WorkToDoFileData> ChildsWorkToDoFileData { set; get; }
+        public List<Work> WorksChilds { set; get; }
 
         public ValisationStat Validation { set; get; }
 
@@ -26,14 +26,14 @@ namespace TP_Tracking.Entities
 
         public List<ValidateErrorMessage> ListErrorMessage { set; get; }
         
-        public WorkToDoFileData():this(null){}
-        public WorkToDoFileData(FileInfo fileInfo) : this(null, fileInfo) { }
-        public WorkToDoFileData(WorkToDoFileData Parent, FileInfo fileInfo)
+        public Work():this(null){}
+        public Work(FileInfo fileInfo) : this(null, fileInfo) { }
+        public Work(Work Parent, FileInfo fileInfo)
         {
             this.fileInfo = fileInfo;
             this.Parent = Parent;
             this.Validation = ValisationStat.Neutral;
-            this.ChildsWorkToDoFileData = new List<WorkToDoFileData>();
+            this.WorksChilds = new List<Work>();
             this.ListErrorMessage = new List<ValidateErrorMessage>();
 
             if(this.fileInfo != null)
@@ -75,9 +75,9 @@ namespace TP_Tracking.Entities
             // recurent Algorithme 
 
             bool isChildsHasErrors = false;
-            if (this.ChildsWorkToDoFileData.Count > 0)
+            if (this.WorksChilds.Count > 0)
              isChildsHasErrors = this
-                .ChildsWorkToDoFileData
+                .WorksChilds
                 .Where(w => w.hasErrors()).Count() > 0;
 
             if(this.ListErrorMessage.Count > 0 || isChildsHasErrors)

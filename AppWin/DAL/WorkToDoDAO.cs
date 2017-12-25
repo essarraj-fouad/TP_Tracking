@@ -17,9 +17,9 @@ namespace TP_Tracking.DAL
     public class WorkToDoDAO : XMLDataBase
     {
         
-        private static WorkToDoXMLDataBaseObject Data { set; get; }
+        private static WorksToDoData Data { set; get; }
 
-        public WorkToDoXMLDataBaseObject getData()
+        public WorksToDoData getData()
         {
             return Data;
         }
@@ -40,9 +40,9 @@ namespace TP_Tracking.DAL
         {
             try
             {
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(WorkToDoXMLDataBaseObject));
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(WorksToDoData));
                 TextReader TextWriter = new StreamReader(XMLDataBasePath);
-                Data = xmlSerializer.Deserialize(TextWriter) as WorkToDoXMLDataBaseObject;
+                Data = xmlSerializer.Deserialize(TextWriter) as WorksToDoData;
                 TextWriter.Close();
             }
             catch (FileNotFoundException)
@@ -62,7 +62,7 @@ namespace TP_Tracking.DAL
         public static void  CreateConfigurationFileExample()
         {
             // Create Data Exemple Instance
-            WorkToDoXMLDataBaseObject data = new WorkToDoXMLDataBaseObject();
+            WorksToDoData data = new WorksToDoData();
 
             // Create groupes examples
             data.Groups.Add(new Group("TDI201"));
@@ -80,7 +80,7 @@ namespace TP_Tracking.DAL
             data.WorksToDo.Add(new WorkToDo("TP1", TPCategory));
             data.WorksToDo.Add(new WorkToDo("TP2", TPCategory));
 
-             XmlSerializer xmlSerializer = new XmlSerializer(typeof(WorkToDoXMLDataBaseObject));
+             XmlSerializer xmlSerializer = new XmlSerializer(typeof(WorksToDoData));
             TextWriter TextWriter = new StreamWriter(XMLDataBaseName);
             xmlSerializer.Serialize(TextWriter, data);
             TextWriter.Close();

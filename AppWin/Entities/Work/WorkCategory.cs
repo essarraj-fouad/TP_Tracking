@@ -14,9 +14,9 @@ namespace TP_Tracking.Entities
         {
 
         }
-        public WorkCategory(string v)
+        public WorkCategory(string Name)
         {
-            this.Name = v;
+            this.Name = Name;
             this.Reference = this.Name;
            
         }

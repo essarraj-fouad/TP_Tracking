@@ -13,50 +13,43 @@ using TP_Tracking.DAL.Tests;
 namespace TP_Tracking.BLL.Tests
 {
     [TestClass()]
-    public class ModuleDirectoryBLOTests
+    public class WorkBLOTests
     {
         [TestInitialize]
         public void InitializeModuleDirectoryForTest()
         {
             TestTraking_Test.CreateModuleDirectory();
-            WorkToDoXMLDataBase.CreateConfigurationFileExample();
+            WorkToDoDAO.CreateConfigurationFileExample();
         }
         [TestCleanup]
         public void CleanModuleDirectoryForTest()
         {
             TestTraking_Test.CreateModuleDirectory();
-            WorkToDoXMLDataBase.DeleteConfigurationFileExample();
+            WorkToDoDAO.DeleteConfigurationFileExample();
         }
 
         [TestMethod()]
         public void ModuleDirectoryBLOTest()
         {
-            ModuleDirectoryBLO ModuleDirectoryBLO = new ModuleDirectoryBLO();
-            Assert.AreEqual(ModuleDirectoryBLO.ModuleDirectory.TP.ChildsFils.Count, 1);
+            WorkBLO ModuleDirectoryBLO = new WorkBLO();
+            Assert.AreEqual(ModuleDirectoryBLO.TraineeDirectory.WorksChilds.Count, 2);
         }
 
         [TestMethod()]
         public void ValidateTest()
         {
-            ModuleDirectoryBLO ModuleDirectoryBLO = new ModuleDirectoryBLO();
-            ModuleDirectoryBLO.Validate();
-            Assert.AreEqual(ModuleDirectoryBLO.ModuleDirectory.TP.ListErrorMessage.Count, 6);
+            WorkBLO ModuleDirectoryBLO = new WorkBLO();
+            ModuleDirectoryBLO.Validation();
+            Assert.AreEqual(ModuleDirectoryBLO.TraineeDirectory.WorksChilds.Count, 2);
         }
 
         [TestMethod()]
         public void SaveStateTest()
         {
-            string m ="";
-            try
-            {
-                ModuleDirectoryBLO ModuleDirectoryBLO = new ModuleDirectoryBLO();
+            
+                WorkBLO ModuleDirectoryBLO = new WorkBLO();
                 ModuleDirectoryBLO.SaveState();
-            }
-            catch (Exception e)
-            {
-                m = e.Message;
-            }
-            Assert.IsTrue(m.Contains(nameof(USBDeviceNotExistException)));
+            
         }
     }
 }

@@ -9,7 +9,7 @@ namespace TP_Tracking.Entities
     /// <summary>
     /// Represents the directory that contains all the work of the trainee
     /// </summary>
-    public class TraineeDirectory : WorkToDoFileData
+    public class TraineeDirectory : Work
     {
         /// <summary>
         /// Trainne 

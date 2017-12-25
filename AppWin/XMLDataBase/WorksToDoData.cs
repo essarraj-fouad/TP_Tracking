@@ -10,13 +10,13 @@ namespace TP_Tracking.DAL
     /// <summary>
     /// WrokToDo XML DataBase Schema Object
     /// </summary>
-    public class WorkToDoXMLDataBaseObject 
+    public class WorksToDoData 
     {
         public List<WorkToDo> WorksToDo { set; get; }
         public List<WorkCategory> WorkCategories { set; get; }
         public List<Group> Groups { set; get; }
 
-        public WorkToDoXMLDataBaseObject()
+        public WorksToDoData()
         {
             WorksToDo = new List<WorkToDo>();
             WorkCategories = new List<WorkCategory>();
