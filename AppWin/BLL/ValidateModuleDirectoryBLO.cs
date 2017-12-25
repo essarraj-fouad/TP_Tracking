@@ -61,11 +61,11 @@ namespace TP_Tracking.BLL
             {
                 WorkToDoFileData chilFile = ParentFileData.ChildsWorkToDoFileData
               .Where(tdChildFile => tdChildFile.FileName.ToUpper()
-              .Contains(workToDo.Title.Split(" -".ToArray<char>()).First().ToUpper()))
+              .Contains(workToDo.Title.ToUpper()))
               .FirstOrDefault();
                 if (chilFile == null)
                 {
-                    string msg = string.Format(" {0} n'existe pas", workToDo);
+                    string msg = string.Format("Le répertoir {0} n'existe pas", workToDo);
                     ValidateErrorMessage errorMessage = new ValidateErrorMessage(msg);
                     ParentFileData.AddErrorMessage(errorMessage);
                 }else
@@ -79,9 +79,7 @@ namespace TP_Tracking.BLL
             foreach (var chilFile in ParentFileData.ChildsWorkToDoFileData)
             {
                 if (ListChildName
-                    .Where(configFileName =>
-                    chilFile.FileInfo.Name.ToUpper().Contains( 
-                        configFileName.Title.Split(" -".ToArray<char>()).First().ToUpper() )
+                    .Where(configFileName => configFileName.Title.ToUpper() == chilFile.FileInfo.Name.ToUpper())
                     .Count() != 0)
                     chilFile.Validation = Enumerations.ValisationStat.Valid;
                 else
