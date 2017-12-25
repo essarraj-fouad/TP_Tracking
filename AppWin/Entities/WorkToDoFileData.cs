@@ -65,5 +65,29 @@ namespace TP_Tracking.Entities
         {
             ListErrorMessage.Add(errorMessage);
         }
+
+        /// <summary>
+        /// is the work file hase Errors
+        /// </summary>
+        /// <returns></returns>
+        public bool hasErrors()
+        {
+            // recurent Algorithme 
+
+            bool isChildsHasErrors = false;
+            if (this.ChildsWorkToDoFileData.Count > 0)
+             isChildsHasErrors = this
+                .ChildsWorkToDoFileData
+                .Where(w => w.hasErrors()).Count() > 0;
+
+            if(this.ListErrorMessage.Count > 0 || isChildsHasErrors)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

@@ -9,6 +9,18 @@ namespace TP_Tracking.Entities
 {
     public class WorkCategory : BaseEntity
     {
+
+        public WorkCategory()
+        {
+
+        }
+        public WorkCategory(string v)
+        {
+            this.Name = v;
+            this.Reference = this.Name;
+           
+        }
+
         public string Name { set; get; }
         public string Description { set; get; }
     }

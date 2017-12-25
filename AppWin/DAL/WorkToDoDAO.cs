@@ -61,14 +61,26 @@ namespace TP_Tracking.DAL
         /// </summary>
         public static void  CreateConfigurationFileExample()
         {
+            // Create Data Exemple Instance
             WorkToDoXMLDataBaseObject data = new WorkToDoXMLDataBaseObject();
 
-            data.Groups.Add(new Group() { Name = "TDI201" });
-            WorkCategory workCategory = new WorkCategory() { Name = "TP" };
-            data.WorkCategories.Add(workCategory);
-            data.WorksToDo.Add(new WorkToDo() { WorkCategory = workCategory,Title = "TP1" });
+            // Create groupes examples
+            data.Groups.Add(new Group("TDI201"));
 
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(WorkToDoXMLDataBaseObject));
+            // Create workCategory exemple
+            WorkCategory TPCategory = new WorkCategory("TP");
+            WorkCategory root = new WorkCategory("root");
+            data.WorkCategories.Add(TPCategory);
+            data.WorkCategories.Add(root);
+
+            // Creatre work to do example
+            data.WorksToDo.Add(new WorkToDo("TP", root));
+            data.WorksToDo.Add(new WorkToDo("TD", root));
+
+            data.WorksToDo.Add(new WorkToDo("TP1", TPCategory));
+            data.WorksToDo.Add(new WorkToDo("TP2", TPCategory));
+
+             XmlSerializer xmlSerializer = new XmlSerializer(typeof(WorkToDoXMLDataBaseObject));
             TextWriter TextWriter = new StreamWriter(XMLDataBaseName);
             xmlSerializer.Serialize(TextWriter, data);
             TextWriter.Close();

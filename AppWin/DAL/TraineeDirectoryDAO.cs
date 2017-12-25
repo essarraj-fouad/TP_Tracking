@@ -46,11 +46,8 @@ namespace TP_Tracking.DAL
             {
                 FileInfo fileInfo = new FileInfo(file);
 
-                WorkToDoFileData FirstChild = new WorkToDoFileData()
-                {
-                    FileInfo = fileInfo,
-                    Parent = traineeDirectory
-                };
+                WorkToDoFileData FirstChild = new WorkToDoFileData(fileInfo);
+              
 
                 traineeDirectory.ChildsWorkToDoFileData.Add(FirstChild);
 

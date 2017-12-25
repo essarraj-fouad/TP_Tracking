@@ -104,6 +104,12 @@
     <Compile Include="Presentation\UI\RepertoriesControl.Designer.cs">
       <DependentUpon>RepertoriesControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\UI\ShowWorksByCategoriesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\UI\ShowWorksByCategoriesControl.Designer.cs">
+      <DependentUpon>ShowWorksByCategoriesControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\UI\Trainees\TraineeForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     <EmbeddedResource Include="Presentation\UI\RepertoriesControl.resx">
       <DependentUpon>RepertoriesControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\UI\ShowWorksByCategoriesControl.resx">
+      <DependentUpon>ShowWorksByCategoriesControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\UI\Trainees\TraineeForm.resx">
       <DependentUpon>TraineeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,7 +182,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="WorkToDo.xml" />
+    <None Include="works_db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\root-directory.png" />
