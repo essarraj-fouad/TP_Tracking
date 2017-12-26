@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Xml.Serialization;
 using TP_Tracking.DAL;
 using TP_Tracking.Entities;
+using TP_Tracking.Enumerations;
 
 namespace TP_Tracking.BLL
 {
@@ -51,9 +52,10 @@ namespace TP_Tracking.BLL
         /// <summary>
         /// Save Job State
         /// </summary>
-        public void SaveState()
+        public UserCategory SaveState()
         {
-            workDAO.SaveModuleDirectoryStat();
+            string ModuleName =  workToDoBLO.getData().ModuleName;
+            return workDAO.SaveModuleDirectoryStat(ModuleName);
         }
 
         public static void CreateConfigurationFileExample()

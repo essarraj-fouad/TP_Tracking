@@ -41,51 +41,59 @@ namespace TP_Tracking.BLL
         /// <param name="WorksTodo"></param>
         private void CheckFileMustExist(Work workDirectory, List<WorkToDo> WorksTodo)
         {
-            foreach (var workToDo in WorksTodo)
-            {
-                Work ValideWork = workDirectory.WorksChilds
-              .Where(w => isWrokValide(w, workToDo))
-              .FirstOrDefault();
+            if (workDirectory != null)
+                foreach (var workToDo in WorksTodo)
+                {
+                    if (workToDo.Title.Contains("TD 7")){
+                        int i = 1;
+                    }
+    
+                    Work ValideWork = workDirectory.WorksChilds
+                  .Where(w => isWrokValide(w, workToDo))
+                  .FirstOrDefault();
 
-                if (ValideWork == null)
-                {
-                    string msg = string.Format("Le travail : {0} n'existe pas", workToDo);
-                    ValidateErrorMessage errorMessage = new ValidateErrorMessage(msg);
-                    workDirectory.AddErrorMessage(errorMessage);
+                    if (ValideWork == null)
+                    {
+                        string msg = string.Format("Le travail : {0} n'existe pas", workToDo);
+                        ValidateErrorMessage errorMessage = new ValidateErrorMessage(msg);
+                        workDirectory.AddErrorMessage(errorMessage);
+                    }
+                    else
+                    {
+                        ValideWork.WorkToDo = workToDo;
+                        ValideWork.Validation = Enumerations.ValisationStat.Valid;
+                    }
                 }
-                else
-                {
-                    ValideWork.WorkToDo = workToDo;
-                }
-            }
         }
         private void CheckFileMustNotExist(Work workDirectory, List<WorkToDo> WorksTodo)
         {
-            foreach (var work in workDirectory.WorksChilds)
-            {
-                if (WorksTodo
-                    .Where(configFileName => isWrokValide(work, configFileName))
-                    .Count() != 0)
-                    work.Validation = Enumerations.ValisationStat.Valid;
-                else
+            if (workDirectory != null)
+                foreach (var work in workDirectory.WorksChilds)
                 {
-                    string msg = string.Format("Le nom du répertoir {0} n'est pas valide", work.FileName);
-                    ValidateErrorMessage errorMessage = new ValidateErrorMessage(msg);
+                    if (WorksTodo
+                        .Where(configFileName => isWrokValide(work, configFileName))
+                        .Count() != 0)
+                        work.Validation = Enumerations.ValisationStat.Valid;
+                    else
+                    {
+                        string msg = string.Format("Le nom du répertoir {0} n'est pas valide", work.FileName);
+                        ValidateErrorMessage errorMessage = new ValidateErrorMessage(msg);
 
-                    work.Validation = Enumerations.ValisationStat.NotValid;
-                    work.AddErrorMessage(errorMessage);
-                    // moduleDirectory.AddErrorMessage(errorMessage);
+                        work.Validation = Enumerations.ValisationStat.NotValid;
+                        work.AddErrorMessage(errorMessage);
+                        // moduleDirectory.AddErrorMessage(errorMessage);
 
+                    }
                 }
-            }
         }
 
         private bool isWrokValide(Work work, WorkToDo workToDo)
         {
+
             string work_reference = work.FileName.Split('-').FirstOrDefault();
             string workToDo_reference = workToDo.Title.Split('-').FirstOrDefault();
 
-            if (work_reference.Replace(" ",string.Empty).ToUpper() == workToDo_reference.Replace(" ", string.Empty).ToUpper())
+            if (work_reference.Replace(" ", string.Empty).ToUpper() == workToDo_reference.Replace(" ", string.Empty).ToUpper())
                 return true;
             else
                 return false;

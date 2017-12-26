@@ -12,6 +12,7 @@ namespace TP_Tracking.DAL
     /// </summary>
     public class WorksToDoData 
     {
+        public string ModuleName = "DefaultModule";
         public List<WorkToDo> WorksToDo { set; get; }
         public List<WorkCategory> WorkCategories { set; get; }
         public List<Group> Groups { set; get; }

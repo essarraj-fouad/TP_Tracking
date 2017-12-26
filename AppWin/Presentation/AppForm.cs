@@ -39,12 +39,12 @@ namespace TP_Tracking.Presentation
             catch (ConfigurationFileNotExistException ex)
             {
                 MessageBox.Show("Le fichier qui contient les travaux à faire n'exist pas");
-                DialogResult dialogResult = MessageBox.Show("Voullez-vous créer un fichier exemple", "", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    WorkBLO.CreateConfigurationFileExample();
-                }
-                this.bt_refresh_Click(null, null);
+                //DialogResult dialogResult = MessageBox.Show("Voullez-vous créer un fichier exemple", "", MessageBoxButtons.YesNo);
+                //if (dialogResult == DialogResult.Yes)
+                //{
+                //    WorkBLO.CreateConfigurationFileExample();
+                //}
+                //this.bt_refresh_Click(null, null);
             }
         }
 
@@ -52,7 +52,15 @@ namespace TP_Tracking.Presentation
         {
             try
             {
-                moduleDirectoryBLO.SaveState();
+               if( moduleDirectoryBLO.SaveState() == Enumerations.UserCategory.Former)
+                {
+                    MessageBox.Show("Bien enregistrer sur le USB du formateur");
+                }
+                else
+                {
+                    MessageBox.Show("Bien enregistrer dans votre répertoire du travail");
+                }
+               
             }
             catch (USBDeviceNotExistException ex)
             {

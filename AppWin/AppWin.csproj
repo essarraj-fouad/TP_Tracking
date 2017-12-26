@@ -183,7 +183,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="works_db">
+    <None Include="poo_works_db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -191,6 +191,10 @@
     <None Include="Resources\root-directory.png" />
     <None Include="Resources\usb.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="works_db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

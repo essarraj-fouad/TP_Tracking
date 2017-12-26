@@ -81,7 +81,7 @@ namespace TP_Tracking.DAL
             data.WorksToDo.Add(new WorkToDo("TP2", TPCategory));
 
              XmlSerializer xmlSerializer = new XmlSerializer(typeof(WorksToDoData));
-            TextWriter TextWriter = new StreamWriter(XMLDataBaseName);
+            TextWriter TextWriter = new StreamWriter(XMLDataBasePath);
             xmlSerializer.Serialize(TextWriter, data);
             TextWriter.Close();
         }

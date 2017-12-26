@@ -34,11 +34,12 @@ namespace TP_Tracking.BLL
         public string getUserXmlDataBaseDirecrory()
         {
             string path = "";
-            if (this.userDAO.isFormerDeviceExist())
-                path = this.userDAO.GetFormerDeviceInfo().Name + "/";
-            else
-                path = "./";
+            //if (this.userDAO.isFormerDeviceExist())
+            //    path = this.userDAO.GetFormerDeviceInfo().Name + "/";
+            //else
+            path = "./";
             return path;
         }
+       
     }
 }
