@@ -13,15 +13,31 @@ namespace TP_Tracking.BLL
 {
     public partial class WorkBLO
     {
+        private static WorkBLO instance;
         private WorkDAO workDAO;
         private WorkToDoBLO workToDoBLO;
-    
-        public WorkBLO()
+
+        private WorkBLO()
         {
             this.workDAO = new WorkDAO();
             this.workToDoBLO = new WorkToDoBLO();
             this.Validation();
         }
+
+        public static WorkBLO Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new WorkBLO();
+                }
+                    return instance;
+
+            }
+
+        }
+
         public TraineeDirectory TraineeDirectory
         {
             get
@@ -54,7 +70,7 @@ namespace TP_Tracking.BLL
         /// </summary>
         public UserCategory SaveState()
         {
-            string ModuleName =  workToDoBLO.getData().ModuleName;
+            string ModuleName = workToDoBLO.getData().ModuleName;
             return workDAO.SaveModuleDirectoryStat(ModuleName);
         }
 

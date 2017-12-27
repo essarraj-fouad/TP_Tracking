@@ -33,6 +33,7 @@
             this.bt_save_repport = new System.Windows.Forms.Button();
             this.configurationFileDeviceControl1 = new TP_Tracking.Presentation.UI.ConfigurationFileDeviceControl();
             this.showWorksByCategoriesControl1 = new TP_Tracking.Presentation.UI.ShowWorksByCategoriesControl();
+            this.bt_edit_profile = new System.Windows.Forms.Button();
             this.groupBoxAction.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +52,7 @@
             // 
             this.groupBoxAction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxAction.Controls.Add(this.bt_edit_profile);
             this.groupBoxAction.Controls.Add(this.bt_save_repport);
             this.groupBoxAction.Controls.Add(this.configurationFileDeviceControl1);
             this.groupBoxAction.Controls.Add(this.bt_refresh);
@@ -88,6 +90,17 @@
             this.showWorksByCategoriesControl1.Size = new System.Drawing.Size(563, 241);
             this.showWorksByCategoriesControl1.TabIndex = 10;
             // 
+            // bt_edit_profile
+            // 
+            this.bt_edit_profile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_edit_profile.Location = new System.Drawing.Point(317, 19);
+            this.bt_edit_profile.Name = "bt_edit_profile";
+            this.bt_edit_profile.Size = new System.Drawing.Size(120, 69);
+            this.bt_edit_profile.TabIndex = 8;
+            this.bt_edit_profile.Text = "Editer profile";
+            this.bt_edit_profile.UseVisualStyleBackColor = true;
+            this.bt_edit_profile.Click += new System.EventHandler(this.bt_edit_profile_Click);
+            // 
             // AppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -111,5 +124,6 @@
         private System.Windows.Forms.GroupBox groupBoxAction;
         private System.Windows.Forms.Button bt_save_repport;
         private UI.ShowWorksByCategoriesControl showWorksByCategoriesControl1;
+        private System.Windows.Forms.Button bt_edit_profile;
     }
 }

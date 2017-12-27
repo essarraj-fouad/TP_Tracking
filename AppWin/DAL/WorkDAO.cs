@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gapp.DAL;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,7 +12,7 @@ using TP_Tracking.Exceptions;
 
 namespace TP_Tracking.DAL
 {
-    public class WorkDAO
+    public class WorkDAO : FileBaseDAO 
     {
         // Data
         private static TraineeDirectory traineeDirectory = null;

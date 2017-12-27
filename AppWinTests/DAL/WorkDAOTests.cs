@@ -45,13 +45,9 @@ namespace TP_Tracking.DAL.Tests
         [TestMethod()]
         public void SaveModuleDirectoryStatTest()
         {
-           
-            
-                WorkDAO moduleDirectoryDAO = new WorkDAO();
-                moduleDirectoryDAO.SaveModuleDirectoryStat();
-            
-            
-           
+            Assert.Fail();
+                //WorkDAO moduleDirectoryDAO = new WorkDAO();
+                //moduleDirectoryDAO.SaveModuleDirectoryStat();
         }
     }
 }

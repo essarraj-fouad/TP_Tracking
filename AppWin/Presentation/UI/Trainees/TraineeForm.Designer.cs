@@ -48,7 +48,7 @@
             this.groupBoxEntity.Controls.Add(this.firstNameTextBox);
             this.groupBoxEntity.Controls.Add(lastNameLabel);
             this.groupBoxEntity.Controls.Add(this.lastNameTextBox);
-            this.groupBoxEntity.Size = new System.Drawing.Size(324, 128);
+            this.groupBoxEntity.Size = new System.Drawing.Size(323, 160);
             this.groupBoxEntity.Text = "Stagiaire";
             // 
             // dateOfBirthLabel
@@ -56,45 +56,45 @@
             dateOfBirthLabel.AutoSize = true;
             dateOfBirthLabel.Location = new System.Drawing.Point(13, 80);
             dateOfBirthLabel.Name = "dateOfBirthLabel";
-            dateOfBirthLabel.Size = new System.Drawing.Size(71, 13);
+            dateOfBirthLabel.Size = new System.Drawing.Size(84, 13);
             dateOfBirthLabel.TabIndex = 0;
-            dateOfBirthLabel.Text = "Date Of Birth:";
-            // 
-            // dateOfBirthDateTimePicker
-            // 
-            this.dateOfBirthDateTimePicker.Location = new System.Drawing.Point(90, 76);
-            this.dateOfBirthDateTimePicker.Name = "dateOfBirthDateTimePicker";
-            this.dateOfBirthDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.dateOfBirthDateTimePicker.TabIndex = 1;
+            dateOfBirthLabel.Text = "Date naissance:";
             // 
             // firstNameLabel
             // 
             firstNameLabel.AutoSize = true;
             firstNameLabel.Location = new System.Drawing.Point(13, 27);
             firstNameLabel.Name = "firstNameLabel";
-            firstNameLabel.Size = new System.Drawing.Size(60, 13);
+            firstNameLabel.Size = new System.Drawing.Size(32, 13);
             firstNameLabel.TabIndex = 2;
-            firstNameLabel.Text = "First Name:";
-            // 
-            // firstNameTextBox
-            // 
-            this.firstNameTextBox.Location = new System.Drawing.Point(90, 24);
-            this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(200, 20);
-            this.firstNameTextBox.TabIndex = 3;
+            firstNameLabel.Text = "Nom:";
             // 
             // lastNameLabel
             // 
             lastNameLabel.AutoSize = true;
             lastNameLabel.Location = new System.Drawing.Point(13, 53);
             lastNameLabel.Name = "lastNameLabel";
-            lastNameLabel.Size = new System.Drawing.Size(61, 13);
+            lastNameLabel.Size = new System.Drawing.Size(46, 13);
             lastNameLabel.TabIndex = 4;
-            lastNameLabel.Text = "Last Name:";
+            lastNameLabel.Text = "Prénom:";
+            // 
+            // dateOfBirthDateTimePicker
+            // 
+            this.dateOfBirthDateTimePicker.Location = new System.Drawing.Point(103, 76);
+            this.dateOfBirthDateTimePicker.Name = "dateOfBirthDateTimePicker";
+            this.dateOfBirthDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.dateOfBirthDateTimePicker.TabIndex = 1;
+            // 
+            // firstNameTextBox
+            // 
+            this.firstNameTextBox.Location = new System.Drawing.Point(103, 24);
+            this.firstNameTextBox.Name = "firstNameTextBox";
+            this.firstNameTextBox.Size = new System.Drawing.Size(200, 20);
+            this.firstNameTextBox.TabIndex = 3;
             // 
             // lastNameTextBox
             // 
-            this.lastNameTextBox.Location = new System.Drawing.Point(90, 50);
+            this.lastNameTextBox.Location = new System.Drawing.Point(103, 50);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(200, 20);
             this.lastNameTextBox.TabIndex = 5;
@@ -104,7 +104,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "TraineeForm";
-            this.Size = new System.Drawing.Size(324, 128);
+            this.Size = new System.Drawing.Size(323, 160);
             this.Title = "Stagiaire";
             this.groupBoxEntity.ResumeLayout(false);
             this.groupBoxEntity.PerformLayout();

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<WorksToDoData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<WorkToDoDAO_DB xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ModuleName>TDI-Client-Server</ModuleName>
   <WorksToDo>
     <WorkToDo>
@@ -368,7 +368,7 @@
       <Name>TDI201</Name>
     </Group>
   </Groups>
-</WorksToDoData>
+</WorkToDoDAO_DB>
 
 
 

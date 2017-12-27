@@ -18,7 +18,7 @@ namespace TP_Tracking.BLL
         /// </summary>
         public void Validation()
         {
-            WorksToDoData workToDoData = this.workToDoBLO.getData();
+            WorkToDoDAO_DB workToDoData = this.workToDoBLO.getData();
 
             var rootWorkToDo = workToDoBLO.FindByCategoryReference("root");
 
