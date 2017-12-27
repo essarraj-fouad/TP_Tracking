@@ -10,16 +10,25 @@ namespace TP_Tracking.Entities
     {
         private string name;
 
-        public Trainee() { }
+        public Trainee() : this(null)
+        {
+           
+        }
+
         public Trainee(string TraineeDirctoryName)
         {
-            string[] names = TraineeDirctoryName.Split(' ');
-            if (names.Count() > 0)
-                this.FirstName = names[0];
-            if (names.Count() > 1)
-                this.LastName = names[1];
-            if (names.Count() == 0)
-                this.FirstName = TraineeDirctoryName;
+            if(!string.IsNullOrEmpty(TraineeDirctoryName))
+            {
+                string[] names = TraineeDirctoryName.Split(' ');
+                if (names.Count() > 0)
+                    this.FirstName = names[0];
+                if (names.Count() > 1)
+                    this.LastName = names[1];
+                if (names.Count() == 0)
+                    this.FirstName = TraineeDirctoryName;
+            }
+            this.DateOfBirth = DateTime.Now;
+
         }
 
         public Group Group { set; get; }

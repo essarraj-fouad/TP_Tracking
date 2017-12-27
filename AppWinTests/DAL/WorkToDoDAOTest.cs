@@ -19,7 +19,7 @@ namespace TP_Tracking.DAL.Tests
             string messageException = "";
             try
             {
-                WorkToDoDAO WorkToDoDAO = new WorkToDoDAO("./");
+                WorkToDoDAO WorkToDoDAO = WorkToDoDAO.Instance;
                 Assert.Fail(string.Format("Exception {0} not thrown", typeof(ConfigurationFileNotExistException)));
             }
             catch (Exception ex)
@@ -36,7 +36,7 @@ namespace TP_Tracking.DAL.Tests
             WorkToDoDAO.CreateConfigurationFileExample();
             // Create configuration file 
 
-            WorkToDoDAO workToDoDAO = new WorkToDoDAO("./");
+            WorkToDoDAO workToDoDAO = WorkToDoDAO.Instance;
             Assert.IsNotNull(workToDoDAO.getData());
             DAL.WorkToDoDAO.DeleteConfigurationFileExample();
         }

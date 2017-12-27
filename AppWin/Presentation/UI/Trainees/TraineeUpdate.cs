@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP_Tracking.Entities;
+using TP_Tracking.BLL;
 
 namespace TP_Tracking.Presentation.UI.Trainees
 {
@@ -21,11 +22,22 @@ namespace TP_Tracking.Presentation.UI.Trainees
         private void buttonSave_Click(object sender, EventArgs e)
         {
             this.traineeForm1.GetEntityFromControls();
+            new TraineeBLO().Save(this.traineeForm1.Value as Trainee);
+            (this.Parent as Form).Close();
 
         }
         public Trainee getTrainee()
         {
             return this.traineeForm1.Value as Trainee;
+        }
+
+        public void UpdateTrainee(Trainee curent_Trainee)
+        {
+            if (curent_Trainee != null)
+            {
+                this.traineeForm1.Value = curent_Trainee;
+                this.traineeForm1.SetEntityToControls();
+            }
         }
     }
 }

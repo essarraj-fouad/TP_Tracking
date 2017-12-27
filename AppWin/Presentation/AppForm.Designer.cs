@@ -30,10 +30,10 @@
         {
             this.bt_refresh = new System.Windows.Forms.Button();
             this.groupBoxAction = new System.Windows.Forms.GroupBox();
-            this.btEditeProfile = new System.Windows.Forms.Button();
             this.bt_save_repport = new System.Windows.Forms.Button();
-            this.showWorksByCategoriesControl1 = new TP_Tracking.Presentation.UI.ShowWorksByCategoriesControl();
             this.configurationFileDeviceControl1 = new TP_Tracking.Presentation.UI.ConfigurationFileDeviceControl();
+            this.showWorksByCategoriesControl1 = new TP_Tracking.Presentation.UI.ShowWorksByCategoriesControl();
+            this.bt_edit_profile = new System.Windows.Forms.Button();
             this.groupBoxAction.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +52,7 @@
             // 
             this.groupBoxAction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxAction.Controls.Add(this.btEditeProfile);
+            this.groupBoxAction.Controls.Add(this.bt_edit_profile);
             this.groupBoxAction.Controls.Add(this.bt_save_repport);
             this.groupBoxAction.Controls.Add(this.configurationFileDeviceControl1);
             this.groupBoxAction.Controls.Add(this.bt_refresh);
@@ -62,17 +62,6 @@
             this.groupBoxAction.TabIndex = 7;
             this.groupBoxAction.TabStop = false;
             this.groupBoxAction.Text = "Actions";
-            // 
-            // btEditeProfile
-            // 
-            this.btEditeProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btEditeProfile.Location = new System.Drawing.Point(317, 19);
-            this.btEditeProfile.Name = "btEditeProfile";
-            this.btEditeProfile.Size = new System.Drawing.Size(120, 69);
-            this.btEditeProfile.TabIndex = 8;
-            this.btEditeProfile.Text = "Profile";
-            this.btEditeProfile.UseVisualStyleBackColor = true;
-            this.btEditeProfile.Click += new System.EventHandler(this.btEditeProfile_Click);
             // 
             // bt_save_repport
             // 
@@ -84,6 +73,13 @@
             this.bt_save_repport.UseVisualStyleBackColor = true;
             this.bt_save_repport.Click += new System.EventHandler(this.bt_save_repport_Click);
             // 
+            // configurationFileDeviceControl1
+            // 
+            this.configurationFileDeviceControl1.Location = new System.Drawing.Point(23, 25);
+            this.configurationFileDeviceControl1.Name = "configurationFileDeviceControl1";
+            this.configurationFileDeviceControl1.Size = new System.Drawing.Size(77, 69);
+            this.configurationFileDeviceControl1.TabIndex = 6;
+            // 
             // showWorksByCategoriesControl1
             // 
             this.showWorksByCategoriesControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -94,12 +90,16 @@
             this.showWorksByCategoriesControl1.Size = new System.Drawing.Size(563, 241);
             this.showWorksByCategoriesControl1.TabIndex = 10;
             // 
-            // configurationFileDeviceControl1
+            // bt_edit_profile
             // 
-            this.configurationFileDeviceControl1.Location = new System.Drawing.Point(23, 25);
-            this.configurationFileDeviceControl1.Name = "configurationFileDeviceControl1";
-            this.configurationFileDeviceControl1.Size = new System.Drawing.Size(77, 69);
-            this.configurationFileDeviceControl1.TabIndex = 6;
+            this.bt_edit_profile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_edit_profile.Location = new System.Drawing.Point(317, 19);
+            this.bt_edit_profile.Name = "bt_edit_profile";
+            this.bt_edit_profile.Size = new System.Drawing.Size(120, 69);
+            this.bt_edit_profile.TabIndex = 8;
+            this.bt_edit_profile.Text = "Editer profile";
+            this.bt_edit_profile.UseVisualStyleBackColor = true;
+            this.bt_edit_profile.Click += new System.EventHandler(this.bt_edit_profile_Click);
             // 
             // AppForm
             // 
@@ -123,7 +123,7 @@
         private UI.ConfigurationFileDeviceControl configurationFileDeviceControl1;
         private System.Windows.Forms.GroupBox groupBoxAction;
         private System.Windows.Forms.Button bt_save_repport;
-        private System.Windows.Forms.Button btEditeProfile;
         private UI.ShowWorksByCategoriesControl showWorksByCategoriesControl1;
+        private System.Windows.Forms.Button bt_edit_profile;
     }
 }

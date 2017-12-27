@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gapp.DAL;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -6,11 +7,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using TP_Tracking.Entities;
+using TP_Tracking.Enumerations;
 using TP_Tracking.Exceptions;
 
 namespace TP_Tracking.DAL
 {
-    public class WorkDAO
+    public class WorkDAO : FileBaseDAO 
     {
         // Data
         private static TraineeDirectory traineeDirectory = null;
@@ -63,23 +65,41 @@ namespace TP_Tracking.DAL
             }
         }
 
-        public void SaveModuleDirectoryStat()
+        public UserCategory SaveModuleDirectoryStat(string ModuleName)
         {
             string path = "";
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(TraineeDirectory));
             if (new UserDAO().GetFormerDeviceInfo() != null)
             {
+                // Create Directories
 
-                path = new UserDAO().GetFormerDeviceInfo().RootDirectory.FullName +  this.StateXmlFileName() + ".xml";
+                path = new UserDAO().GetFormerDeviceInfo().RootDirectory.FullName
+                    + ModuleName;
+                if (!File.Exists(path)) Directory.CreateDirectory(path);
+
+                path  += "/Trainees/";
+                if (!File.Exists(path)) Directory.CreateDirectory(path);
+
+                path += this.StateXmlFileName() + ".xml";
+                TextWriter TextWriter = new StreamWriter(path);
+
+                xmlSerializer.Serialize(TextWriter, traineeDirectory);
+                TextWriter.Close();
+                return UserCategory.Former;
 
             }
             else
             {
+
                 path = this.StateXmlFileName() + ".xml";
+
+                TextWriter TextWriter = new StreamWriter(path);
+                xmlSerializer.Serialize(TextWriter, traineeDirectory);
+                TextWriter.Close();
+                return UserCategory.Trainee;
             }
-            TextWriter TextWriter = new StreamWriter(path);
-            xmlSerializer.Serialize(TextWriter, traineeDirectory);
-            TextWriter.Close();
+            
+            
         }
 
         private string StateXmlFileName()

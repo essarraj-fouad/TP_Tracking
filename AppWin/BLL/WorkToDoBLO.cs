@@ -13,10 +13,10 @@ namespace TP_Tracking.BLL
        private WorkToDoDAO workToDoDAO { set; get; }
        public WorkToDoBLO()
         {
-            this.workToDoDAO = new WorkToDoDAO(new UserBLO().getUserXmlDataBaseDirecrory());
+            this.workToDoDAO =  WorkToDoDAO.Instance;
         }
 
-        public WorksToDoData getData()
+        public WorkToDoDAO_DB getData()
         {
             return this.workToDoDAO.getData();
         }

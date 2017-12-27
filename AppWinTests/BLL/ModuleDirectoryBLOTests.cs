@@ -31,14 +31,14 @@ namespace TP_Tracking.BLL.Tests
         [TestMethod()]
         public void ModuleDirectoryBLOTest()
         {
-            WorkBLO ModuleDirectoryBLO = new WorkBLO();
+            WorkBLO ModuleDirectoryBLO = WorkBLO.Instance;
             Assert.AreEqual(ModuleDirectoryBLO.TraineeDirectory.WorksChilds.Count, 2);
         }
 
         [TestMethod()]
         public void ValidateTest()
         {
-            WorkBLO ModuleDirectoryBLO = new WorkBLO();
+            WorkBLO ModuleDirectoryBLO = WorkBLO.Instance;
             ModuleDirectoryBLO.Validation();
             Assert.AreEqual(ModuleDirectoryBLO.TraineeDirectory.WorksChilds.Count, 2);
         }
@@ -46,8 +46,8 @@ namespace TP_Tracking.BLL.Tests
         [TestMethod()]
         public void SaveStateTest()
         {
-            
-                WorkBLO ModuleDirectoryBLO = new WorkBLO();
+
+            WorkBLO ModuleDirectoryBLO = WorkBLO.Instance;
                 ModuleDirectoryBLO.SaveState();
             
         }

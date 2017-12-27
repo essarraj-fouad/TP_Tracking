@@ -14,55 +14,22 @@ namespace TP_Tracking.DAL
     /// <summary>
     /// Work to Do XML DataBase
     /// </summary>
-    public class WorkToDoDAO : XMLDataBase
+    public class WorkToDoDAO : XmlBaseDAO<WorkToDoDAO_DB, WorkToDoDAO>
     {
-        
-        private static WorksToDoData Data { set; get; }
-
-        public WorksToDoData getData()
+        public WorkToDoDAO():base()
         {
-            return Data;
+            this.XMLDataBaseName = "works_db";
+            this.LoadXML();
         }
 
-        public WorkToDoDAO(string XMLDataBaseDirectory)
-        {
-            XMLDataBaseName = "works_db";
-            if (string.IsNullOrEmpty(XMLDataBasePath))
-                XMLDataBasePath = XMLDataBaseDirectory + XMLDataBaseName;
-            
-            this.LoadData();
-        }
-
-        /// <summary>
-        /// Load Data from XML : 
-        /// </summary>
-        public void LoadData()
-        {
-            try
-            {
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(WorksToDoData));
-                TextReader TextWriter = new StreamReader(XMLDataBasePath);
-                Data = xmlSerializer.Deserialize(TextWriter) as WorksToDoData;
-                TextWriter.Close();
-            }
-            catch (FileNotFoundException)
-            {
-
-                throw new ConfigurationFileNotExistException();
-            }
-           
-
-            if (Data == null)
-                throw new ConfigurationFileNotExistException();
-        }
-
+     
         /// <summary>
         /// Create Configuration file example
         /// </summary>
         public static void  CreateConfigurationFileExample()
         {
             // Create Data Exemple Instance
-            WorksToDoData data = new WorksToDoData();
+            WorkToDoDAO_DB data = new WorkToDoDAO_DB();
 
             // Create groupes examples
             data.Groups.Add(new Group("TDI201"));
@@ -80,14 +47,16 @@ namespace TP_Tracking.DAL
             data.WorksToDo.Add(new WorkToDo("TP1", TPCategory));
             data.WorksToDo.Add(new WorkToDo("TP2", TPCategory));
 
-             XmlSerializer xmlSerializer = new XmlSerializer(typeof(WorksToDoData));
-            TextWriter TextWriter = new StreamWriter(XMLDataBaseName);
+             XmlSerializer xmlSerializer = new XmlSerializer(typeof(WorkToDoDAO_DB));
+            TextWriter TextWriter = new StreamWriter("work_to_do_exemple.xml");
             xmlSerializer.Serialize(TextWriter, data);
             TextWriter.Close();
         }
         public static void DeleteConfigurationFileExample()
         {
-            File.Delete(XMLDataBasePath);
+            File.Delete("work_to_do_exemple.xml");
         }
+
+    
     }
 }
