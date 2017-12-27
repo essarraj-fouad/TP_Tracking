@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 
 namespace TP_Tracking.DAL
 {
-    public abstract class XmlBaseDAO<T, TDao> where TDao : new()
+    public abstract class XmlBaseDAO<T, TDao> where TDao : new() where T:new()
     {
         #region Segleton Pattern
         private static TDao instance;
@@ -31,13 +31,14 @@ namespace TP_Tracking.DAL
         protected T Data { set; get; }
         public T getData()
         {
-            return Data;
+            return this.Data;
         }
 
 
         public XmlBaseDAO()
         {
             XMLDataBaseName = nameof(T);
+            this.Data = new T();
         }
 
         protected string XMLDataBasePath
@@ -51,6 +52,8 @@ namespace TP_Tracking.DAL
 
         protected void LoadXML()
         {
+            if (!File.Exists(this.XMLDataBasePath))
+                this.SaveXML();
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
             TextReader TextWriter = new StreamReader(this.XMLDataBasePath);
             this.Data = (T) xmlSerializer.Deserialize(TextWriter) ;
