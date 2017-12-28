@@ -10,7 +10,7 @@ namespace GApp.DAL
         /// </summary>
         public Action SaveData;
         public Action<T> SetData { get; set; }
-        public Func<T> GetData { get; set; }
+        public Func<T> getEntity { get; set; }
 
         public virtual int Save(T t)
         {

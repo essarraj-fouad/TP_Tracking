@@ -13,6 +13,14 @@ namespace TP_Tracking.BLL
     /// </summary>
     public partial class WorkBLO
     {
+        public string DataFileName {
+
+            get
+            {
+                return this.workToDoBLO.DataFileName;
+            }
+        }
+
         /// <summary>
         /// Validation trainee directory
         /// </summary>

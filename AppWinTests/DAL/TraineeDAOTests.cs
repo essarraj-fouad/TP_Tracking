@@ -20,7 +20,7 @@ namespace TP_Tracking.DAL.Tests
             Trainee.FirstName = "Madani";
             TraineeDAO.Instance.Save(Trainee);
 
-            Trainee LoadedTrainee = TraineeDAO.Instance.GetData();
+            Trainee LoadedTrainee = TraineeDAO.Instance.getEntity();
 
             Assert.AreEqual(Trainee.Id, LoadedTrainee.Id);
         }

@@ -33,12 +33,7 @@ namespace TP_Tracking.Presentation.UI
             this.ParentFileData = ParentFileData;
             this.RefreshRepertories();
         }
-
-        internal void RefreshRepertories(object rootDirectoty)
-        {
-            throw new NotImplementedException();
-        }
-
+ 
         public void RefreshRepertories()
         {
             if(this.ParentFileData != null)

@@ -66,17 +66,26 @@ namespace TP_Tracking.BLL
         }
 
         /// <summary>
-        /// Save Job State
+        /// Save work State to Trainee Directory or Former Directory
         /// </summary>
-        public UserCategory SaveState()
+        public UserCategory SaveWorksState()
         {
             string ModuleName = workToDoBLO.getData().ModuleName;
-            return workDAO.SaveModuleDirectoryStat(ModuleName);
+            return workDAO.SaveWorksState(ModuleName);
         }
 
         public static void CreateConfigurationFileExample()
         {
             WorkToDoDAO.CreateConfigurationFileExample();
+        }
+
+        /// <summary>
+        /// Reload Data and Validation
+        /// </summary>
+        public void ReloadData()
+        {
+            this.workDAO.Load();
+            this.Validation();
         }
     }
 }

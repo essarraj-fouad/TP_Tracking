@@ -25,9 +25,10 @@ namespace GApp.BLL
             return 1;
         }
 
-        public T getData()
+        public virtual T Find()
         {
-            return EntityDao.GetData();
+            return EntityDao.getEntity();
         }
+        
     }
 }

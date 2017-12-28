@@ -28,7 +28,7 @@ namespace TP_Tracking.DAL
         {
             this.SaveData = TP_TrakingDAO.Instance.SaveData;
             this.SetData = TP_TrakingDAO.Instance.getData().setTrainee;
-            this.GetData = TP_TrakingDAO.Instance.getData().getTrainee;
+            this.getEntity = TP_TrakingDAO.Instance.getData().getTrainee;
         }
     }
 }

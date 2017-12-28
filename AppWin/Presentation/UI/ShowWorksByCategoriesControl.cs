@@ -13,12 +13,13 @@ namespace TP_Tracking.Presentation.UI
 {
     public partial class ShowWorksByCategoriesControl : UserControl
     {
+        Dictionary<string, RepertoriesControl> List_RepertoriesControl;
         public ShowWorksByCategoriesControl()
         {
             InitializeComponent();
             this.tabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;
             this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem);
-
+            List_RepertoriesControl = new Dictionary<string, RepertoriesControl>();
         }
 
         public void RefreshShow(TraineeDirectory traineeDirectory)
@@ -43,7 +44,7 @@ namespace TP_Tracking.Presentation.UI
                     RepertoriesControl repertoriesControl = new RepertoriesControl();
                     repertoriesControl.Dock = DockStyle.Fill;
                     repertoriesControl.RefreshRepertories(workToDoFileData);
-
+                    List_RepertoriesControl.Add(workToDoFileData.Reference, repertoriesControl);
                     // Create TabPage
                     TabPage tabPage = new TabPage();
                     tabPage.Name = workToDoFileData.Reference;
@@ -58,7 +59,7 @@ namespace TP_Tracking.Presentation.UI
                     tabControl1.TabPages.Add(tabPage);
                 }else
                 {
-
+                    List_RepertoriesControl[workToDoFileData.Reference].RefreshRepertories(workToDoFileData);
                 }
             }
 

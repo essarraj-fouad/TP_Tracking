@@ -48,7 +48,7 @@ namespace TP_Tracking.BLL.Tests
         {
 
             WorkBLO ModuleDirectoryBLO = WorkBLO.Instance;
-                ModuleDirectoryBLO.SaveState();
+                ModuleDirectoryBLO.SaveWorksState();
             
         }
     }

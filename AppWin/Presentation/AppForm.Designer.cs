@@ -30,17 +30,18 @@
         {
             this.bt_refresh = new System.Windows.Forms.Button();
             this.groupBoxAction = new System.Windows.Forms.GroupBox();
+            this.bt_edit_profile = new System.Windows.Forms.Button();
             this.bt_save_repport = new System.Windows.Forms.Button();
             this.configurationFileDeviceControl1 = new TP_Tracking.Presentation.UI.ConfigurationFileDeviceControl();
             this.showWorksByCategoriesControl1 = new TP_Tracking.Presentation.UI.ShowWorksByCategoriesControl();
-            this.bt_edit_profile = new System.Windows.Forms.Button();
+            this.lbl_dataFileName = new System.Windows.Forms.Label();
             this.groupBoxAction.SuspendLayout();
             this.SuspendLayout();
             // 
             // bt_refresh
             // 
             this.bt_refresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_refresh.Location = new System.Drawing.Point(443, 19);
+            this.bt_refresh.Location = new System.Drawing.Point(632, 19);
             this.bt_refresh.Name = "bt_refresh";
             this.bt_refresh.Size = new System.Drawing.Size(120, 69);
             this.bt_refresh.TabIndex = 5;
@@ -52,16 +53,28 @@
             // 
             this.groupBoxAction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxAction.Controls.Add(this.lbl_dataFileName);
             this.groupBoxAction.Controls.Add(this.bt_edit_profile);
             this.groupBoxAction.Controls.Add(this.bt_save_repport);
             this.groupBoxAction.Controls.Add(this.configurationFileDeviceControl1);
             this.groupBoxAction.Controls.Add(this.bt_refresh);
             this.groupBoxAction.Location = new System.Drawing.Point(12, 12);
             this.groupBoxAction.Name = "groupBoxAction";
-            this.groupBoxAction.Size = new System.Drawing.Size(569, 100);
+            this.groupBoxAction.Size = new System.Drawing.Size(758, 100);
             this.groupBoxAction.TabIndex = 7;
             this.groupBoxAction.TabStop = false;
             this.groupBoxAction.Text = "Actions";
+            // 
+            // bt_edit_profile
+            // 
+            this.bt_edit_profile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_edit_profile.Location = new System.Drawing.Point(506, 19);
+            this.bt_edit_profile.Name = "bt_edit_profile";
+            this.bt_edit_profile.Size = new System.Drawing.Size(120, 69);
+            this.bt_edit_profile.TabIndex = 8;
+            this.bt_edit_profile.Text = "Editer profile";
+            this.bt_edit_profile.UseVisualStyleBackColor = true;
+            this.bt_edit_profile.Click += new System.EventHandler(this.bt_edit_profile_Click);
             // 
             // bt_save_repport
             // 
@@ -87,25 +100,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.showWorksByCategoriesControl1.Location = new System.Drawing.Point(12, 118);
             this.showWorksByCategoriesControl1.Name = "showWorksByCategoriesControl1";
-            this.showWorksByCategoriesControl1.Size = new System.Drawing.Size(563, 241);
+            this.showWorksByCategoriesControl1.Size = new System.Drawing.Size(752, 285);
             this.showWorksByCategoriesControl1.TabIndex = 10;
             // 
-            // bt_edit_profile
+            // lbl_dataFileName
             // 
-            this.bt_edit_profile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_edit_profile.Location = new System.Drawing.Point(317, 19);
-            this.bt_edit_profile.Name = "bt_edit_profile";
-            this.bt_edit_profile.Size = new System.Drawing.Size(120, 69);
-            this.bt_edit_profile.TabIndex = 8;
-            this.bt_edit_profile.Text = "Editer profile";
-            this.bt_edit_profile.UseVisualStyleBackColor = true;
-            this.bt_edit_profile.Click += new System.EventHandler(this.bt_edit_profile_Click);
+            this.lbl_dataFileName.AutoSize = true;
+            this.lbl_dataFileName.Location = new System.Drawing.Point(306, 47);
+            this.lbl_dataFileName.Name = "lbl_dataFileName";
+            this.lbl_dataFileName.Size = new System.Drawing.Size(88, 13);
+            this.lbl_dataFileName.TabIndex = 10;
+            this.lbl_dataFileName.Text = "lbl_dataFileName";
             // 
             // AppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(593, 371);
+            this.ClientSize = new System.Drawing.Size(782, 415);
             this.Controls.Add(this.showWorksByCategoriesControl1);
             this.Controls.Add(this.groupBoxAction);
             this.MinimumSize = new System.Drawing.Size(600, 400);
@@ -114,6 +125,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AppForm_Load);
             this.groupBoxAction.ResumeLayout(false);
+            this.groupBoxAction.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -125,5 +137,6 @@
         private System.Windows.Forms.Button bt_save_repport;
         private UI.ShowWorksByCategoriesControl showWorksByCategoriesControl1;
         private System.Windows.Forms.Button bt_edit_profile;
+        private System.Windows.Forms.Label lbl_dataFileName;
     }
 }

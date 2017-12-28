@@ -1,4 +1,5 @@
-﻿using GApp.Entities;
+﻿using GApp.DAL.Exceptions;
+using GApp.Entities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace TP_Tracking.DAL
+namespace GApp.DAL
 {
-    public abstract class XmlBaseDAO<T, TDao> where TDao : new() where T:new()
+    public abstract class XmlBaseDAO<T, TDao> where TDao : new() where T : new()
     {
         #region Segleton Pattern
         private static TDao instance;
@@ -24,7 +25,11 @@ namespace TP_Tracking.DAL
         }
         #endregion
 
-     
+        /// <summary>
+        /// Create the file data if not exist
+        /// </summary>
+        public bool CreateFileDataIdNotExist = true;
+
 
         protected string XMLDataBaseName;
         protected string XMLDataBaseDirectory = "./";
@@ -49,14 +54,25 @@ namespace TP_Tracking.DAL
             }
         }
 
+        protected virtual void CheckFileDate()
+        {
+            // Check file data 
+           
+        }
 
-        protected void LoadXML()
+        protected virtual void LoadXML()
         {
             if (!File.Exists(this.XMLDataBasePath))
+            {
+                if (this.CreateFileDataIdNotExist)
+                    throw new XmlDataFileNotExistException();
                 this.SaveXML();
+            }
+           
+            // Load Data
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
             TextReader TextWriter = new StreamReader(this.XMLDataBasePath);
-            this.Data = (T) xmlSerializer.Deserialize(TextWriter) ;
+            this.Data = (T)xmlSerializer.Deserialize(TextWriter);
             TextWriter.Close();
         }
 

@@ -7,26 +7,30 @@ using System.Threading.Tasks;
 using TP_Tracking.Entities;
 using GApp.Entities;
 using TP_Tracking.DAL;
+using GApp.Patterns;
 
 namespace TP_Tracking.BLL
 {
     public class TraineeBLO : SingleBaseBLO<Trainee>
     {
 
+        private static TraineeBLO _current;
+        public static TraineeBLO Instance = Singleton<TraineeBLO>.GetSingleton(ref _current, () => new TraineeBLO());
+
         #region Signleton Pattern
-        private static TraineeBLO instance;
-        public static TraineeBLO Instance
-        {
-            get
-            {
-                if (instance == null)
-                    instance = new TraineeBLO();
-                return instance;
-            }
-        }
+        //private static TraineeBLO instance;
+        //public static TraineeBLO Instance
+        //{
+        //    get
+        //    {
+        //        if (instance == null)
+        //            instance = new TraineeBLO();
+        //        return instance;
+        //    }
+        //}
         #endregion
 
-        public TraineeBLO()
+        private TraineeBLO()
         {
             EntityDao = TraineeDAO.Instance;
         }
@@ -51,13 +55,16 @@ namespace TP_Tracking.BLL
         public Trainee Find(Trainee work_directory_trainee)
         {
             // if current trainee null , create it by work_directory_trainee
-            return work_directory_trainee;
+            Trainee trainee = base.Find();
+            if (trainee == null)
+            {
+                this.Save(work_directory_trainee);
+            }
+            trainee = base.Find();
+            return trainee;
         }
 
-        public Trainee getEntity()
-        {
-            return this.EntityDao.GetData();
-        }
+        
 
 
 

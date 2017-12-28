@@ -11,7 +11,16 @@ namespace TP_Tracking.BLL
     public class WorkToDoBLO
     {
        private WorkToDoDAO workToDoDAO { set; get; }
-       public WorkToDoBLO()
+        public string DataFileName {
+            get
+            {
+                return this.workToDoDAO.DataFileName;
+            }
+
+
+        }
+
+        public WorkToDoBLO()
         {
             this.workToDoDAO =  WorkToDoDAO.Instance;
         }

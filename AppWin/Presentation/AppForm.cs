@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GApp.DAL.Exceptions;
+using GwinApp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,6 +13,7 @@ using TP_Tracking.BLL;
 using TP_Tracking.DAL;
 using TP_Tracking.Entities;
 using TP_Tracking.Exceptions;
+using TP_Tracking.GwinApp;
 using TP_Tracking.Presentation.UI;
 using TP_Tracking.Presentation.UI.Trainees;
 
@@ -26,20 +29,25 @@ namespace TP_Tracking.Presentation
 
         private void AppForm_Load(object sender, EventArgs e)
         {
-            this.bt_refresh_Click(null, null);
+            this.LoadData();
         }
 
-        private void bt_refresh_Click(object sender, EventArgs e)
+        private void LoadData()
         {
             try
             {
                 workBLO = WorkBLO.Instance;
+
                 this.showWorksByCategoriesControl1.RefreshShow(workBLO.TraineeDirectory);
                 this.configurationFileDeviceControl1.RefreshControl();
             }
-            catch (ConfigurationFileNotExistException ex)
+            catch (XmlDataFileNotExistException ex)
             {
-                MessageBox.Show("Le fichier qui contient les travaux à faire n'exist pas");
+                MessageBox.Show(ex.Message);
+            }
+            catch (TP_Tracking.Exceptions.ConfigurationFileNotExistException ex)
+            {
+                MessageBox.Show(ex.Message);
                 //DialogResult dialogResult = MessageBox.Show("Voullez-vous créer un fichier exemple", "", MessageBoxButtons.YesNo);
                 //if (dialogResult == DialogResult.Yes)
                 //{
@@ -47,6 +55,17 @@ namespace TP_Tracking.Presentation
                 //}
                 //this.bt_refresh_Click(null, null);
             }
+
+            lbl_dataFileName.Text = WorkBLO.Instance.DataFileName;
+        }
+
+        private void bt_refresh_Click(object sender, EventArgs e)
+        {
+            WorkBLO.Instance.ReloadData();
+            this.LoadData();
+           
+
+
         }
 
         private void bt_save_repport_Click(object sender, EventArgs e)
@@ -54,7 +73,7 @@ namespace TP_Tracking.Presentation
             EditerProfile();
             try
             {
-               if( workBLO.SaveState() == Enumerations.UserCategory.Former)
+                if (workBLO.SaveWorksState() == Enumerations.UserCategory.Former)
                 {
                     MessageBox.Show("Bien enregistrer sur le USB du formateur");
                 }
@@ -62,7 +81,7 @@ namespace TP_Tracking.Presentation
                 {
                     MessageBox.Show("Bien enregistrer dans votre répertoire du travail");
                 }
-               
+
             }
             catch (USBDeviceNotExistException ex)
             {
@@ -70,7 +89,7 @@ namespace TP_Tracking.Presentation
                 string msg = string.Format("USB du formateur n'est pas enregistrer");
                 MessageBox.Show(msg);
             }
-           
+
         }
 
         private void groupBoxRepertories_Enter(object sender, EventArgs e)
@@ -90,23 +109,16 @@ namespace TP_Tracking.Presentation
 
         private void EditerProfile()
         {
-            Trainee work_directory_trainee = workBLO.TraineeDirectory.Trainee;
-            Trainee Cuurent_Trainee = new TraineeBLO().Find(work_directory_trainee);
+            eFormsManager formsManager = new eFormsManager();
 
-            // Create form
+            Trainee work_directory_trainee = workBLO.TraineeDirectory.Trainee;
+            Trainee Cuurent_Trainee = TraineeBLO.Instance.Find(work_directory_trainee);
+
+            // Create Manager Form
             TraineeUpdate TraineeUpdate = new TraineeUpdate();
-            TraineeUpdate.Dock = DockStyle.Fill;
             TraineeUpdate.UpdateTrainee(Cuurent_Trainee);
 
-            // Create form
-            Form formUpdate = new Form();
-            formUpdate.Controls.Add(TraineeUpdate);
-            formUpdate.Size = new Size(350, 220);
-            formUpdate.WindowState = FormWindowState.Normal;
-            formUpdate.StartPosition = FormStartPosition.CenterScreen;
-            formUpdate.Text = "Validation du profile";
-
-            formUpdate.ShowDialog();
+            formsManager.ShwoForm(TraineeUpdate, new Size(350, 220), "Validation du profile");
         }
     }
 }

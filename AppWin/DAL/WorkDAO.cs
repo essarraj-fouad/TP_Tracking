@@ -28,7 +28,7 @@ namespace TP_Tracking.DAL
         public WorkDAO()
         {
             traineeDirectory = new TraineeDirectory();
-            Load();
+            this.Load();
         }
 
         /// <summary>
@@ -65,22 +65,26 @@ namespace TP_Tracking.DAL
             }
         }
 
-        public UserCategory SaveModuleDirectoryStat(string ModuleName)
+        /// <summary>
+        /// Save works state to Trainee or Former Directory
+        /// </summary>
+        /// <param name="ModuleName"></param>
+        /// <returns></returns>
+        public UserCategory SaveWorksState(string ModuleName)
         {
             string path = "";
+           
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(TraineeDirectory));
+
+            // if former
             if (new UserDAO().GetFormerDeviceInfo() != null)
             {
-                // Create Directories
-
-                path = new UserDAO().GetFormerDeviceInfo().RootDirectory.FullName
-                    + ModuleName;
+                // Create former directory if not exist
+                path = new UserDAO().GetFormerDeviceInfo().RootDirectory.FullName + ModuleName;
                 if (!File.Exists(path)) Directory.CreateDirectory(path);
-
                 path  += "/Trainees/";
                 if (!File.Exists(path)) Directory.CreateDirectory(path);
-
-                path += this.StateXmlFileName() + ".xml";
+                path += this.StateXmlFileName(ModuleName);
                 TextWriter TextWriter = new StreamWriter(path);
 
                 xmlSerializer.Serialize(TextWriter, traineeDirectory);
@@ -88,11 +92,10 @@ namespace TP_Tracking.DAL
                 return UserCategory.Former;
 
             }
+            // if trainee
             else
             {
-
-                path = this.StateXmlFileName() + ".xml";
-
+                path = this.StateXmlFileName(ModuleName) ;
                 TextWriter TextWriter = new StreamWriter(path);
                 xmlSerializer.Serialize(TextWriter, traineeDirectory);
                 TextWriter.Close();
@@ -102,9 +105,11 @@ namespace TP_Tracking.DAL
             
         }
 
-        private string StateXmlFileName()
+        private string StateXmlFileName(string module_name)
         {
-            return this.TraineeDirectory.Trainee.FirstName + "_" + this.TraineeDirectory.Trainee.LastName;
+            string trainee_reference = this.TraineeDirectory.Trainee.FirstName + "_" + this.TraineeDirectory.Trainee.LastName;
+
+            return trainee_reference + "." + module_name + ".works";
         }
     }
 }
