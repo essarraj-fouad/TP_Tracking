@@ -19,15 +19,16 @@ namespace TP_Tracking.Presentation.UI.Trainees
             InitializeComponent();
         }
 
-        public override void GetEntityFromControls()
+        public override void readEntityFromControls ()
         {
             Trainee trainee = this.Entity as Trainee;
             if (trainee == null) trainee = new Trainee();
             trainee.FirstName = firstNameTextBox.Text;
             trainee.LastName = lastNameTextBox.Text;
             trainee.DateOfBirth = dateOfBirthDateTimePicker.Value;
+            trainee.PhoneNumber = txtPhoneNumber.Text;
         }
-        public override void SetEntityToControls()
+        public override void writeEntityToControls()
         {
             Trainee trainee = this.Entity as Trainee;
             if (trainee != null)
@@ -35,6 +36,7 @@ namespace TP_Tracking.Presentation.UI.Trainees
                 firstNameTextBox.Text = trainee.FirstName;
                 lastNameTextBox.Text = trainee.LastName;
                 dateOfBirthDateTimePicker.Value = trainee.DateOfBirth;
+                txtPhoneNumber.Text = trainee.PhoneNumber;
             }
 
         }

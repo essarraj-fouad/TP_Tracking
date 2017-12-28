@@ -58,7 +58,7 @@
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.traineeForm1);
             this.Name = "TraineeUpdate";
-            this.Size = new System.Drawing.Size(337, 169);
+            this.Size = new System.Drawing.Size(352, 167);
             this.ResumeLayout(false);
 
         }

@@ -21,7 +21,7 @@ namespace TP_Tracking.Presentation.UI.Trainees
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            this.traineeForm1.GetEntityFromControls();
+            this.traineeForm1.readEntityFromControls();
             TraineeBLO.Instance.Save(this.traineeForm1.Value as Trainee);
             (this.Parent as Form).Close();
 
@@ -36,7 +36,7 @@ namespace TP_Tracking.Presentation.UI.Trainees
             if (curent_Trainee != null)
             {
                 this.traineeForm1.Value = curent_Trainee;
-                this.traineeForm1.SetEntityToControls();
+                this.traineeForm1.writeEntityToControls();
             }
         }
     }

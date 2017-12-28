@@ -12,5 +12,6 @@ namespace TP_Tracking.Entities
         public string FirstName { set; get; }
         public string LastName { set; get; }
         public DateTime DateOfBirth { set; get; }
+        public string PhoneNumber { set; get; }
     }
 }

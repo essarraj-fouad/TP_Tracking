@@ -31,24 +31,29 @@
             System.Windows.Forms.Label dateOfBirthLabel;
             System.Windows.Forms.Label firstNameLabel;
             System.Windows.Forms.Label lastNameLabel;
+            System.Windows.Forms.Label lbl_tel;
             this.dateOfBirthDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
+            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             dateOfBirthLabel = new System.Windows.Forms.Label();
             firstNameLabel = new System.Windows.Forms.Label();
             lastNameLabel = new System.Windows.Forms.Label();
+            lbl_tel = new System.Windows.Forms.Label();
             this.groupBoxEntity.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxEntity
             // 
+            this.groupBoxEntity.Controls.Add(this.txtPhoneNumber);
+            this.groupBoxEntity.Controls.Add(lbl_tel);
             this.groupBoxEntity.Controls.Add(dateOfBirthLabel);
             this.groupBoxEntity.Controls.Add(this.dateOfBirthDateTimePicker);
             this.groupBoxEntity.Controls.Add(firstNameLabel);
             this.groupBoxEntity.Controls.Add(this.firstNameTextBox);
             this.groupBoxEntity.Controls.Add(lastNameLabel);
             this.groupBoxEntity.Controls.Add(this.lastNameTextBox);
-            this.groupBoxEntity.Size = new System.Drawing.Size(323, 160);
+            this.groupBoxEntity.Size = new System.Drawing.Size(332, 147);
             this.groupBoxEntity.Text = "Stagiaire";
             // 
             // dateOfBirthLabel
@@ -99,12 +104,28 @@
             this.lastNameTextBox.Size = new System.Drawing.Size(200, 20);
             this.lastNameTextBox.TabIndex = 5;
             // 
+            // lbl_tel
+            // 
+            lbl_tel.AutoSize = true;
+            lbl_tel.Location = new System.Drawing.Point(13, 112);
+            lbl_tel.Name = "lbl_tel";
+            lbl_tel.Size = new System.Drawing.Size(28, 13);
+            lbl_tel.TabIndex = 6;
+            lbl_tel.Text = "Tél :";
+            // 
+            // txtPhoneNumber
+            // 
+            this.txtPhoneNumber.Location = new System.Drawing.Point(103, 109);
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(200, 20);
+            this.txtPhoneNumber.TabIndex = 7;
+            // 
             // TraineeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "TraineeForm";
-            this.Size = new System.Drawing.Size(323, 160);
+            this.Size = new System.Drawing.Size(332, 147);
             this.Title = "Stagiaire";
             this.groupBoxEntity.ResumeLayout(false);
             this.groupBoxEntity.PerformLayout();
@@ -117,5 +138,6 @@
         private System.Windows.Forms.DateTimePicker dateOfBirthDateTimePicker;
         private System.Windows.Forms.TextBox firstNameTextBox;
         private System.Windows.Forms.TextBox lastNameTextBox;
+        private System.Windows.Forms.TextBox txtPhoneNumber;
     }
 }
