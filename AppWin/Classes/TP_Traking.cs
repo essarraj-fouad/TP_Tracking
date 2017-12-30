@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP_Tracking.Entities
+namespace TP_Tracking.Classes
 {
     public class TP_Traking : BaseEntity
     {

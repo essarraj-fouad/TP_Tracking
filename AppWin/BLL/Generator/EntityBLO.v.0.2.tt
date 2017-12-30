@@ -1,0 +1,52 @@
+﻿<#@ template language="C#" debug="true" hostspecific="true"#>
+<#@ output extension=".cs"#>
+<#@ include file="../../Template_v1/ReflexionClassesGenerator.ttinclude"  #>
+<#@ include file="../../Template_v1/CodeStringGenerator.ttinclude"#>
+<#@ include file="../../Template_v1/TemplateFileManagerV2.1.ttinclude" #>
+<#@ include file="../../Template_v1/VisualStudioHelper.ttinclude" #>
+
+<#@ assembly name="EnvDte" #>
+ 
+ <#
+    // get a reference to the project of this t4 template
+    var project = VisualStudioHelper.CurrentProject;
+	// get all class items from the code model
+	var allClasses = new VsCodeModel(this.VisualStudioHelper).GetAllCodeElementsOfType(project.CodeModel.CodeElements, EnvDTE.vsCMElement.vsCMElementClass, false);
+    // Create file for All Entities
+	var manager = TemplateFileManager.Create(this);
+
+	// Generate BLO object for each Entities
+	foreach(EnvDTE.CodeClass codeClass in allClasses)
+    {
+           if(codeClass.FullName.Contains("Entities")){
+			  manager.StartNewFile(codeClass.Name + "BLO.cs");
+
+#>
+using <#=   codeClass.Namespace.FullName #>;
+using GApp.BLL;
+using GApp.DAL;
+using App.DAL;
+using System.Data.Entity;
+namespace App.BLL
+{
+	public partial class <#= codeClass.Name #>BLO : BaseBLO<<#= codeClass.Name #>>{
+	    
+		public <#= codeClass.Name #>BLO(DbContext context) : base()
+        {
+            this.entityDAO = new <#= codeClass.Name #>DAO(context);
+        }
+		public <#= codeClass.Name #>BLO() : base()
+        {
+           this.entityDAO = new <#= codeClass.Name #>DAO(new ModelContext());
+        }
+ 
+	}
+}
+<#
+           } // if
+
+    } // for
+	manager.Process();
+#>
+
+

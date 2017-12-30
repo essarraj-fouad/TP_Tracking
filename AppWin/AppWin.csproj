@@ -32,8 +32,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="GApp">
       <HintPath>..\packages\GApp\GApp.dll</HintPath>
+    </Reference>
+    <Reference Include="GApp.DAL.EF6">
+      <HintPath>..\packages\GApp\GApp.DAL.EF6.dll</HintPath>
     </Reference>
     <Reference Include="GForm">
       <HintPath>..\packages\GApp\GForm.dll</HintPath>
@@ -47,8 +56,26 @@
     <Reference Include="GwinForm">
       <HintPath>..\packages\GApp\GwinForm.dll</HintPath>
     </Reference>
+    <Reference Include="IGApp">
+      <HintPath>..\packages\GApp\IGApp.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite.CodeFirst">
+      <HintPath>..\packages\SQLite.CodeFirst.1.5.0.21\lib\net45\SQLite.CodeFirst.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.105.1, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.106.0\lib\net45\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.105.1, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.106.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.105.1, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.106.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,6 +87,84 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\Generator\EntityBLO.v.0.2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\Generator\FormerBLO.cs">
+      <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\Generator\GroupBLO.cs">
+      <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\Generator\ModuleBLO.cs">
+      <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\Generator\PersonBLO.cs">
+      <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\Generator\TraineeBLO.cs">
+      <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\Generator\TraineeDirectoryBLO.cs">
+      <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\Generator\UserBLO.cs">
+      <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\Generator\ValidateErrorMessageBLO.cs">
+      <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\Generator\WorkBLO.cs">
+      <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\Generator\WorkCategoryBLO.cs">
+      <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\Generator\WorkToDoBLO.cs">
+      <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Generator\EntityDAO.v.0.2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntityDAO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Generator\FormerDAO.cs">
+      <DependentUpon>EntityDAO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Generator\GroupDAO.cs">
+      <DependentUpon>EntityDAO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Generator\ModuleDAO.cs">
+      <DependentUpon>EntityDAO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Generator\PersonDAO.cs">
+      <DependentUpon>EntityDAO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Generator\TraineeDAO.cs">
+      <DependentUpon>EntityDAO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Generator\TraineeDirectoryDAO.cs">
+      <DependentUpon>EntityDAO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Generator\UserDAO.cs">
+      <DependentUpon>EntityDAO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Generator\ValidateErrorMessageDAO.cs">
+      <DependentUpon>EntityDAO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Generator\WorkCategoryDAO.cs">
+      <DependentUpon>EntityDAO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Generator\WorkDAO.cs">
+      <DependentUpon>EntityDAO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Generator\WorkToDoDAO.cs">
+      <DependentUpon>EntityDAO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ModelContext.cs" />
+    <Compile Include="DAL\SQLiteConfiguration.cs" />
     <Compile Include="GApp\BLL\SingleBaseBLO.cs" />
     <Compile Include="BLL\TraineeBLO.cs" />
     <Compile Include="BLL\WorkBLO.cs" />
@@ -74,7 +179,7 @@
     <Compile Include="DAL\TraineeDAO.cs" />
     <Compile Include="DAL\WorkDAO.cs" />
     <Compile Include="DAL\WorkToDoDAO.cs" />
-    <Compile Include="Entities\TP_Traking.cs" />
+    <Compile Include="Classes\TP_Traking.cs" />
     <Compile Include="Entities\Training\Module.cs" />
     <Compile Include="Entities\Users\Former.cs" />
     <Compile Include="Entities\Users\Person.cs" />
@@ -140,8 +245,8 @@
     <Compile Include="Entities\Users\Group.cs" />
     <Compile Include="Entities\Work.cs" />
     <Compile Include="Entities\Users\Trainee.cs" />
-    <Compile Include="Entities\Enumerations\UserCategory.cs" />
-    <Compile Include="Entities\Enumerations\Repertories.cs" />
+    <Compile Include="Enumerations\UserCategory.cs" />
+    <Compile Include="Enumerations\Repertories.cs" />
     <Compile Include="Presentation\UI\Trainees\UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -190,6 +295,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Entities\Entities.cd" />
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\TP_Tracking.Entities.Trainee.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -200,6 +306,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Template_v1\CodeStringGenerator.ttinclude" />
+    <None Include="Template_v1\ReflexionClassesGenerator.ttinclude" />
+    <None Include="Template_v1\TemplateFileManagerV2.1.ttinclude" />
+    <None Include="Template_v1\VisualStudioHelper.ttinclude" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -208,6 +318,18 @@
     <None Include="Resources\root-directory.png" />
     <None Include="Resources\usb.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="BLL\Generator\EntityBLO.v.0.2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EntityBLO.v.0.2.cs</LastGenOutput>
+    </Content>
+    <Content Include="DAL\Generator\EntityDAO.v.0.2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EntityDAO.v.0.2.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,45 @@
+﻿<#@ template language="C#" debug="true" hostspecific="true"#>
+<#@ output extension=".cs"#>
+<#@ include file="../../Template_v1/ReflexionClassesGenerator.ttinclude"  #>
+<#@ include file="../../Template_v1/CodeStringGenerator.ttinclude"#>
+<#@ include file="../../Template_v1/TemplateFileManagerV2.1.ttinclude" #>
+<#@ include file="../../Template_v1/VisualStudioHelper.ttinclude" #>
+
+<#@ assembly name="EnvDte" #>
+ 
+ <#
+    // get a reference to the project of this t4 template
+    var project = VisualStudioHelper.CurrentProject;
+	// get all class items from the code model
+	var allClasses = new VsCodeModel(this.VisualStudioHelper).GetAllCodeElementsOfType(project.CodeModel.CodeElements, EnvDTE.vsCMElement.vsCMElementClass, false);
+    // Create file for All Entities
+	var manager = TemplateFileManager.Create(this);
+
+	// Generate BLO object for each Entities
+	foreach(EnvDTE.CodeClass codeClass in allClasses)
+    {
+           if(codeClass.FullName.Contains("Entities")){
+			  manager.StartNewFile(codeClass.Name + "DAO.cs");
+
+#>
+using <#=   codeClass.Namespace.FullName #>;
+using GApp.DAL;
+using System.Data.Entity;
+namespace App.DAL
+{
+    public partial class <#= codeClass.Name #>DAO : BaseDAO<<#= codeClass.Name #>>{
+        
+		public <#= codeClass.Name #>DAO(DbContext context) : base(context)
+		{
+
+        }
+   }
+}
+<#
+           } // if
+
+    } // for
+	manager.Process();
+#>
+
+
