@@ -8,29 +8,21 @@ namespace TP_Tracking.Entities
 {
     public class Trainee : User
     {
-        private string name;
-
-        public Trainee() : this(null)
+        public Trainee() { }
+        public Trainee(string TraineeWroksFolderName):base()
         {
-           
-        }
-
-        public Trainee(string TraineeDirctoryName)
-        {
-            if(!string.IsNullOrEmpty(TraineeDirctoryName))
+            if(!string.IsNullOrEmpty(TraineeWroksFolderName))
             {
-                string[] names = TraineeDirctoryName.Split(' ');
+                string[] names = TraineeWroksFolderName.Split(' ');
                 if (names.Count() > 0)
                     this.FirstName = names[0];
                 if (names.Count() > 1)
                     this.LastName = names[1];
                 if (names.Count() == 0)
-                    this.FirstName = TraineeDirctoryName;
+                    this.FirstName = TraineeWroksFolderName;
             }
-            this.DateOfBirth = DateTime.Now;
-
         }
 
-        public Group Group { set; get; }
+        public virtual Group Group { set; get; }
     }
 }

@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TP_Tracking.Entities;
-using TP_Tracking.DAL.XML;
 
 namespace TP_Tracking.DAL.Tests
 {
@@ -17,11 +16,13 @@ namespace TP_Tracking.DAL.Tests
         [TestMethod()]
         public void SaveTest()
         {
+            TraineeDAO traineeDAO = new TraineeDAO();
+          
             Trainee Trainee = new Trainee();
             Trainee.FirstName = "Madani";
-            TraineeXmlDAO.Instance.Insert(Trainee);
+            traineeDAO.Insert(Trainee);
 
-            Trainee LoadedTrainee = TraineeXmlDAO.Instance.FindByReference(Trainee.Reference);
+            Trainee LoadedTrainee = traineeDAO.FindByReference(Trainee.Reference);
 
             Assert.AreEqual(Trainee.Id, LoadedTrainee.Id);
         }

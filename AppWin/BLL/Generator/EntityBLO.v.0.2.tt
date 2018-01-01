@@ -36,10 +36,10 @@ namespace  <#= RootNamespace #>.BLL
             this.entityDAO = new <#= codeClass.Name #>DAO(context);
         }
 		 
-		// public <#= codeClass.Name #>BLO() : base()
-        // {
-        //   this.entityDAO = new <#= codeClass.Name #>DAO(new ModelContext());
-        // }
+		public <#= codeClass.Name #>BLO() : base()
+        {
+           this.entityDAO = new <#= codeClass.Name #>DAO(new ModelContext());
+        }
  
 	}
 }

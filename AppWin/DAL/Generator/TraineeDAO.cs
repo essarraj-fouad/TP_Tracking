@@ -9,5 +9,9 @@ namespace TP_Tracking.DAL
 		{
 
         }
+
+		public TraineeDAO() : base(new ModelContext())
+		{
+        }
    }
 }

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TP_Tracking.Entities.TraineeWorkValidateError" Collapsed="true">
+    <Position X="1.75" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Entities\TraineesWorks\TraineeWorkValidateError.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TP_Tracking.Entities.WorkToDo" Collapsed="true">
+    <Position X="2" Y="0.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAEQAAAAAAAgAEAEAAAAAAAAAAAAAAAAAAAACAABAAA=</HashCode>
+      <FileName>Entities\Training\WorkToDo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TP_Tracking.Entities.TraineeWork">
+    <Position X="4" Y="1.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AEAAAABBBAAAAAAJACAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Entities\TraineesWorks\TraineeWork.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="WorkToDo" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="TraineeWorkValidateErrors" />
+      <Property Name="TraineeWorkNotes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="TP_Tracking.Entities.TraineeWorkNote" Collapsed="true">
+    <Position X="7.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\TraineeWorkNote.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

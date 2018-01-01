@@ -11,10 +11,10 @@ namespace  TP_Tracking.BLL
             this.entityDAO = new ModuleDAO(context);
         }
 		 
-		// public ModuleBLO() : base()
-        // {
-        //   this.entityDAO = new ModuleDAO(new ModelContext());
-        // }
+		public ModuleBLO() : base()
+        {
+           this.entityDAO = new ModuleDAO(new ModelContext());
+        }
  
 	}
 }

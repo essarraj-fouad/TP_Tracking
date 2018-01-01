@@ -91,9 +91,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\Generator\EntityBLO.v.0.2.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="BLL\Generator\FormerBLO.cs">
       <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
@@ -104,183 +104,125 @@
     <Compile Include="BLL\Generator\ModuleBLO.cs">
       <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
     </Compile>
+    <Compile Include="BLL\Generator\NamedBaseEntityBLO.cs">
+      <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
+    </Compile>
     <Compile Include="BLL\Generator\PersonBLO.cs">
+      <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\Generator\SpecialtyBLO.cs">
       <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
     </Compile>
     <Compile Include="BLL\Generator\TraineeBLO.cs">
       <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
     </Compile>
-    <Compile Include="BLL\Generator\TraineeDirectoryBLO.cs">
+    <Compile Include="BLL\Generator\TraineeWorkBLO.cs">
+      <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\Generator\TraineeWorkNoteBLO.cs">
+      <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\Generator\TraineeWorkValidateErrorBLO.cs">
+      <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\Generator\TrainingBLO.cs">
       <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
     </Compile>
     <Compile Include="BLL\Generator\UserBLO.cs">
       <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
     </Compile>
-    <Compile Include="BLL\Generator\ValidateErrorMessageBLO.cs">
-      <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BLL\Generator\WorkBLO.cs">
-      <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BLL\Generator\WorkCategoryBLO.cs">
-      <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
-    </Compile>
     <Compile Include="BLL\Generator\WorkToDoBLO.cs">
       <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
     </Compile>
-    <Compile Include="BLL\ModuleBLO.cs" />
-    <Compile Include="DAL\XML\ModuleXmlDAO.cs" />
-    <Compile Include="DAL\XML\WorkCategoryXmlDAO.cs" />
-    <Compile Include="DAL\Generator\EntityDAO.v.0.2.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EntityDAO.v.0.2.tt</DependentUpon>
+    <Compile Include="BLL\Generator\WorkToDoCategoryBLO.cs">
+      <DependentUpon>EntityBLO.v.0.2.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\Generator\FormerDAO.cs">
-      <DependentUpon>EntityDAO.v.0.2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Generator\GroupDAO.cs">
-      <DependentUpon>EntityDAO.v.0.2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Generator\ModuleDAO.cs">
-      <DependentUpon>EntityDAO.v.0.2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Generator\PersonDAO.cs">
-      <DependentUpon>EntityDAO.v.0.2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Generator\TraineeDAO.cs">
-      <DependentUpon>EntityDAO.v.0.2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Generator\TraineeDirectoryDAO.cs">
-      <DependentUpon>EntityDAO.v.0.2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Generator\UserDAO.cs">
-      <DependentUpon>EntityDAO.v.0.2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Generator\ValidateErrorMessageDAO.cs">
-      <DependentUpon>EntityDAO.v.0.2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Generator\WorkCategoryDAO.cs">
-      <DependentUpon>EntityDAO.v.0.2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Generator\WorkDAO.cs">
-      <DependentUpon>EntityDAO.v.0.2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Generator\WorkToDoDAO.cs">
-      <DependentUpon>EntityDAO.v.0.2.tt</DependentUpon>
-    </Compile>
+    <Compile Include="DAL\DeviceDAO.cs" />
     <Compile Include="DAL\EF\ModelContext.cs" />
     <Compile Include="DAL\EF\SQLiteConfiguration.cs" />
-    <Compile Include="BLL\TraineeBLO.cs" />
-    <Compile Include="BLL\WorkBLO.cs" />
-    <Compile Include="BLL\UserBLO.cs" />
-    <Compile Include="BLL\Validate.WorkBLO.cs" />
-    <Compile Include="BLL\WorkCategoryBLO.cs" />
-    <Compile Include="BLL\WorkToDoBLO.cs" />
-    <Compile Include="DAL\DeviceDA.cs" />
-    <Compile Include="DAL\XML\TraineeXmlDAO.cs" />
-    <Compile Include="DAL\File\TraineeDirectoryFileDAO.cs" />
-    <Compile Include="DAL\XML\WorkToDoXmlDAO.cs" />
+    <Compile Include="DAL\Exceptions\USBDeviceNotExistException.cs" />
+    <Compile Include="DAL\Generator\EntityDAO.v.0.3.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntityDAO.v.0.3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Generator\FormerDAO.cs">
+      <DependentUpon>EntityDAO.v.0.3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Generator\GroupDAO.cs">
+      <DependentUpon>EntityDAO.v.0.3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Generator\ModuleDAO.cs">
+      <DependentUpon>EntityDAO.v.0.3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Generator\NamedBaseEntityDAO.cs">
+      <DependentUpon>EntityDAO.v.0.3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Generator\PersonDAO.cs">
+      <DependentUpon>EntityDAO.v.0.3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Generator\SpecialtyDAO.cs">
+      <DependentUpon>EntityDAO.v.0.3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Generator\TraineeDAO.cs">
+      <DependentUpon>EntityDAO.v.0.3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Generator\TraineeWorkDAO.cs">
+      <DependentUpon>EntityDAO.v.0.3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Generator\TraineeWorkNoteDAO.cs">
+      <DependentUpon>EntityDAO.v.0.3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Generator\TraineeWorkValidateErrorDAO.cs">
+      <DependentUpon>EntityDAO.v.0.3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Generator\TrainingDAO.cs">
+      <DependentUpon>EntityDAO.v.0.3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Generator\UserDAO.cs">
+      <DependentUpon>EntityDAO.v.0.3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Generator\WorkToDoCategoryDAO.cs">
+      <DependentUpon>EntityDAO.v.0.3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Generator\WorkToDoDAO.cs">
+      <DependentUpon>EntityDAO.v.0.3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Base\NamedBaseEntity.cs" />
+    <Compile Include="Entities\TraineesWorks\TraineeWorkNote.cs" />
+    <Compile Include="Entities\Training\Training.cs" />
     <Compile Include="Entities\Training\Module.cs" />
     <Compile Include="Entities\Users\Former.cs" />
     <Compile Include="Entities\Users\Person.cs" />
     <Compile Include="Entities\Users\User.cs" />
-    <Compile Include="Entities\Work\WorkCategory.cs" />
-    <Compile Include="Entities\Work\WorkToDo.cs" />
-    <Compile Include="DAL\Exceptions\USBDeviceNotExistException.cs" />
-    <Compile Include="Entities\TraineeDirectory.cs" />
-    <Compile Include="Entities\ErrorMessage.cs" />
-    <Compile Include="GApp\Patterns\Singleton.cs" />
-    <Compile Include="GApp\GwinApp\eFormsManager.cs" />
-    <Compile Include="Presentation\AppForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentation\AppForm.Designer.cs">
-      <DependentUpon>AppForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\FormerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentation\FormerForm.Designer.cs">
-      <DependentUpon>FormerForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\UI\ConfigurationFileDeviceControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Presentation\UI\ConfigurationFileDeviceControl.Designer.cs">
-      <DependentUpon>ConfigurationFileDeviceControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\UI\ErrorMessageControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Presentation\UI\ErrorMessageControl.Designer.cs">
-      <DependentUpon>ErrorMessageControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\UI\RepertoriesControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Presentation\UI\RepertoriesControl.Designer.cs">
-      <DependentUpon>RepertoriesControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\UI\ShowWorksByCategoriesControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Presentation\UI\ShowWorksByCategoriesControl.Designer.cs">
-      <DependentUpon>ShowWorksByCategoriesControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\UI\Trainees\TraineeForm.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Presentation\UI\Trainees\TraineeForm.Designer.cs">
-      <DependentUpon>TraineeForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\UI\Trainees\TraineeUpdate.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Presentation\UI\Trainees\TraineeUpdate.Designer.cs">
-      <DependentUpon>TraineeUpdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\XML\XmlDataBase\XmlWorkToDoDb.cs" />
-    <Compile Include="Entities\Users\Group.cs" />
-    <Compile Include="Entities\Work.cs" />
+    <Compile Include="Entities\Training\WorkToDoCategory.cs" />
+    <Compile Include="Entities\Training\WorkToDo.cs" />
+    <Compile Include="Entities\TraineesWorks\TraineeWorkValidateError.cs" />
+    <Compile Include="Entities\Training\Group.cs" />
+    <Compile Include="Entities\TraineesWorks\TraineeWork.cs" />
     <Compile Include="Entities\Users\Trainee.cs" />
     <Compile Include="Enumerations\UserCategory.cs" />
-    <Compile Include="Enumerations\Repertories.cs" />
-    <Compile Include="Presentation\UI\Trainees\UserControl1.cs">
+    <Compile Include="Enumerations\ValisationStat.cs" />
+    <Compile Include="Presentation\Forms\GroupForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Presentation\UI\Trainees\UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <Compile Include="Presentation\Forms\GroupForm.Designer.cs">
+      <DependentUpon>GroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Forms\TraineeForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\Forms\TraineeForm.Designer.cs">
+      <DependentUpon>TraineeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DAL\XML\XmlDataBase\XmlTP_TrakingDb.cs" />
-    <EmbeddedResource Include="Presentation\AppForm.resx">
-      <DependentUpon>AppForm.cs</DependentUpon>
+    <Compile Include="Entities\Training\Specialty.cs" />
+    <EmbeddedResource Include="Presentation\Forms\GroupForm.resx">
+      <DependentUpon>GroupForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\FormerForm.resx">
-      <DependentUpon>FormerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\UI\ConfigurationFileDeviceControl.resx">
-      <DependentUpon>ConfigurationFileDeviceControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\UI\ErrorMessageControl.resx">
-      <DependentUpon>ErrorMessageControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\UI\RepertoriesControl.resx">
-      <DependentUpon>RepertoriesControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\UI\ShowWorksByCategoriesControl.resx">
-      <DependentUpon>ShowWorksByCategoriesControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\UI\Trainees\TraineeForm.resx">
+    <EmbeddedResource Include="Presentation\Forms\TraineeForm.resx">
       <DependentUpon>TraineeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\UI\Trainees\TraineeUpdate.resx">
-      <DependentUpon>TraineeUpdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\UI\Trainees\UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -292,9 +234,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Entities\Entities.cd" />
+    <None Include="Entities\Training\Trainning.cd" />
+    <None Include="Entities\TraineesWorks\TraineesWorks.cd" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\TP_Tracking.Entities.Former.datasource" />
+    <None Include="Properties\DataSources\TP_Tracking.Entities.Group.datasource" />
+    <None Include="Properties\DataSources\TP_Tracking.Entities.Module.datasource" />
+    <None Include="Properties\DataSources\TP_Tracking.Entities.NamedBaseEntity.datasource" />
+    <None Include="Properties\DataSources\TP_Tracking.Entities.Person.datasource" />
+    <None Include="Properties\DataSources\TP_Tracking.Entities.Specialty.datasource" />
     <None Include="Properties\DataSources\TP_Tracking.Entities.Trainee.datasource" />
+    <None Include="Properties\DataSources\TP_Tracking.Entities.TraineeWork.datasource" />
+    <None Include="Properties\DataSources\TP_Tracking.Entities.TraineeWorkNote.datasource" />
+    <None Include="Properties\DataSources\TP_Tracking.Entities.TraineeWorkValidateError.datasource" />
+    <None Include="Properties\DataSources\TP_Tracking.Entities.Training.datasource" />
+    <None Include="Properties\DataSources\TP_Tracking.Entities.User.datasource" />
+    <None Include="Properties\DataSources\TP_Tracking.Entities.WorkToDo.datasource" />
+    <None Include="Properties\DataSources\TP_Tracking.Entities.WorkToDoCategory.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -317,20 +273,20 @@
     <None Include="Resources\usb.png" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Presentation\UI\Trainees\" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="BLL\Generator\EntityBLO.v.0.2.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EntityBLO.v.0.2.cs</LastGenOutput>
     </Content>
-    <Content Include="DAL\Generator\EntityDAO.v.0.2.tt">
+    <Content Include="DAL\Generator\EntityDAO.v.0.3.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EntityDAO.v.0.2.cs</LastGenOutput>
+      <LastGenOutput>EntityDAO.v.0.3.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Classes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

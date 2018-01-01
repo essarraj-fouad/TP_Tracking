@@ -9,5 +9,10 @@ namespace TP_Tracking.DAL
 		{
 
         }
+
+		public PersonDAO() : base(null)
+		{
+			this.Context = new ModelContext();
+        }
    }
 }

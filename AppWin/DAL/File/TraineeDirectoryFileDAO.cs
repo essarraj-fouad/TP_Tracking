@@ -47,20 +47,20 @@ namespace TP_Tracking.DAL
             foreach (var file in Files)
             {
                 FileInfo fileInfo = new FileInfo(file);
-                Work rootWork = new Work(fileInfo);
+                TraineeWork rootWork = new TraineeWork(fileInfo);
                 traineeDirectory.WorksChilds.Add(rootWork);
 
                 LoadChildDataFile(rootWork);
             }
         }
 
-        private void LoadChildDataFile(Work fileData)
+        private void LoadChildDataFile(TraineeWork fileData)
         {
             string[] ChildsFiles = Directory.GetFileSystemEntries(fileData.FileInfo.FullName);
             foreach (var childFile in ChildsFiles)
             {
                 FileInfo fileInfo = new FileInfo(childFile);
-                fileData.WorksChilds.Add(new Work(fileInfo));
+                fileData.WorksChilds.Add(new TraineeWork(fileInfo));
             }
         }
 

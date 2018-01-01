@@ -8,7 +8,7 @@ using TP_Tracking.Entities;
 
 namespace TP_Tracking.DAL.XML
 {
-    public class WorkCategoryXmlDAO : BaseXmlDAO<XmlWorkToDoDb, WorkCategory>
+    public class WorkCategoryXmlDAO : BaseXmlDAO<XmlWorkToDoDb, WorkToDoCategory>
     {
         #region Segleton Pattern
         private static WorkCategoryXmlDAO instance;

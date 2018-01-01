@@ -10,13 +10,11 @@ namespace  TP_Tracking.BLL
         {
             this.entityDAO = new WorkToDoDAO(context);
         }
-
-       
-
-        // public WorkToDoBLO() : base()
-        // {
-        //   this.entityDAO = new WorkToDoDAO(new ModelContext());
-        // }
-
-    }
+		 
+		public WorkToDoBLO() : base()
+        {
+           this.entityDAO = new WorkToDoDAO(new ModelContext());
+        }
+ 
+	}
 }

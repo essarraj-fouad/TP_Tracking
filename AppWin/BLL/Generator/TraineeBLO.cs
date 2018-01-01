@@ -11,10 +11,10 @@ namespace  TP_Tracking.BLL
             this.entityDAO = new TraineeDAO(context);
         }
 		 
-		// public TraineeBLO() : base()
-        // {
-        //   this.entityDAO = new TraineeDAO(new ModelContext());
-        // }
+		public TraineeBLO() : base()
+        {
+           this.entityDAO = new TraineeDAO(new ModelContext());
+        }
  
 	}
 }

@@ -87,8 +87,8 @@ namespace TP_Tracking.DAL.XML
             data.Group.Add(new Group("TDI201"));
 
             // Create workCategory exemple
-            WorkCategory TPCategory = new WorkCategory("TP");
-            WorkCategory root = new WorkCategory("root");
+            WorkToDoCategory TPCategory = new WorkToDoCategory("TP");
+            WorkToDoCategory root = new WorkToDoCategory("root");
             data.WorkCategory.Add(TPCategory);
             data.WorkCategory.Add(root);
 

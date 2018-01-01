@@ -11,10 +11,10 @@ namespace  TP_Tracking.BLL
             this.entityDAO = new UserDAO(context);
         }
 		 
-		// public UserBLO() : base()
-        // {
-        //   this.entityDAO = new UserDAO(new ModelContext());
-        // }
+		public UserBLO() : base()
+        {
+           this.entityDAO = new UserDAO(new ModelContext());
+        }
  
 	}
 }

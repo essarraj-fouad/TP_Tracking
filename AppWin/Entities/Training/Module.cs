@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace TP_Tracking.Entities
 {
-    public class Module : BaseEntity
+    public class Module : NamedBaseEntity
     {
-        public string Name { get;  set; }
+        public string Code { get;  set; }
+        public int HourNumber { get; set; }
     }
 }

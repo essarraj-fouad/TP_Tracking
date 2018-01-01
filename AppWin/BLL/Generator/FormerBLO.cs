@@ -11,10 +11,10 @@ namespace  TP_Tracking.BLL
             this.entityDAO = new FormerDAO(context);
         }
 		 
-		// public FormerBLO() : base()
-        // {
-        //   this.entityDAO = new FormerDAO(new ModelContext());
-        // }
+		public FormerBLO() : base()
+        {
+           this.entityDAO = new FormerDAO(new ModelContext());
+        }
  
 	}
 }

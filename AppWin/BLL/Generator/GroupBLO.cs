@@ -11,10 +11,10 @@ namespace  TP_Tracking.BLL
             this.entityDAO = new GroupDAO(context);
         }
 		 
-		// public GroupBLO() : base()
-        // {
-        //   this.entityDAO = new GroupDAO(new ModelContext());
-        // }
+		public GroupBLO() : base()
+        {
+           this.entityDAO = new GroupDAO(new ModelContext());
+        }
  
 	}
 }

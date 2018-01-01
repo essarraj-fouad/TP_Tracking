@@ -9,5 +9,10 @@ namespace TP_Tracking.DAL
 		{
 
         }
+
+		public FormerDAO() : base(null)
+		{
+			this.Context = new ModelContext();
+        }
    }
 }

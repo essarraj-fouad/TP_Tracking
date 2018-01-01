@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TP_Tracking.Entities.Module" Collapsed="true">
+    <Position X="3.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Training\Module.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TP_Tracking.Entities.Group" Collapsed="true">
+    <Position X="3" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAQAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Training\Group.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Specialty" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TP_Tracking.Entities.Specialty">
+    <Position X="5.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Training\Specialty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TP_Tracking.Entities.Training" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAI=</HashCode>
+      <FileName>Entities\Training\Training.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Group" />
+      <Property Name="Module" />
+      <Property Name="Former" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TP_Tracking.Entities.Former" Collapsed="true">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Users\Former.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TP_Tracking.Entities.WorkToDoCategory" Collapsed="true">
+    <Position X="6.5" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Training\WorkToDoCategory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TP_Tracking.Entities.WorkToDo" Collapsed="true">
+    <Position X="3.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEQAAAAAAAgAEAEAAAAAAAAAAAAAAAAAAAACAABAAA=</HashCode>
+      <FileName>Entities\Training\WorkToDo.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Module" />
+      <Property Name="WorkToDoCategory" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

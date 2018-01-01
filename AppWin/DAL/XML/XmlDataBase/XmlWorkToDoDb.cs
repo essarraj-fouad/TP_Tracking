@@ -19,7 +19,7 @@ namespace TP_Tracking.DAL.XML
         }
         public List<Module> Module { set; get; }
         public List<WorkToDo> WorkToDo { set; get; }
-        public List<WorkCategory> WorkCategory { set; get; }
+        public List<WorkToDoCategory> WorkCategory { set; get; }
         public List<Group> Group { set; get; }
 
         public XmlWorkToDoDb()
@@ -28,7 +28,7 @@ namespace TP_Tracking.DAL.XML
             this.XmlDataBaseName = "works.db";
 
             WorkToDo = new List<WorkToDo>();
-            WorkCategory = new List<WorkCategory>();
+            WorkCategory = new List<WorkToDoCategory>();
             Group = new List<Group>();
             Module = new List<Entities.Module>();
         }

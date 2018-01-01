@@ -9,5 +9,10 @@ namespace TP_Tracking.DAL
 		{
 
         }
+
+		public GroupDAO() : base(null)
+		{
+			this.Context = new ModelContext();
+        }
    }
 }

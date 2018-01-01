@@ -9,6 +9,11 @@ namespace TP_Tracking.Entities
 {
     public class Person : BaseEntity
     {
+        public Person()
+        {
+            this.DateOfBirth = DateTime.Now;
+        }
+
         public string FirstName { set; get; }
         public string LastName { set; get; }
         public DateTime DateOfBirth { set; get; }
