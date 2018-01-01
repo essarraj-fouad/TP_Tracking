@@ -10,6 +10,7 @@
  <#
     // get a reference to the project of this t4 template
     var project = VisualStudioHelper.CurrentProject;
+	var RootNamespace = project.Properties.Item("RootNamespace").Value;
 	// get all class items from the code model
 	var allClasses = new VsCodeModel(this.VisualStudioHelper).GetAllCodeElementsOfType(project.CodeModel.CodeElements, EnvDTE.vsCMElement.vsCMElementClass, false);
     // Create file for All Entities
@@ -22,12 +23,11 @@
 			  manager.StartNewFile(codeClass.Name + "BLO.cs");
 
 #>
-using <#=   codeClass.Namespace.FullName #>;
+using <#=  codeClass.Namespace.FullName #>;
 using GApp.BLL;
-using GApp.DAL;
-using App.DAL;
+using <#= RootNamespace #>.DAL;
 using System.Data.Entity;
-namespace App.BLL
+namespace  <#= RootNamespace #>.BLL
 {
 	public partial class <#= codeClass.Name #>BLO : BaseBLO<<#= codeClass.Name #>>{
 	    
@@ -35,10 +35,11 @@ namespace App.BLL
         {
             this.entityDAO = new <#= codeClass.Name #>DAO(context);
         }
-		public <#= codeClass.Name #>BLO() : base()
-        {
-           this.entityDAO = new <#= codeClass.Name #>DAO(new ModelContext());
-        }
+		 
+		// public <#= codeClass.Name #>BLO() : base()
+        // {
+        //   this.entityDAO = new <#= codeClass.Name #>DAO(new ModelContext());
+        // }
  
 	}
 }

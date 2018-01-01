@@ -6,43 +6,40 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using TP_Tracking.DAL;
+using TP_Tracking.DAL.XML;
 using TP_Tracking.Entities;
 using TP_Tracking.Enumerations;
 
 namespace TP_Tracking.BLL
 {
-    public partial class WorkBLO
+    public partial class TraineeDirectoryBLO2
     {
-        private static WorkBLO instance;
-        private WorkDAO workDAO;
-        private WorkToDoBLO workToDoBLO;
-
-        private WorkBLO()
-        {
-            this.workDAO = new WorkDAO();
-            this.workToDoBLO = new WorkToDoBLO();
-            this.Validation();
-        }
-
-        public static WorkBLO Instance
+        #region Signleton Pattern
+        private static TraineeDirectoryBLO2 instance;
+        public static TraineeDirectoryBLO2 Instance
         {
             get
             {
                 if (instance == null)
-                {
-                    instance = new WorkBLO();
-                }
-                    return instance;
-
+                    instance = new TraineeDirectoryBLO2();
+                return instance;
             }
+        }
+        #endregion
 
+        private TraineeDirectoryFileDAO traineeDirectoryFileDAO;
+
+        private TraineeDirectoryBLO2()
+        {
+            this.traineeDirectoryFileDAO = new TraineeDirectoryFileDAO();
+            this.Validation();
         }
 
         public TraineeDirectory TraineeDirectory
         {
             get
             {
-                return workDAO.TraineeDirectory;
+                return traineeDirectoryFileDAO.TraineeDirectory;
             }
         }
 
@@ -70,13 +67,13 @@ namespace TP_Tracking.BLL
         /// </summary>
         public UserCategory SaveWorksState()
         {
-            string ModuleName = workToDoBLO.getData().ModuleName;
-            return workDAO.SaveWorksState(ModuleName);
+            string ModuleName = new TraineeBLO().getModuleName();
+            return traineeDirectoryFileDAO.SaveWorksState(ModuleName);
         }
 
         public static void CreateConfigurationFileExample()
         {
-            WorkToDoDAO.CreateConfigurationFileExample();
+            WorkToDoXmlDAO.CreateConfigurationFileExample();
         }
 
         /// <summary>
@@ -84,8 +81,15 @@ namespace TP_Tracking.BLL
         /// </summary>
         public void ReloadData()
         {
-            this.workDAO.Load();
+            this.traineeDirectoryFileDAO.Load();
             this.Validation();
+        }
+
+        public string DataFileName {
+        get {
+                return "";
+
+            }
         }
     }
 }

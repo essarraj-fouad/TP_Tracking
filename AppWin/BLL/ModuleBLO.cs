@@ -4,15 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TP_Tracking.DAL.XML;
-using TP_Tracking.Entities;
 
 namespace TP_Tracking.BLL
 {
-    public partial class WorkCategoryBLO
+    public partial class ModuleBLO
     {
-        public WorkCategoryBLO() : base()
+        public ModuleBLO()
         {
-            this.entityDAO = new WorkCategoryXmlDAO();
+            this.entityDAO = ModuleXmlDAO.Instance;
         }
     }
 }

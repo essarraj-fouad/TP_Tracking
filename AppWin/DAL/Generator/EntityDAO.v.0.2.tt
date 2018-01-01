@@ -10,6 +10,7 @@
  <#
     // get a reference to the project of this t4 template
     var project = VisualStudioHelper.CurrentProject;
+	var RootNamespace = project.Properties.Item("RootNamespace").Value;
 	// get all class items from the code model
 	var allClasses = new VsCodeModel(this.VisualStudioHelper).GetAllCodeElementsOfType(project.CodeModel.CodeElements, EnvDTE.vsCMElement.vsCMElementClass, false);
     // Create file for All Entities
@@ -25,7 +26,7 @@
 using <#=   codeClass.Namespace.FullName #>;
 using GApp.DAL;
 using System.Data.Entity;
-namespace App.DAL
+namespace <#= RootNamespace #>.DAL
 {
     public partial class <#= codeClass.Name #>DAO : BaseDAO<<#= codeClass.Name #>>{
         

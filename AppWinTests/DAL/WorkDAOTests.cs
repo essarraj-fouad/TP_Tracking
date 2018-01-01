@@ -30,14 +30,14 @@ namespace TP_Tracking.DAL.Tests
         [TestMethod()]
         public void ModuleDirectoryDAOTest()
         {
-            WorkDAO workDAO = new WorkDAO();
+            TraineeDirectoryFileDAO workDAO = new TraineeDirectoryFileDAO();
             Assert.AreEqual(workDAO.TraineeDirectory.WorksChilds.Count ,2);
         }
 
         [TestMethod()]
         public void LoadTest()
         {
-            WorkDAO workDAO = new WorkDAO();
+            TraineeDirectoryFileDAO workDAO = new TraineeDirectoryFileDAO();
             workDAO.Load();
             Assert.AreEqual(workDAO.TraineeDirectory.WorksChilds.Count, 2);
         }
@@ -45,9 +45,8 @@ namespace TP_Tracking.DAL.Tests
         [TestMethod()]
         public void SaveModuleDirectoryStatTest()
         {
-            Assert.Fail();
-                //WorkDAO moduleDirectoryDAO = new WorkDAO();
-                //moduleDirectoryDAO.SaveModuleDirectoryStat();
+            //WorkDAO moduleDirectoryDAO = new WorkXmlDAO();
+            //moduleDirectoryDAO.SaveModuleDirectoryStat();
         }
     }
 }

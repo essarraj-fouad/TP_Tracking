@@ -9,6 +9,7 @@ using AppWinTests;
 using TP_Tracking.Entities;
 using TP_Tracking.DAL;
 using TP_Tracking.DAL.Tests;
+using TP_Tracking.DAL.XML;
 
 namespace TP_Tracking.BLL.Tests
 {
@@ -19,26 +20,26 @@ namespace TP_Tracking.BLL.Tests
         public void InitializeModuleDirectoryForTest()
         {
             TestTraking_Test.CreateModuleDirectory();
-            WorkToDoDAO.CreateConfigurationFileExample();
+            WorkToDoXmlDAO.CreateConfigurationFileExample();
         }
         [TestCleanup]
         public void CleanModuleDirectoryForTest()
         {
             TestTraking_Test.CreateModuleDirectory();
-            WorkToDoDAO.DeleteConfigurationFileExample();
+            WorkToDoXmlDAO.DeleteConfigurationFileExample();
         }
 
         [TestMethod()]
         public void ModuleDirectoryBLOTest()
         {
-            WorkBLO ModuleDirectoryBLO = WorkBLO.Instance;
+            TraineeDirectoryBLO2 ModuleDirectoryBLO = TraineeDirectoryBLO2.Instance;
             Assert.AreEqual(ModuleDirectoryBLO.TraineeDirectory.WorksChilds.Count, 2);
         }
 
         [TestMethod()]
         public void ValidateTest()
         {
-            WorkBLO ModuleDirectoryBLO = WorkBLO.Instance;
+            TraineeDirectoryBLO2 ModuleDirectoryBLO = TraineeDirectoryBLO2.Instance;
             ModuleDirectoryBLO.Validation();
             Assert.AreEqual(ModuleDirectoryBLO.TraineeDirectory.WorksChilds.Count, 2);
         }
@@ -47,7 +48,7 @@ namespace TP_Tracking.BLL.Tests
         public void SaveStateTest()
         {
 
-            WorkBLO ModuleDirectoryBLO = WorkBLO.Instance;
+            TraineeDirectoryBLO2 ModuleDirectoryBLO = TraineeDirectoryBLO2.Instance;
                 ModuleDirectoryBLO.SaveWorksState();
             
         }

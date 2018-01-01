@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<WorkToDoXMLDataBaseObject xmlns-xsi="http-//www.w3.org/2001/XMLSchema-instance" xmlns-xsd="http-//www.w3.org/2001/XMLSchema">
-  <WorksToDo>
+<XmlWorkToDoDb xmlns-xsi="http-//www.w3.org/2001/XMLSchema-instance" xmlns-xsd="http-//www.w3.org/2001/XMLSchema">
+  <WorkToDo>
     <WorkToDo>
       <Id>1</Id>
       <Title>TP</Title>
@@ -293,8 +293,8 @@ TD 39 - Sérialisation binaire d’un objet
     </WorkToDo>
 
 
-  </WorksToDo>
-    <WorkCategories>
+  </WorkToDo>
+  <WorkCategory>
       <WorkCategory>
         <Id>1</Id>
         <Reference>TP</Reference>
@@ -305,12 +305,13 @@ TD 39 - Sérialisation binaire d’un objet
         <Reference>root</Reference>
         <Name>root</Name>
       </WorkCategory>
-    </WorkCategories>
-    <Groups>
+    </WorkCategory>
+    <Group>
       <Group>
         <Id>1</Id>
         <Reference>TDI201</Reference>
         <Name>TDI201</Name>
       </Group>
-    </Groups>
-  </WorkToDoXMLDataBaseObject>
+    </Group>
+  
+</XmlWorkToDoDb>

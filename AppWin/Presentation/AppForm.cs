@@ -1,4 +1,5 @@
 ﻿using GApp.DAL.Exceptions;
+using GApp.DAL.Xml.Exceptions;
 using GwinApp;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace TP_Tracking.Presentation
 {
     public partial class AppForm : Form
     {
-        WorkBLO workBLO;
+        TraineeDirectoryBLO2 workBLO;
         public AppForm()
         {
             InitializeComponent();
@@ -36,7 +37,7 @@ namespace TP_Tracking.Presentation
         {
             try
             {
-                workBLO = WorkBLO.Instance;
+                workBLO = TraineeDirectoryBLO2.Instance;
 
                 this.showWorksByCategoriesControl1.RefreshShow(workBLO.TraineeDirectory);
                 this.configurationFileDeviceControl1.RefreshControl();
@@ -45,23 +46,12 @@ namespace TP_Tracking.Presentation
             {
                 MessageBox.Show(ex.Message);
             }
-            catch (TP_Tracking.Exceptions.ConfigurationFileNotExistException ex)
-            {
-                MessageBox.Show(ex.Message);
-                //DialogResult dialogResult = MessageBox.Show("Voullez-vous créer un fichier exemple", "", MessageBoxButtons.YesNo);
-                //if (dialogResult == DialogResult.Yes)
-                //{
-                //    WorkBLO.CreateConfigurationFileExample();
-                //}
-                //this.bt_refresh_Click(null, null);
-            }
-
-            lbl_dataFileName.Text = WorkBLO.Instance.DataFileName;
+           // lbl_dataFileName.Text = TraineeDirectoryBLO2.Instance.DataFileName;
         }
 
         private void bt_refresh_Click(object sender, EventArgs e)
         {
-            WorkBLO.Instance.ReloadData();
+            TraineeDirectoryBLO2.Instance.ReloadData();
             this.LoadData();
            
 
@@ -112,7 +102,7 @@ namespace TP_Tracking.Presentation
             eFormsManager formsManager = new eFormsManager();
 
             Trainee work_directory_trainee = workBLO.TraineeDirectory.Trainee;
-            Trainee Cuurent_Trainee = TraineeBLO.Instance.Find(work_directory_trainee);
+            Trainee Cuurent_Trainee = new TraineeBLO().Find(work_directory_trainee);
 
             // Create Manager Form
             TraineeUpdate TraineeUpdate = new TraineeUpdate();

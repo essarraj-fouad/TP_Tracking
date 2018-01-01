@@ -1,20 +1,20 @@
 ﻿using TP_Tracking.Entities;
 using GApp.BLL;
-using GApp.DAL;
-using App.DAL;
+using TP_Tracking.DAL;
 using System.Data.Entity;
-namespace App.BLL
+namespace  TP_Tracking.BLL
 {
-	public partial class WorkBLO : BaseBLO<Work>{
+	public partial class TraineeDirectoryBLO2 : BaseBLO<Work>{
 	    
-		public WorkBLO(DbContext context) : base()
+		public TraineeDirectoryBLO2(DbContext context) : base()
         {
             this.entityDAO = new WorkDAO(context);
         }
-		public WorkBLO() : base()
-        {
-           this.entityDAO = new WorkDAO(new ModelContext());
-        }
+		 
+		// public WorkBLO() : base()
+        // {
+        //   this.entityDAO = new WorkDAO(new ModelContext());
+        // }
  
 	}
 }

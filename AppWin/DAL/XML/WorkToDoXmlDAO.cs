@@ -1,5 +1,7 @@
 ﻿using GApp.DAL;
 using GApp.DAL.Exceptions;
+using GApp.DAL.Xml;
+using GApp.DAL.Xml.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,44 +13,41 @@ using System.Xml.Serialization;
 using TP_Tracking.Entities;
 using TP_Tracking.Exceptions;
 
-namespace TP_Tracking.DAL
+namespace TP_Tracking.DAL.XML
 {
     /// <summary>
     /// Work to Do XML DataBase
     /// </summary>
-    public class WorkToDoDAO : XmlBaseDAO<WorkToDoDAO_DB, WorkToDoDAO>
+    public class WorkToDoXmlDAO : BaseXmlDAO<XmlWorkToDoDb,WorkToDo>
     {
-        public string DataFileName
+        #region Segleton Pattern
+        private static WorkToDoXmlDAO instance;
+        public static WorkToDoXmlDAO Instance
         {
             get
             {
-                return this.XMLDataBaseName;
+                if (instance == null)
+                    instance = new WorkToDoXmlDAO();
+                return instance;
             }
         }
+        #endregion
 
-        public WorkToDoDAO() : base()
-        {
-            this.CreateFileDataIdNotExist = false;
-            this.XMLDataBaseName = "works.db";
-
-            
-            this.LoadXML();
-        }
 
         protected override void LoadXML()
         {
-            CheckXMLDataBaseName();
+            CheckXmlDataBaseVersionName();
             base.LoadXML();
         }
 
-        private void CheckXMLDataBaseName()
+        private void CheckXmlDataBaseVersionName()
         {
-            string[] all_data_file_names = Directory.GetFiles(".", "*" + this.XMLDataBaseName);
+            string[] all_data_file_names = Directory.GetFiles(".", "*" + this.XmlData.XmlDataBaseName);
 
             if (all_data_file_names.Count() == 0)
             {
-                string msg = string.Format("Le fichier de données {0} n'exist pas", this.XMLDataBaseName);
-                throw new ConfigurationFileNotExistException(msg);
+                string msg = string.Format("Le fichier de données {0} n'exist pas", this.XmlData.XmlDataBaseName);
+                throw new XmlDataFileNotExistException(msg);
             }
             else
             {
@@ -57,18 +56,18 @@ namespace TP_Tracking.DAL
                 // module-name_v2_works.db;
 
                 var DataFilesNamesObjects = from fileName in all_data_file_names.ToList<string>()
-                                            let parts = fileName.Split('_')
-                                            where parts.Count() == 3
+                                            let parts = fileName.Replace(".\\","").Split('.')
+                                            where parts.Count() == 4
                                             select new { ModuleName = parts[0], WorksVersion = parts[1].Last(),fileName = fileName };
 
 
                 if (DataFilesNamesObjects.Count() == 0)
                 {
-                    string msg = string.Format("Le fichier de données {0} exist mais il  ne contient pas le nom du module et le numéro de version", this.XMLDataBaseName);
-                    throw new XmlDataFileNotExistException();
+                    string msg = string.Format("Le fichier de données {0} exist mais il  ne contient pas le nom du module et le numéro de version", this.XmlData.XmlDataBaseName);
+                    throw new XmlDataFileNotExistException(msg);
                 }
 
-                this.XMLDataBaseName = (from d in DataFilesNamesObjects
+                this.XmlData.XmlDataBaseName = (from d in DataFilesNamesObjects
                                         orderby d.WorksVersion
                                         select d).Last().fileName;
 
@@ -82,25 +81,25 @@ namespace TP_Tracking.DAL
         public static void CreateConfigurationFileExample()
         {
             // Create Data Exemple Instance
-            WorkToDoDAO_DB data = new WorkToDoDAO_DB();
+            XmlWorkToDoDb data = new XmlWorkToDoDb();
 
             // Create groupes examples
-            data.Groups.Add(new Group("TDI201"));
+            data.Group.Add(new Group("TDI201"));
 
             // Create workCategory exemple
             WorkCategory TPCategory = new WorkCategory("TP");
             WorkCategory root = new WorkCategory("root");
-            data.WorkCategories.Add(TPCategory);
-            data.WorkCategories.Add(root);
+            data.WorkCategory.Add(TPCategory);
+            data.WorkCategory.Add(root);
 
             // Creatre work to do example
-            data.WorksToDo.Add(new WorkToDo("TP", root));
-            data.WorksToDo.Add(new WorkToDo("TD", root));
+            data.WorkToDo.Add(new WorkToDo("TP", root));
+            data.WorkToDo.Add(new WorkToDo("TD", root));
 
-            data.WorksToDo.Add(new WorkToDo("TP1", TPCategory));
-            data.WorksToDo.Add(new WorkToDo("TP2", TPCategory));
+            data.WorkToDo.Add(new WorkToDo("TP1", TPCategory));
+            data.WorkToDo.Add(new WorkToDo("TP2", TPCategory));
 
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(WorkToDoDAO_DB));
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(XmlWorkToDoDb));
             TextWriter TextWriter = new StreamWriter("work_to_do_exemple.xml");
             xmlSerializer.Serialize(TextWriter, data);
             TextWriter.Close();
@@ -109,7 +108,5 @@ namespace TP_Tracking.DAL
         {
             File.Delete("work_to_do_exemple.xml");
         }
-
-
     }
 }

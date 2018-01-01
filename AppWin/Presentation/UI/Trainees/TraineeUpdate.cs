@@ -22,7 +22,7 @@ namespace TP_Tracking.Presentation.UI.Trainees
         private void buttonSave_Click(object sender, EventArgs e)
         {
             this.traineeForm1.readEntityFromControls();
-            TraineeBLO.Instance.Save(this.traineeForm1.Value as Trainee);
+            new TraineeBLO().Save(this.traineeForm1.Value as Trainee);
             (this.Parent as Form).Close();
 
         }

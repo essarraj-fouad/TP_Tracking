@@ -8,31 +8,16 @@ using TP_Tracking.Entities;
 using GApp.Entities;
 using TP_Tracking.DAL;
 using GApp.Patterns;
+using TP_Tracking.DAL.XML;
 
 namespace TP_Tracking.BLL
 {
-    public class TraineeBLO : SingleBaseBLO<Trainee>
+    public partial class TraineeBLO  
     {
-
-        private static TraineeBLO _current;
-        public static TraineeBLO Instance = Singleton<TraineeBLO>.GetSingleton(ref _current, () => new TraineeBLO());
-
-        #region Signleton Pattern
-        //private static TraineeBLO instance;
-        //public static TraineeBLO Instance
-        //{
-        //    get
-        //    {
-        //        if (instance == null)
-        //            instance = new TraineeBLO();
-        //        return instance;
-        //    }
-        //}
-        #endregion
-
-        private TraineeBLO()
+ 
+        public TraineeBLO()
         {
-            EntityDao = TraineeDAO.Instance;
+            this.entityDAO = TraineeXmlDAO.Instance;
         }
 
         /// <summary>
@@ -42,7 +27,7 @@ namespace TP_Tracking.BLL
         /// <returns></returns>
         public override int Save(Trainee entity)
         {
-            WorkBLO.Instance
+            TraineeDirectoryBLO2.Instance
                 .TraineeDirectory
                 .Trainee = entity as Trainee;
             return base.Save(entity);
@@ -55,18 +40,21 @@ namespace TP_Tracking.BLL
         public Trainee Find(Trainee work_directory_trainee)
         {
             // if current trainee null , create it by work_directory_trainee
-            Trainee trainee = base.Find();
+            Trainee trainee = this.FindAll().FirstOrDefault();
             if (trainee == null)
             {
                 this.Save(work_directory_trainee);
             }
-            trainee = base.Find();
+            trainee = this.FindAll().FirstOrDefault();
             return trainee;
         }
 
-        
-
-
-
+        public string getModuleName()
+        {
+          Module m =  new ModuleBLO().FindAll().FirstOrDefault();
+            if (m == null)
+                throw new Exception("Le nom du module n'exist pas dans la base de données");
+            return m.Name;
+        }
     }
 }

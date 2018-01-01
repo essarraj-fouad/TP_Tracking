@@ -40,6 +40,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\GApp\GApp.dll</HintPath>
     </Reference>
+    <Reference Include="GApp.DAL.XML">
+      <HintPath>..\packages\GApp\GApp.DAL.XML.dll</HintPath>
+    </Reference>
     <Reference Include="IGApp, Version=0.2.0.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="System" />
   </ItemGroup>

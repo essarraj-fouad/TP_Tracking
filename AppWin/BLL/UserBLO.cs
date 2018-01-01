@@ -8,12 +8,12 @@ using TP_Tracking.Enumerations;
 
 namespace TP_Tracking.BLL
 {
-    public class UserBLO
+    public partial class UserBLO
     {
-        private UserDAO userDAO;
+        private DeviceDA deviceDA;
         public UserBLO()
         {
-            this.userDAO = new UserDAO();
+            this.deviceDA = new DeviceDA();
         }
         /// <summary>
         /// Get the UserCagrory that use the application
@@ -21,7 +21,7 @@ namespace TP_Tracking.BLL
         /// <returns></returns>
         public UserCategory GetUserCagegory()
         {
-            if (this.userDAO.isFormerDeviceExist())
+            if (this.deviceDA.isFormerDeviceExist())
                 return UserCategory.Former;
             else
                 return UserCategory.Trainee;

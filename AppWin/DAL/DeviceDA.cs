@@ -10,7 +10,7 @@ namespace TP_Tracking.DAL
     /// <summary>
     /// 
     /// </summary>
-    public class UserDAO
+    public class DeviceDA
     {
         private static string FormerDeviceVolumeLabel = "Formateur";
        

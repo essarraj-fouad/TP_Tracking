@@ -1,9 +1,8 @@
 ﻿using TP_Tracking.Entities;
 using GApp.BLL;
-using GApp.DAL;
-using App.DAL;
+using TP_Tracking.DAL;
 using System.Data.Entity;
-namespace App.BLL
+namespace  TP_Tracking.BLL
 {
 	public partial class UserBLO : BaseBLO<User>{
 	    
@@ -11,10 +10,11 @@ namespace App.BLL
         {
             this.entityDAO = new UserDAO(context);
         }
-		public UserBLO() : base()
-        {
-           this.entityDAO = new UserDAO(new ModelContext());
-        }
+		 
+		// public UserBLO() : base()
+        // {
+        //   this.entityDAO = new UserDAO(new ModelContext());
+        // }
  
 	}
 }

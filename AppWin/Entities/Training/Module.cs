@@ -9,5 +9,6 @@ namespace TP_Tracking.Entities
 {
     public class Module : BaseEntity
     {
+        public string Name { get;  set; }
     }
 }

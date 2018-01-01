@@ -11,32 +11,25 @@ namespace TP_Tracking.BLL
     /// <summary>
     /// Validate Trainee directory with WorkToDo configuration
     /// </summary>
-    public partial class WorkBLO
+    public partial class TraineeDirectoryBLO2
     {
-        public string DataFileName {
-
-            get
-            {
-                return this.workToDoBLO.DataFileName;
-            }
-        }
+       
 
         /// <summary>
         /// Validation trainee directory
         /// </summary>
         public void Validation()
         {
-            WorkToDoDAO_DB workToDoData = this.workToDoBLO.getData();
 
-            var rootWorkToDo = workToDoBLO.FindByCategoryReference("root");
+            var rootWorkToDo =new WorkToDoBLO().FindByCategoryReference("root");
 
-            CheckFileMustExist(this.workDAO.TraineeDirectory, rootWorkToDo);
-            CheckFileMustNotExist(this.workDAO.TraineeDirectory, rootWorkToDo);
+            CheckFileMustExist(this.traineeDirectoryFileDAO.TraineeDirectory, rootWorkToDo);
+            CheckFileMustNotExist(this.traineeDirectoryFileDAO.TraineeDirectory, rootWorkToDo);
 
-            foreach (WorkCategory workCategory in workToDoData.WorkCategories)
+            foreach (WorkCategory workCategory in new WorkCategoryBLO().FindAll())
             {
                 if (workCategory.Reference == "root") continue;
-                var WorksToDo = workToDoBLO.FindByCategoryReference(workCategory.Reference);
+                var WorksToDo = new WorkToDoBLO().FindByCategoryReference(workCategory.Reference);
                 var rootWorkByCategoryReference = this.FindRootWorkByCategoryReference(workCategory.Reference);
                 CheckFileMustExist(rootWorkByCategoryReference, WorksToDo);
                 CheckFileMustNotExist(rootWorkByCategoryReference, WorksToDo);

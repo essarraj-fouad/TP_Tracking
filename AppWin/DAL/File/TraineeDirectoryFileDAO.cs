@@ -1,5 +1,4 @@
-﻿using Gapp.DAL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,7 +11,7 @@ using TP_Tracking.Exceptions;
 
 namespace TP_Tracking.DAL
 {
-    public class WorkDAO : FileBaseDAO 
+    public class TraineeDirectoryFileDAO 
     {
         // Data
         private static TraineeDirectory traineeDirectory = null;
@@ -25,7 +24,7 @@ namespace TP_Tracking.DAL
             }
         }
 
-        public WorkDAO()
+        public TraineeDirectoryFileDAO()
         {
             traineeDirectory = new TraineeDirectory();
             this.Load();
@@ -77,10 +76,10 @@ namespace TP_Tracking.DAL
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(TraineeDirectory));
 
             // if former
-            if (new UserDAO().GetFormerDeviceInfo() != null)
+            if (new DeviceDA().GetFormerDeviceInfo() != null)
             {
                 // Create former directory if not exist
-                path = new UserDAO().GetFormerDeviceInfo().RootDirectory.FullName + ModuleName;
+                path = new DeviceDA().GetFormerDeviceInfo().RootDirectory.FullName + ModuleName;
                 if (!File.Exists(path)) Directory.CreateDirectory(path);
                 path  += "/Trainees/";
                 if (!File.Exists(path)) Directory.CreateDirectory(path);

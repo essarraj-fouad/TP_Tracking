@@ -1,9 +1,8 @@
 ﻿using TP_Tracking.Entities;
 using GApp.BLL;
-using GApp.DAL;
-using App.DAL;
+using TP_Tracking.DAL;
 using System.Data.Entity;
-namespace App.BLL
+namespace  TP_Tracking.BLL
 {
 	public partial class GroupBLO : BaseBLO<Group>{
 	    
@@ -11,10 +10,11 @@ namespace App.BLL
         {
             this.entityDAO = new GroupDAO(context);
         }
-		public GroupBLO() : base()
-        {
-           this.entityDAO = new GroupDAO(new ModelContext());
-        }
+		 
+		// public GroupBLO() : base()
+        // {
+        //   this.entityDAO = new GroupDAO(new ModelContext());
+        // }
  
 	}
 }

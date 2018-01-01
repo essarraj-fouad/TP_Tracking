@@ -4,31 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TP_Tracking.DAL;
+using TP_Tracking.DAL.XML;
 using TP_Tracking.Entities;
 
 namespace TP_Tracking.BLL
 {
-    public class WorkToDoBLO
+    public partial class WorkToDoBLO 
     {
-       private WorkToDoDAO workToDoDAO { set; get; }
-        public string DataFileName {
-            get
-            {
-                return this.workToDoDAO.DataFileName;
-            }
-
-
-        }
-
+      
         public WorkToDoBLO()
         {
-            this.workToDoDAO =  WorkToDoDAO.Instance;
+            this.entityDAO =  WorkToDoXmlDAO.Instance;
         }
 
-        public WorkToDoDAO_DB getData()
-        {
-            return this.workToDoDAO.getData();
-        }
         /// <summary>
         /// get a list of work in the root directory
         /// </summary>
@@ -36,9 +24,11 @@ namespace TP_Tracking.BLL
         public List<WorkToDo> FindByCategoryReference(string CategoryReference)
         {
             // a root works have WorkCategory with reference == "root"
-          return  this.workToDoDAO.getData().WorksToDo
+          return  this.FindAll()
                .Where(w => w.WorkCategory?.Reference == CategoryReference)
                .OrderBy(w => w.Ordre).ToList<WorkToDo>();
         }
+
+        
     }
 }

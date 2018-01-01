@@ -1,9 +1,8 @@
 ﻿using TP_Tracking.Entities;
 using GApp.BLL;
-using GApp.DAL;
-using App.DAL;
+using TP_Tracking.DAL;
 using System.Data.Entity;
-namespace App.BLL
+namespace  TP_Tracking.BLL
 {
 	public partial class WorkToDoBLO : BaseBLO<WorkToDo>{
 	    
@@ -11,10 +10,13 @@ namespace App.BLL
         {
             this.entityDAO = new WorkToDoDAO(context);
         }
-		public WorkToDoBLO() : base()
-        {
-           this.entityDAO = new WorkToDoDAO(new ModelContext());
-        }
- 
-	}
+
+       
+
+        // public WorkToDoBLO() : base()
+        // {
+        //   this.entityDAO = new WorkToDoDAO(new ModelContext());
+        // }
+
+    }
 }

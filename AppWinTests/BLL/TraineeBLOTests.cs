@@ -16,7 +16,7 @@ namespace TP_Tracking.BLL.Tests
         public void SaveTest()
         {
             Trainee t = new Trainee();
-            TraineeBLO.Instance.Save(t);
+            new TraineeBLO().Save(t);
 
           
         }
