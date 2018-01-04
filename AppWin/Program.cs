@@ -7,7 +7,7 @@ using TP_Tracking.Presentation;
 
 namespace AppWin
 {
-    static class Program
+    static class  Program
     {
         /// <summary>
         /// Point d'entrée principal de l'application.
