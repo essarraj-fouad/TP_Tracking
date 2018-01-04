@@ -8,14 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GwinForm;
+using TP_Tracking.Entities;
 
-namespace TP_Tracking.Presentation.Forms
+namespace TP_Tracking.Specialties
 {
-    public partial class GroupForm : GwinFormControl
+    public partial class SpecialtyForm : GwinFormControl
     {
-        public GroupForm()
+        public SpecialtyForm()
         {
             InitializeComponent();
         }
+
+        private void specialtyBindingNavigator_RefreshItems(object sender, EventArgs e)
+        {
+                    }
+
+        
     }
 }

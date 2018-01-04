@@ -38,29 +38,38 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="GApp">
-      <HintPath>..\packages\GApp\GApp.dll</HintPath>
+    <Reference Include="GApp.BLL">
+      <HintPath>..\packages\GApp\GApp.BLL.dll</HintPath>
     </Reference>
-    <Reference Include="GApp.DAL.EF6">
+    <Reference Include="GApp.Core">
+      <HintPath>..\packages\GApp\GApp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GApp.DAL.EF6, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\GApp\GApp.DAL.EF6.dll</HintPath>
     </Reference>
-    <Reference Include="GApp.DAL.XML">
-      <HintPath>..\packages\GApp\GApp.DAL.XML.dll</HintPath>
+    <Reference Include="GwinApp.Core">
+      <HintPath>..\packages\GApp\GwinApp.Core.dll</HintPath>
     </Reference>
-    <Reference Include="GForm">
-      <HintPath>..\packages\GApp\GForm.dll</HintPath>
-    </Reference>
-    <Reference Include="GwinApp">
-      <HintPath>..\packages\GApp\GwinApp.dll</HintPath>
-    </Reference>
-    <Reference Include="GwinDataGrid">
+    <Reference Include="GwinDataGrid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\GApp\GwinDataGrid.dll</HintPath>
     </Reference>
-    <Reference Include="GwinForm">
+    <Reference Include="GwinForm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\GApp\GwinForm.dll</HintPath>
     </Reference>
-    <Reference Include="IGApp">
-      <HintPath>..\packages\GApp\IGApp.dll</HintPath>
+    <Reference Include="GwinManager">
+      <HintPath>..\packages\GApp\GwinManager.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="SQLite.CodeFirst">
       <HintPath>..\packages\SQLite.CodeFirst.1.5.0.21\lib\net45\SQLite.CodeFirst.dll</HintPath>
@@ -203,26 +212,62 @@
     <Compile Include="Entities\Users\Trainee.cs" />
     <Compile Include="Enumerations\UserCategory.cs" />
     <Compile Include="Enumerations\ValisationStat.cs" />
-    <Compile Include="Presentation\Forms\GroupForm.cs">
+    <Compile Include="Presentation\Groups\GroupDataGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Presentation\Forms\GroupForm.Designer.cs">
+    <Compile Include="Presentation\Groups\GroupDataGrid.Designer.cs">
+      <DependentUpon>GroupDataGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Specialties\SpecialtyDataGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\Specialties\SpecialtyDataGrid.Designer.cs">
+      <DependentUpon>SpecialtyDataGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Groups\GroupForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\Groups\GroupForm.Designer.cs">
       <DependentUpon>GroupForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Forms\TraineeForm.cs">
+    <Compile Include="Presentation\Specialties\SpecialtyForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Presentation\Forms\TraineeForm.Designer.cs">
+    <Compile Include="Presentation\Specialties\SpecialtyForm.Designer.cs">
+      <DependentUpon>SpecialtyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Trainees\TraineeForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\Trainees\TraineeForm.Designer.cs">
       <DependentUpon>TraineeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\Training\Specialty.cs" />
-    <EmbeddedResource Include="Presentation\Forms\GroupForm.resx">
+    <EmbeddedResource Include="Presentation\Groups\GroupDataGrid.resx">
+      <DependentUpon>GroupDataGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Specialties\SpecialtyDataGrid.resx">
+      <DependentUpon>SpecialtyDataGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Groups\GroupForm.resx">
       <DependentUpon>GroupForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\Forms\TraineeForm.resx">
+    <EmbeddedResource Include="Presentation\Specialties\SpecialtyForm.resx">
+      <DependentUpon>SpecialtyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Trainees\TraineeForm.resx">
       <DependentUpon>TraineeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -36,12 +36,34 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GApp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\GApp\GApp.dll</HintPath>
+    <Reference Include="GApp.BLL">
+      <HintPath>..\packages\GApp\GApp.BLL.dll</HintPath>
     </Reference>
-    <Reference Include="GApp.DAL.EF6, Version=0.2.0.0, Culture=neutral, PublicKeyToken=null" />
-    <Reference Include="IGApp, Version=0.2.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="GApp.Core">
+      <HintPath>..\packages\GApp\GApp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GApp.DAL.EF6, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\GApp\GApp.DAL.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="GwinApp.Core">
+      <HintPath>..\packages\GApp\GwinApp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GwinDataGrid">
+      <HintPath>..\packages\GApp\GwinDataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="GwinForm">
+      <HintPath>..\packages\GApp\GwinForm.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
