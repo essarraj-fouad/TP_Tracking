@@ -51,7 +51,7 @@
             this.groupBoxEntity.Controls.Add(this.descriptionTextBox);
             this.groupBoxEntity.Controls.Add(nameLabel);
             this.groupBoxEntity.Controls.Add(this.nameTextBox);
-            this.groupBoxEntity.Size = new System.Drawing.Size(397, 201);
+            this.groupBoxEntity.Size = new System.Drawing.Size(393, 195);
             this.groupBoxEntity.Text = "Group";
             this.groupBoxEntity.Enter += new System.EventHandler(this.groupBoxEntity_Enter);
             // 
@@ -73,6 +73,15 @@
             descriptionLabel.TabIndex = 2;
             descriptionLabel.Text = "Description:";
             // 
+            // specialtyLabel
+            // 
+            specialtyLabel.AutoSize = true;
+            specialtyLabel.Location = new System.Drawing.Point(25, 58);
+            specialtyLabel.Name = "specialtyLabel";
+            specialtyLabel.Size = new System.Drawing.Size(53, 13);
+            specialtyLabel.TabIndex = 4;
+            specialtyLabel.Text = "Specialty:";
+            // 
             // nameTextBox
             // 
             this.nameTextBox.Location = new System.Drawing.Point(84, 28);
@@ -88,19 +97,10 @@
             this.descriptionTextBox.Size = new System.Drawing.Size(298, 99);
             this.descriptionTextBox.TabIndex = 3;
             // 
-            // specialtyLabel
-            // 
-            specialtyLabel.AutoSize = true;
-            specialtyLabel.Location = new System.Drawing.Point(25, 58);
-            specialtyLabel.Name = "specialtyLabel";
-            specialtyLabel.Size = new System.Drawing.Size(53, 13);
-            specialtyLabel.TabIndex = 4;
-            specialtyLabel.Text = "Specialty:";
-            // 
             // specialtyComboBox
             // 
             this.specialtyComboBox.DataSource = this.specialtyBindingSource;
-            this.specialtyComboBox.DisplayMember = "Name";
+            this.specialtyComboBox.DisplayMember = "Code";
             this.specialtyComboBox.FormattingEnabled = true;
             this.specialtyComboBox.Location = new System.Drawing.Point(84, 55);
             this.specialtyComboBox.Name = "specialtyComboBox";
@@ -117,8 +117,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "GroupForm";
-            this.Size = new System.Drawing.Size(397, 201);
+            this.Size = new System.Drawing.Size(393, 195);
             this.Title = "Group";
+            this.Load += new System.EventHandler(this.GroupForm_Load);
             this.groupBoxEntity.ResumeLayout(false);
             this.groupBoxEntity.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.specialtyBindingSource)).EndInit();

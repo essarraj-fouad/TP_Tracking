@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GwinForm;
+using TP_Tracking.BLL;
 
 namespace TP_Tracking.Presentation.Forms
 {
@@ -21,6 +22,11 @@ namespace TP_Tracking.Presentation.Forms
         private void groupBoxEntity_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void GroupForm_Load(object sender, EventArgs e)
+        {
+            this.specialtyComboBox.DataSource = new SpecialtyBLO().FindAll();
         }
     }
 }

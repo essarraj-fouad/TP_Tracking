@@ -29,7 +29,7 @@ namespace TP_Tracking.Presentation
             GwinManagerControl<Specialty, SpecialtyForm, SpecialtyDataGrid>
               managerForm = new GwinManagerControl<Specialty, SpecialtyForm, SpecialtyDataGrid>(new SpecialtyBLO());
 
-            new GwinShowFormManager().ShwoManagerForm(managerForm);
+            new GwinShowFormManager().ShwoForm(managerForm,"Gestion des spécialité");
         }
 
         private void gestionDesGroupesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace TP_Tracking.Presentation
             GwinManagerControl<Group, GroupForm, GroupDataGrid>
              managerForm = new GwinManagerControl<Group, GroupForm, GroupDataGrid>(new GroupBLO());
 
-            new GwinShowFormManager().ShwoManagerForm(managerForm);
+            new GwinShowFormManager().ShwoForm(managerForm,"Gestion des groupes");
         }
     }
 }
