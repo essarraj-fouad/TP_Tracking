@@ -42,9 +42,8 @@
     <Reference Include="GApp.Core">
       <HintPath>..\packages\GApp\GApp.Core.dll</HintPath>
     </Reference>
-    <Reference Include="GApp.DAL.EF6, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\GApp\GApp.DAL.EF6.dll</HintPath>
+    <Reference Include="GApp.DAL.EECore">
+      <HintPath>..\packages\GApp\GApp.DAL.EECore.dll</HintPath>
     </Reference>
     <Reference Include="GwinApp.Core">
       <HintPath>..\packages\GApp\GwinApp.Core.dll</HintPath>

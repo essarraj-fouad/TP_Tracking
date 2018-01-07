@@ -14,6 +14,8 @@ using App.Entities;
 using App.Presentation.Groups;
 using App.Specialties;
 using App.Presentation.Projects;
+using App.Presentation.Tasks;
+using App.DAL;
 
 namespace App.Presentation
 {
@@ -29,16 +31,18 @@ namespace App.Presentation
             GwinManagerControl<Specialty, SpecialtyForm, SpecialtyDataGrid>
               managerForm = new GwinManagerControl<Specialty, SpecialtyForm, SpecialtyDataGrid>(new SpecialtyBLO());
 
-            new GwinShowFormManager().ShwoForm(managerForm,"Gestion des spécialité");
+            new GwinShowFormManager(this).ShwoForm(managerForm,"Gestion des spécialité");
         }
 
         private void gestionDesGroupesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
             GwinManagerControl<Group, GroupForm, GroupDataGrid>
-             managerForm = new GwinManagerControl<Group, GroupForm, GroupDataGrid>(new GroupBLO());
+             managerForm = new GwinManagerControl<Group, GroupForm, GroupDataGrid>(
+                 new GroupBLO(ModelContext.getContext(nameof(Group)))
+                 );
 
-            new GwinShowFormManager().ShwoForm(managerForm,"Gestion des groupes");
+            new GwinShowFormManager(this).ShwoForm(managerForm,"Gestion des groupes", FormWindowState.Maximized);
         }
 
         private void projetsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -48,7 +52,17 @@ namespace App.Presentation
             GwinManagerControl<Project, ProjectForm, ProjectDataGrid>
              (new ProjectBLO());
 
-            new GwinShowFormManager().ShwoForm(managerForm, "Gestion des projets");
+            new GwinShowFormManager(this).ShwoForm(managerForm, "Gestion des projets", FormWindowState.Maximized);
+        }
+
+        private void tâchesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GwinManagerControl<Entities.Task, TaskForm, TaskDataGrid>
+            managerForm = new
+           GwinManagerControl<Entities.Task, TaskForm, TaskDataGrid>
+            (new TaskBLO(ModelContext.getContext(nameof(Entities.Task))));
+
+            new GwinShowFormManager(this).ShwoForm(managerForm, "Gestion des tâches", FormWindowState.Maximized);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using App.Entities;
 using GApp.DAL;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 namespace App.DAL
 {
     public partial class GroupDAO : BaseDAO<Group>{

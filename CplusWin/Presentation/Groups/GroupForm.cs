@@ -19,8 +19,9 @@ namespace App.Presentation.Groups
         public GroupForm()
         {
             InitializeComponent();
-            ModelContext context = ModelContext.getUniqueContextByEntity(typeof(Group));
-            this.specialtyComboBox.DataSource = new SpecialtyBLO(context).FindAll();
+            this.specialtyComboBox.DataSource = 
+                new SpecialtyBLO(ModelContext.getContext(typeof(Group)))
+                .FindAll();
         }
         
 

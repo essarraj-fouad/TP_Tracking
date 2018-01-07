@@ -1,7 +1,7 @@
 ﻿using App.Entities;
 using GApp.BLL;
 using App.DAL;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 namespace  App.BLL
 {
 	public partial class TraineeBLO : BaseBLO<Trainee>{

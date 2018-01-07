@@ -44,7 +44,7 @@
 #>
 using <#=   codeClass.Namespace.FullName #>;
 using GApp.DAL;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 namespace <#= RootNamespace #>.DAL
 {
     public partial class <#= codeClass.Name #>DAO : BaseDAO<<#= codeClass.Name #>>{

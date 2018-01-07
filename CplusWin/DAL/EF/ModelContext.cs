@@ -1,31 +1,27 @@
 ﻿namespace App.DAL
 {
-    using SQLite.CodeFirst;
     using System;
-    using System.Data.Entity;
-    using System.Data.SQLite;
+
     using System.Linq;
     using App.Entities;
     using System.Collections.Generic;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.Data.Sqlite;
 
     public class ModelContext : DbContext
     {
         static Dictionary<String, ModelContext> UniqueContextByEntity = new Dictionary<string, ModelContext>();
 
-        // SQLite DataBase
-        public ModelContext() : base(
-            new SQLiteConnection()
-            {
-                ConnectionString = new SQLiteConnectionStringBuilder() { DataSource = "SuiviTP.db", ForeignKeys = true }.ConnectionString
-            }, true)
-        { }
-
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            var sqliteConnectionInitializer = new SqliteCreateDatabaseIfNotExists<ModelContext>(modelBuilder);
-            Database.SetInitializer(sqliteConnectionInitializer);
 
+            base.OnModelCreating(modelBuilder);
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            var sqliteConn = new SqliteConnection(@"DataSource = ../../traineeManager.db");
+            optionsBuilder.UseSqlite(sqliteConn);
         }
         // Taks Manager
 
@@ -50,9 +46,9 @@
         /// </summary>
         /// <param name="EntityName">Entity Name</param>
         /// <returns>Modelc context instance</returns>
-        public static ModelContext getUniqueContextByEntity(Type EntityType)
+        public static ModelContext getContext(Type EntityType)
         {
-            return getUniqueContextByEntity(EntityType.Name);
+            return getContext(EntityType.Name);
 
         }
         /// <summary>
@@ -60,7 +56,7 @@
         /// </summary>
         /// <param name="EntityName">Entity Name</param>
         /// <returns>Modelc context instance</returns>
-        public static ModelContext getUniqueContextByEntity(string EntityName)
+        public static ModelContext getContext(string EntityName)
         {
             if (UniqueContextByEntity.ContainsKey(EntityName))
                 return UniqueContextByEntity[EntityName];
