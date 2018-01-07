@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP_Tracking.DAL
+namespace App.DAL
 {
     public class SQLiteConfiguration : DbConfiguration
     {

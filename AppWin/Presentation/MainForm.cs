@@ -9,13 +9,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TP_Tracking.BLL;
-using TP_Tracking.Entities;
-using TP_Tracking.Presentation.Forms;
-using TP_Tracking.Presentation.Groups;
-using TP_Tracking.Specialties;
+using App.BLL;
+using App.Entities;
+using App.Presentation.Groups;
+using App.Specialties;
 
-namespace TP_Tracking.Presentation
+namespace App.Presentation
 {
     public partial class MainForm : FormApplication
     {
@@ -34,6 +33,7 @@ namespace TP_Tracking.Presentation
 
         private void gestionDesGroupesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             GwinManagerControl<Group, GroupForm, GroupDataGrid>
              managerForm = new GwinManagerControl<Group, GroupForm, GroupDataGrid>(new GroupBLO());
 

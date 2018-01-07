@@ -1,4 +1,4 @@
-﻿namespace TP_Tracking.Specialties
+﻿namespace App.Specialties
 {
     partial class SpecialtyForm
     {
@@ -55,7 +55,7 @@
             // 
             // specialtyBindingSource
             // 
-            this.specialtyBindingSource.DataSource = typeof(TP_Tracking.Entities.Specialty);
+            this.specialtyBindingSource.DataSource = typeof(App.Entities.Specialty);
             // 
             // codeLabel
             // 

@@ -1,14 +1,16 @@
-﻿namespace TP_Tracking.DAL
+﻿namespace App.DAL
 {
     using SQLite.CodeFirst;
     using System;
     using System.Data.Entity;
     using System.Data.SQLite;
     using System.Linq;
-    using TP_Tracking.Entities;
+    using App.Entities;
+    using System.Collections.Generic;
 
     public class ModelContext : DbContext
     {
+        static Dictionary<String, ModelContext> UniqueContextByEntity = new Dictionary<string, ModelContext>();
      
         // SQLite DataBase
         public ModelContext() : base(
@@ -37,6 +39,35 @@
         public virtual DbSet<TraineeWorkValidateError> TraineeWorkValidateErrors { get; set; }
         public virtual DbSet<TraineeWork> TraineeWorks { get; set; }
         public virtual DbSet<TraineeWorkNote> TraineeWorkNotes { get; set; }
+
+        #region Get Unique Conrext
+        /// <summary>
+        /// Get the unique context by Entity Type
+        /// </summary>
+        /// <param name="EntityName">Entity Name</param>
+        /// <returns>Modelc context instance</returns>
+        public static ModelContext getUniqueContextByEntity(Type EntityType)
+        {
+           return getUniqueContextByEntity(EntityType.Name);
+
+        }
+        /// <summary>
+        /// Get the unique context by Entity Name
+        /// </summary>
+        /// <param name="EntityName">Entity Name</param>
+        /// <returns>Modelc context instance</returns>
+        public static ModelContext getUniqueContextByEntity(string EntityName)
+        {
+            if (UniqueContextByEntity.ContainsKey(EntityName))
+                return UniqueContextByEntity[EntityName];
+            else
+            {
+                UniqueContextByEntity[EntityName] = new ModelContext();
+                return UniqueContextByEntity[EntityName];
+            }
+
+        }
+#endregion
     }
 
 

@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E0CCE3A0-D53E-4914-9924-4D04562D8AD6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>TP_Tracking</RootNamespace>
+    <RootNamespace>App</RootNamespace>
     <AssemblyName>TP_Tracking</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -282,12 +282,13 @@
     <None Include="Entities\Training\Trainning.cd" />
     <None Include="Entities\TraineesWorks\TraineesWorks.cd" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\App.Entities.Group.datasource" />
     <None Include="Properties\DataSources\TP_Tracking.Entities.Former.datasource" />
     <None Include="Properties\DataSources\TP_Tracking.Entities.Group.datasource" />
     <None Include="Properties\DataSources\TP_Tracking.Entities.Module.datasource" />
     <None Include="Properties\DataSources\TP_Tracking.Entities.NamedBaseEntity.datasource" />
     <None Include="Properties\DataSources\TP_Tracking.Entities.Person.datasource" />
-    <None Include="Properties\DataSources\TP_Tracking.Entities.Specialty.datasource" />
+    <None Include="Properties\DataSources\App.Entities.Specialty.datasource" />
     <None Include="Properties\DataSources\TP_Tracking.Entities.Trainee.datasource" />
     <None Include="Properties\DataSources\TP_Tracking.Entities.TraineeWork.datasource" />
     <None Include="Properties\DataSources\TP_Tracking.Entities.TraineeWorkNote.datasource" />

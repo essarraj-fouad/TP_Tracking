@@ -1,4 +1,4 @@
-﻿namespace TP_Tracking.Presentation
+﻿namespace App.Presentation
 {
     partial class MainForm
     {
@@ -48,8 +48,8 @@
             // etablissementToolStripMenuItem
             // 
             this.etablissementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionDesSpécialitésToolStripMenuItem,
-            this.gestionDesGroupesToolStripMenuItem});
+            this.gestionDesGroupesToolStripMenuItem,
+            this.gestionDesSpécialitésToolStripMenuItem});
             this.etablissementToolStripMenuItem.Name = "etablissementToolStripMenuItem";
             this.etablissementToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
             this.etablissementToolStripMenuItem.Text = "Etablissement";

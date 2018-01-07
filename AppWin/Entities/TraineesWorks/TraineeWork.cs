@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using TP_Tracking.Enumerations;
+using App.Enumerations;
 
-namespace TP_Tracking.Entities
+namespace App.Entities
 {
     public class TraineeWork : BaseEntity
     {

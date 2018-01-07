@@ -1,8 +1,8 @@
-﻿using TP_Tracking.Entities;
+﻿using App.Entities;
 using GApp.BLL;
-using TP_Tracking.DAL;
+using App.DAL;
 using System.Data.Entity;
-namespace  TP_Tracking.BLL
+namespace  App.BLL
 {
 	public partial class UserBLO : BaseBLO<User>{
 	    

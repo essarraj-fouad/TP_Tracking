@@ -9,13 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GwinDataGrid;
 
-namespace TP_Tracking.Presentation.Groups
+namespace App.Presentation.Groups
 {
     public partial class GroupDataGrid : GwinDataGridControl
     {
         public GroupDataGrid()
         {
             InitializeComponent();
+        }
+
+        private void groupDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

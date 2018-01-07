@@ -1,7 +1,7 @@
-﻿using TP_Tracking.Entities;
+﻿using App.Entities;
 using GApp.DAL;
 using System.Data.Entity;
-namespace TP_Tracking.DAL
+namespace App.DAL
 {
     public partial class TraineeDAO : BaseDAO<Trainee>{
         
@@ -10,8 +10,9 @@ namespace TP_Tracking.DAL
 
         }
 
-		public TraineeDAO() : base(new ModelContext())
+		public TraineeDAO() : base(null)
 		{
+			this.Context = new ModelContext();
         }
    }
 }

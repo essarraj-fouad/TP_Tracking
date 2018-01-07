@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GwinForm;
-using TP_Tracking.Entities;
+using App.Entities;
 
-namespace TP_Tracking.Presentation.UI.Trainees
+namespace App.Presentation.UI.Trainees
 {
     public partial class TraineeForm : GwinFormControl
     {

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GwinDataGrid;
 
-namespace TP_Tracking.Specialties
+namespace App.Specialties
 {
     public partial class SpecialtyDataGrid : GwinDataGridControl
     {

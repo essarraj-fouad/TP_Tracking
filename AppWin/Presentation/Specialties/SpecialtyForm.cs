@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GwinForm;
-using TP_Tracking.Entities;
+using App.Entities;
 
-namespace TP_Tracking.Specialties
+namespace App.Specialties
 {
     public partial class SpecialtyForm : GwinFormControl
     {

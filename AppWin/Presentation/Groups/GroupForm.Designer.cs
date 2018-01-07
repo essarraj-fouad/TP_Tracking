@@ -1,4 +1,4 @@
-﻿namespace TP_Tracking.Presentation.Forms
+﻿namespace App.Presentation.Groups
 {
     partial class GroupForm
     {
@@ -110,7 +110,7 @@
             // 
             // specialtyBindingSource
             // 
-            this.specialtyBindingSource.DataSource = typeof(TP_Tracking.Entities.Specialty);
+            this.specialtyBindingSource.DataSource = typeof(App.Entities.Specialty);
             // 
             // GroupForm
             // 

@@ -8,16 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GwinForm;
-using TP_Tracking.BLL;
+using App.BLL;
+using App.Entities;
+using App.DAL;
 
-namespace TP_Tracking.Presentation.Forms
+namespace App.Presentation.Groups
 {
     public partial class GroupForm : GwinFormControl
     {
         public GroupForm()
         {
             InitializeComponent();
+            ModelContext context = ModelContext.getUniqueContextByEntity(typeof(Group));
+            this.specialtyComboBox.DataSource = new SpecialtyBLO(context).FindAll();
         }
+        
 
         private void groupBoxEntity_Enter(object sender, EventArgs e)
         {
@@ -26,7 +31,20 @@ namespace TP_Tracking.Presentation.Forms
 
         private void GroupForm_Load(object sender, EventArgs e)
         {
-            this.specialtyComboBox.DataSource = new SpecialtyBLO().FindAll();
+          
+        }
+
+        protected override void readEntityFromControls()
+        {
+            base.readEntityFromControls();
+            Group group = this.Entity as Group;
+            group.Specialty = this.specialtyComboBox.SelectedItem as Specialty;
+        }
+        protected override void writeEntityToControls()
+        {
+            base.writeEntityToControls();
+
+            this.specialtyComboBox.SelectedItem = (this.Entity as Group).Specialty;
         }
     }
 }

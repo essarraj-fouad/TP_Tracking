@@ -1,13 +1,13 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TP_Tracking.DAL;
+using App.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TP_Tracking.Entities;
+using App.Entities;
 
-namespace TP_Tracking.DAL.Tests
+namespace App.DAL.Tests
 {
     [TestClass()]
     public class TraineeDAOTests

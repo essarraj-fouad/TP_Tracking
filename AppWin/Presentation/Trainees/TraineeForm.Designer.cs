@@ -1,4 +1,4 @@
-﻿namespace TP_Tracking.Presentation.UI.Trainees
+﻿namespace App.Presentation.UI.Trainees
 {
     partial class TraineeForm
     {
@@ -130,7 +130,7 @@
             // 
             // traineeBindingSource
             // 
-            this.traineeBindingSource.DataSource = typeof(TP_Tracking.Entities.Trainee);
+            this.traineeBindingSource.DataSource = typeof(App.Entities.Trainee);
             // 
             // groupLabel
             // 

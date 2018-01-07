@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP_Tracking.Entities
+namespace App.Entities
 {
     public class Trainee : User
     {

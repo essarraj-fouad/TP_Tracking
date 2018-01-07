@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace TP_Tracking.Exceptions
+namespace App.Exceptions
 {
     [Serializable]
     public class USBDeviceNotExistException : Exception
