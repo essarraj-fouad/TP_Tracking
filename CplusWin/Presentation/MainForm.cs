@@ -31,7 +31,7 @@ namespace App.Presentation
             GwinManagerControl<Specialty, SpecialtyForm, SpecialtyDataGrid>
               managerForm = new GwinManagerControl<Specialty, SpecialtyForm, SpecialtyDataGrid>(new SpecialtyBLO());
 
-            new GwinShowFormManager(this).ShwoForm(managerForm,"Gestion des spécialité");
+            new ShowFormManager(this).ShwoForm(managerForm,"Gestion des spécialité");
         }
 
         private void gestionDesGroupesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace App.Presentation
                  new GroupBLO(ModelContext.getContext(nameof(Group)))
                  );
 
-            new GwinShowFormManager(this).ShwoForm(managerForm,"Gestion des groupes", FormWindowState.Maximized);
+            new ShowFormManager(this).ShwoForm(managerForm,"Gestion des groupes", FormWindowState.Maximized);
         }
 
         private void projetsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace App.Presentation
             GwinManagerControl<Project, ProjectForm, ProjectDataGrid>
              (new ProjectBLO());
 
-            new GwinShowFormManager(this).ShwoForm(managerForm, "Gestion des projets", FormWindowState.Maximized);
+            new ShowFormManager(this).ShwoForm(managerForm, "Gestion des projets", FormWindowState.Maximized);
         }
 
         private void tâchesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -62,7 +62,7 @@ namespace App.Presentation
            GwinManagerControl<Entities.Task, TaskForm, TaskDataGrid>
             (new TaskBLO(ModelContext.getContext(nameof(Entities.Task))));
 
-            new GwinShowFormManager(this).ShwoForm(managerForm, "Gestion des tâches", FormWindowState.Maximized);
+            new ShowFormManager(this).ShwoForm(managerForm, "Gestion des tâches", FormWindowState.Maximized);
         }
     }
 }
