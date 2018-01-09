@@ -296,6 +296,8 @@
       <DependentUpon>EntityDAO.v.0.3.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Base\NamedBaseEntity.cs" />
+    <Compile Include="Entities\ModuleManagement\Precision.cs" />
+    <Compile Include="Entities\ModuleManagement\PrecisionContent.cs" />
     <Compile Include="Entities\ProjecsManager\Project.cs" />
     <Compile Include="Entities\ProjecsManager\Task.cs" />
     <Compile Include="Entities\TraineesWorks\TraineeWorkNote.cs" />
@@ -316,6 +318,10 @@
     <Compile Include="Migrations\20180107181707_InitDataBase.designer.cs">
       <DependentUpon>20180107181707_InitDataBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20180109213301_ModuleManager.cs" />
+    <Compile Include="Migrations\20180109213301_ModuleManager.designer.cs">
+      <DependentUpon>20180109213301_ModuleManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ModelContextModelSnapshot.cs" />
     <Compile Include="Presentation\Groups\GroupDataGrid.cs">
       <SubType>UserControl</SubType>
@@ -335,10 +341,10 @@
     <Compile Include="Presentation\ProjectManagement\Projects\ProjectForm.Designer.cs">
       <DependentUpon>ProjectForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Specialties\SpecialtyDataGrid.cs">
+    <Compile Include="Presentation\ModulesManagement\Specialties\SpecialtyDataGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Presentation\Specialties\SpecialtyDataGrid.Designer.cs">
+    <Compile Include="Presentation\ModulesManagement\Specialties\SpecialtyDataGrid.Designer.cs">
       <DependentUpon>SpecialtyDataGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Groups\GroupForm.cs">
@@ -347,10 +353,10 @@
     <Compile Include="Presentation\Groups\GroupForm.Designer.cs">
       <DependentUpon>GroupForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Specialties\SpecialtyForm.cs">
+    <Compile Include="Presentation\ModulesManagement\Specialties\SpecialtyForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Presentation\Specialties\SpecialtyForm.Designer.cs">
+    <Compile Include="Presentation\ModulesManagement\Specialties\SpecialtyForm.Designer.cs">
       <DependentUpon>SpecialtyForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\ProjectManagement\Tasks\TaskDataGrid.cs">
@@ -392,13 +398,13 @@
     <EmbeddedResource Include="Presentation\ProjectManagement\Projects\ProjectForm.resx">
       <DependentUpon>ProjectForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\Specialties\SpecialtyDataGrid.resx">
+    <EmbeddedResource Include="Presentation\ModulesManagement\Specialties\SpecialtyDataGrid.resx">
       <DependentUpon>SpecialtyDataGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Groups\GroupForm.resx">
       <DependentUpon>GroupForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\Specialties\SpecialtyForm.resx">
+    <EmbeddedResource Include="Presentation\ModulesManagement\Specialties\SpecialtyForm.resx">
       <DependentUpon>SpecialtyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\ProjectManagement\Tasks\TaskDataGrid.resx">
@@ -473,6 +479,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Presentation\Modules\" />
     <Folder Include="Presentation\UI\Trainees\" />
   </ItemGroup>
   <ItemGroup>

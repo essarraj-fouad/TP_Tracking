@@ -23,18 +23,26 @@
             var sqliteConn = new SqliteConnection(@"DataSource = ../../traineeManager.db");
             optionsBuilder.UseSqlite(sqliteConn);
         }
-        // Taks Manager
-
+        // Project Manager
         public virtual DbSet<Project> Projects { get; set; }
         public virtual DbSet<Task> Tasks { get; set; }
 
+        // Trainning Manager
         public virtual DbSet<Module> Modules { get; set; }
+        public virtual DbSet<Precision> Precisions { get; set; }
+        public virtual DbSet<PrecisionContent> PrecisionContents { get; set; }
+        
+
         public virtual DbSet<Former> Formers { get; set; }
+        public virtual DbSet<Training> Trainings { get; set; }
+
         public virtual DbSet<Trainee> Trainees { get; set; }
         public virtual DbSet<Group> Groups { get; set; }
-        public virtual DbSet<WorkToDo> WorkToDos { get; set; }
         public virtual DbSet<Specialty> Specialtys { get; set; }
-        public virtual DbSet<Training> Trainings { get; set; }
+
+
+        // TP Traking Manager
+        public virtual DbSet<WorkToDo> WorkToDos { get; set; }
         public virtual DbSet<WorkToDoCategory> WorkToDoCategorys { get; set; }
         public virtual DbSet<TraineeWorkValidateError> TraineeWorkValidateErrors { get; set; }
         public virtual DbSet<TraineeWork> TraineeWorks { get; set; }

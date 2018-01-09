@@ -28,13 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.etablissementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionDesGroupesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionDesSpécialitésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionDesProjetsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.projetsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tâchesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metroSetTabControl1 = new MetroSet_UI.Controls.MetroSetTabControl();
             this.TabPageEstablishment = new MetroSet_UI.Child.MetroSetTabPage();
             this.TabPageTraining = new MetroSet_UI.Child.MetroSetTabPage();
@@ -43,82 +36,24 @@
             this.GroupesTile = new MetroSet_UI.Controls.MetroSetTile();
             this.SpecialityTile = new MetroSet_UI.Controls.MetroSetTile();
             this.TasksTile = new MetroSet_UI.Controls.MetroSetTile();
-            this.menuStrip1.SuspendLayout();
             this.metroSetTabControl1.SuspendLayout();
             this.TabPageEstablishment.SuspendLayout();
             this.TaskManagerTabPage.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.etablissementToolStripMenuItem,
-            this.gestionDesProjetsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(20, 138);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(783, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // etablissementToolStripMenuItem
-            // 
-            this.etablissementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionDesGroupesToolStripMenuItem,
-            this.gestionDesSpécialitésToolStripMenuItem});
-            this.etablissementToolStripMenuItem.Name = "etablissementToolStripMenuItem";
-            this.etablissementToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
-            this.etablissementToolStripMenuItem.Text = "Etablissement";
-            // 
-            // gestionDesGroupesToolStripMenuItem
-            // 
-            this.gestionDesGroupesToolStripMenuItem.Name = "gestionDesGroupesToolStripMenuItem";
-            this.gestionDesGroupesToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.gestionDesGroupesToolStripMenuItem.Text = "Gestion des groupes";
-            this.gestionDesGroupesToolStripMenuItem.Click += new System.EventHandler(this.gestionDesGroupesToolStripMenuItem_Click);
-            // 
-            // gestionDesSpécialitésToolStripMenuItem
-            // 
-            this.gestionDesSpécialitésToolStripMenuItem.Name = "gestionDesSpécialitésToolStripMenuItem";
-            this.gestionDesSpécialitésToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.gestionDesSpécialitésToolStripMenuItem.Text = "Gestion des spécialités";
-            this.gestionDesSpécialitésToolStripMenuItem.Click += new System.EventHandler(this.gestionDesSpécialitésToolStripMenuItem_Click);
-            // 
-            // gestionDesProjetsToolStripMenuItem
-            // 
-            this.gestionDesProjetsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.projetsToolStripMenuItem,
-            this.tâchesToolStripMenuItem});
-            this.gestionDesProjetsToolStripMenuItem.Name = "gestionDesProjetsToolStripMenuItem";
-            this.gestionDesProjetsToolStripMenuItem.Size = new System.Drawing.Size(119, 20);
-            this.gestionDesProjetsToolStripMenuItem.Text = "Gestion des projets";
-            // 
-            // projetsToolStripMenuItem
-            // 
-            this.projetsToolStripMenuItem.Name = "projetsToolStripMenuItem";
-            this.projetsToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.projetsToolStripMenuItem.Text = "Projets";
-            this.projetsToolStripMenuItem.Click += new System.EventHandler(this.projetsToolStripMenuItem_Click);
-            // 
-            // tâchesToolStripMenuItem
-            // 
-            this.tâchesToolStripMenuItem.Name = "tâchesToolStripMenuItem";
-            this.tâchesToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.tâchesToolStripMenuItem.Text = "Tâches";
-            this.tâchesToolStripMenuItem.Click += new System.EventHandler(this.tâchesToolStripMenuItem_Click);
             // 
             // metroSetTabControl1
             // 
             this.metroSetTabControl1.Controls.Add(this.TabPageEstablishment);
             this.metroSetTabControl1.Controls.Add(this.TabPageTraining);
             this.metroSetTabControl1.Controls.Add(this.TaskManagerTabPage);
-            this.metroSetTabControl1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.metroSetTabControl1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.metroSetTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroSetTabControl1.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.metroSetTabControl1.ItemSize = new System.Drawing.Size(100, 38);
-            this.metroSetTabControl1.Location = new System.Drawing.Point(20, 162);
+            this.metroSetTabControl1.Location = new System.Drawing.Point(20, 138);
             this.metroSetTabControl1.Name = "metroSetTabControl1";
             this.metroSetTabControl1.SelectedIndex = 2;
-            this.metroSetTabControl1.Size = new System.Drawing.Size(783, 189);
+            this.metroSetTabControl1.Size = new System.Drawing.Size(783, 213);
             this.metroSetTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.metroSetTabControl1.Speed = 0;
             this.metroSetTabControl1.Style = MetroSet_UI.Design.Style.Light;
@@ -172,7 +107,7 @@
             this.TaskManagerTabPage.ImageKey = null;
             this.TaskManagerTabPage.Location = new System.Drawing.Point(4, 42);
             this.TaskManagerTabPage.Name = "TaskManagerTabPage";
-            this.TaskManagerTabPage.Size = new System.Drawing.Size(775, 143);
+            this.TaskManagerTabPage.Size = new System.Drawing.Size(775, 167);
             this.TaskManagerTabPage.Style = MetroSet_UI.Design.Style.Light;
             this.TaskManagerTabPage.StyleManager = null;
             this.TaskManagerTabPage.TabIndex = 2;
@@ -297,31 +232,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(823, 369);
             this.Controls.Add(this.metroSetTabControl1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Cplus";
-            this.Controls.SetChildIndex(this.menuStrip1, 0);
             this.Controls.SetChildIndex(this.metroSetTabControl1, 0);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.metroSetTabControl1.ResumeLayout(false);
             this.TabPageEstablishment.ResumeLayout(false);
             this.TaskManagerTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem etablissementToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gestionDesSpécialitésToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gestionDesGroupesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gestionDesProjetsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem projetsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tâchesToolStripMenuItem;
         private MetroSet_UI.Controls.MetroSetTabControl metroSetTabControl1;
         private MetroSet_UI.Child.MetroSetTabPage TabPageEstablishment;
         private MetroSet_UI.Controls.MetroSetTile SpecialityTile;

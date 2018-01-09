@@ -11,5 +11,7 @@ namespace App.Entities
     {
         public string Code { get;  set; }
         public int HourNumber { get; set; }
+        public virtual Specialty Specialty { set; get; }
+        public List<Precision> Precisions { set; get; }
     }
 }
