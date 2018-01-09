@@ -28,39 +28,59 @@ namespace App.Presentation
 
         private void gestionDesSpécialitésToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GwinManagerControl<Specialty, SpecialtyForm, SpecialtyDataGrid>
-              managerForm = new GwinManagerControl<Specialty, SpecialtyForm, SpecialtyDataGrid>(new SpecialtyBLO());
-
-            new ShowFormManager(this).ShwoForm(managerForm,"Gestion des spécialité");
+           
         }
 
         private void gestionDesGroupesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
+            
+        }
+
+        private void projetsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void tâchesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void GroupesTile_Click(object sender, EventArgs e)
+        {
             GwinManagerControl<Group, GroupForm, GroupDataGrid>
              managerForm = new GwinManagerControl<Group, GroupForm, GroupDataGrid>(
                  new GroupBLO(ModelContext.getContext(nameof(Group)))
                  );
 
-            new ShowFormManager(this).ShwoForm(managerForm,"Gestion des groupes", FormWindowState.Maximized);
+            new ShowFormManager(this).ShwoForm(managerForm, "Gestion des groupes", FormWindowState.Maximized);
         }
 
-        private void projetsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SpecialityTile_Click(object sender, EventArgs e)
+        {
+            GwinManagerControl<Specialty, SpecialtyForm, SpecialtyDataGrid>
+             managerForm = new GwinManagerControl<Specialty, SpecialtyForm, SpecialtyDataGrid>(new SpecialtyBLO());
+
+            new ShowFormManager(this).ShwoForm(managerForm, "Gestion des spécialité");
+        }
+
+        private void ProjectsTile_Click(object sender, EventArgs e)
         {
             GwinManagerControl<Project, ProjectForm, ProjectDataGrid>
-             managerForm = new
-            GwinManagerControl<Project, ProjectForm, ProjectDataGrid>
-             (new ProjectBLO());
+            managerForm = new
+           GwinManagerControl<Project, ProjectForm, ProjectDataGrid>
+            (new ProjectBLO());
 
             new ShowFormManager(this).ShwoForm(managerForm, "Gestion des projets", FormWindowState.Maximized);
         }
 
-        private void tâchesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void TasksTile_Click(object sender, EventArgs e)
         {
             GwinManagerControl<Entities.Task, TaskForm, TaskDataGrid>
-            managerForm = new
-           GwinManagerControl<Entities.Task, TaskForm, TaskDataGrid>
-            (new TaskBLO(ModelContext.getContext(nameof(Entities.Task))));
+           managerForm = new
+          GwinManagerControl<Entities.Task, TaskForm, TaskDataGrid>
+           (new TaskBLO(ModelContext.getContext(nameof(Entities.Task))));
 
             new ShowFormManager(this).ShwoForm(managerForm, "Gestion des tâches", FormWindowState.Maximized);
         }
